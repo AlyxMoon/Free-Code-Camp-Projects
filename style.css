@@ -1,0 +1,145 @@
+body {
+  background-color: #000;
+  color: black;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 20px;
+}
+
+#personal-photo {
+  width: 200px;
+  height: 200px;
+  margin-top: 50px;
+  margin-left: 40px;
+  text-align: center;
+  border: 1px solid gray;
+  border-radius: 50%;
+}
+
+.navbar {
+  border-bottom: 1px solid grey;
+  box-shadow: 0px 2px;
+  background-color: rgba(220,220,220,0.9);
+}
+
+.navbar-right {
+  background-color: rgb(180,180,180);
+  font-weight: bold;
+  font-size: 15px;
+  margin-right: 70px;
+}
+
+.navbar ul.navbar-nav li a {
+  color: black;
+}
+.navbar ul.navbar-nav li a:hover {
+  background-color: white;
+}
+
+.navbar div.navbar-header a {
+  color: black;
+}
+.navbar div.navbar-header a:hover {
+  background-color: white;
+}
+
+.navbar-header {
+  margin-left: 70px;
+}
+.navbar-brand {
+  background-color: rgb(180,180,180);
+  font-weight: bold;
+}
+
+.container {
+  background-size: cover;
+}
+
+.btn {
+  background-color: rgba(200,200,200,0.9);
+  border: 2px solid black;
+  box-shadow: 2px 2px;
+  text-shadow: 0px 0px 0px #000;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  margin: 10px 10px;
+}
+
+.btn:hover {
+  background-color: rgba(0,0,0,0.9);
+  border: 2px solid black;
+  box-shadow: 2px 2px black;
+  color: white;
+}
+
+td:hover{
+  background-color: rgba(100,100,100,0.8);
+  box-shadow: 2px 2px;
+}
+
+
+#sectionHome {
+  text-shadow: 2px 1px 2px #000;
+  color: rgba(200,200,200,0.8);
+
+  min-height: 400px;
+  margin-top: 50px;
+  text-align: center;
+  background: url('http://negativespace.co/wp-content/uploads/2015/06/1300x867xnegativespace-141-1300x867.jpg.pagespeed.ic.-OQkir4i_u.webp') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#sectionAbout {
+  min-height: 500px;
+  background: url('http://i1.wp.com/negativespace.co/wp-content/uploads/2015/10/0016.jpg?resize=1300%2C866') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#sectionPortfolio {
+	min-height: 700px;
+  text-align: center;
+  background: url('http://negativespace.co/wp-content/uploads/2015/06/1300x867xnegativespace-71-1300x867.jpg.pagespeed.ic.Ec6JRgLAob.webp') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#sectionContact {
+  text-shadow: 2px 1px 2px #000;
+  color: rgba(200,200,200,1);
+
+  height: 500px;
+  text-align: center;
+  background: url('http://negativespace.co/wp-content/uploads/2015/06/1300x867xnegativespace-151-1300x867.jpg.pagespeed.ic.umY-EwPh7X.webp') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.portfolio-container {
+  border: 1px solid black;
+  background-color: gray;
+}
+.portfolio-container:hover {
+  background-color: rgba(100,100,100,0.8);
+  box-shadow: 5px 5px 5px;
+
+}
+.portfolio-image {
+  margin: 0px 10px 0px 10px;
+}
+.portfolio-text-main {
+  color: white;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0.8);
+  margin: 0px 10px 0px 10px;
+}
+.portfolio-text-sub {
+  color: white;
+  font-size: 12px;
+  background-color: rgba(0,0,0,0.8);
+  margin: 0px 10px 0px 10px;
+}
