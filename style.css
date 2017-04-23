@@ -1,66 +1,104 @@
+/* CSS Sections
+  1. =PRIMARY
+  2. =SECONDARY
+  3. =TERTIARY
+  4. =TEXT
+  5. =IMAGE
+  6. =GENERAL
+*/
+
+/* ===PRIMARY=== */
 body {
   background-color: #000;
-  color: black;
+  color: white;
+  text-shadow: 2px 1px 2px #000;
 }
 
+.content {
+  padding-top: 50px;
+  overflow: auto;
+  position: relative;
+}
+
+.content:before {
+  content: "";
+  position: fixed;
+  left: -5%;
+  right: -5%;
+  z-index: -1;
+
+  display: block;
+  background-image: url('img/texture.jpg');
+  background-size:cover;
+  width: 110%;
+  height: 110%;
+
+  -webkit-filter: brightness(40%) contrast(70%);
+  -moz-filter: brightness(40%) contrast(70%);
+  -o-filter: brightness(40%) contrast(70%);
+  -ms-filter: brightness(40%) contrast(70%);
+  filter: brightness(40%) contrast(70%);
+}
+
+.content > div {
+  padding-top: 50px;
+  margin-top: -50px;
+  min-height: 500px;
+}
+
+/* ===SECONDARY=== */
+#sectionHome, #sectionPortfolio, #sectionContact {
+  text-align: center;
+}
+
+/* ===TERTIARY=== */
+.portfolio-container {
+  background-color: rgba(0,0,0,0.8);
+  margin-top: 10px;
+  border: 1px solid black;
+}
+
+.portfolio-container:hover {
+  background-color: rgba(100,100,100,0.8);
+  box-shadow: 5px 5px 5px;
+
+}
+
+.portfolio-text {
+  color: white;
+  font-size: 20px;
+  padding: 5px 0;
+}
+
+.portfolio-image {
+  margin: 5px;
+}
+
+/* ===TEXT=== */
 h1 {
   font-size: 50px;
-  font-weight: bold;
+  text-align: center;
 }
 
 p {
   font-size: 20px;
 }
 
+/* ===IMAGE=== */
 #personal-photo {
-  width: 200px;
-  height: 200px;
-  margin-top: 50px;
-  margin-left: 40px;
-  text-align: center;
+  margin: auto;
+  max-height: 500px;
   border: 1px solid gray;
   border-radius: 50%;
 }
 
-.navbar {
-  border-bottom: 1px solid grey;
-  box-shadow: 0px 2px;
-  background-color: rgba(220,220,220,0.9);
+.portfolio-image img {
+  max-width: 100%;
+  height: 200px;
+  max-height:
 }
 
-.navbar-right {
-  background-color: rgb(180,180,180);
-  font-weight: bold;
-  font-size: 15px;
-  margin-right: 70px;
-}
-
-.navbar ul.navbar-nav li a {
-  color: black;
-}
-.navbar ul.navbar-nav li a:hover {
-  background-color: white;
-}
-
-.navbar div.navbar-header a {
-  color: black;
-}
-.navbar div.navbar-header a:hover {
-  background-color: white;
-}
-
-.navbar-header {
-  margin-left: 70px;
-}
-.navbar-brand {
-  background-color: rgb(180,180,180);
-  font-weight: bold;
-}
-
-.container {
-  background-size: cover;
-}
-
+/* ===GENERAL=== */
 .btn {
   background-color: rgba(200,200,200,0.9);
   border: 2px solid black;
@@ -69,7 +107,6 @@ p {
   font-weight: bold;
   font-size: 20px;
   color: black;
-  margin: 10px 10px;
 }
 
 .btn:hover {
@@ -79,67 +116,4 @@ p {
   color: white;
 }
 
-td:hover{
-  background-color: rgba(100,100,100,0.8);
-  box-shadow: 2px 2px;
-}
-
-
-#sectionHome {
-  text-shadow: 2px 1px 2px #000;
-  color: rgba(200,200,200,0.8);
-
-  min-height: 400px;
-  margin-top: 50px;
-  text-align: center;
-  background: url('http://negativespace.co/wp-content/uploads/2015/06/1300x867xnegativespace-141-1300x867.jpg.pagespeed.ic.-OQkir4i_u.webp') no-repeat center center fixed;
-    background-size: cover;
-}
-
-#sectionAbout {
-  min-height: 500px;
-  background: url('http://i1.wp.com/negativespace.co/wp-content/uploads/2015/10/0016.jpg?resize=1300%2C866') no-repeat center center fixed;
-    background-size: cover;
-}
-
-#sectionPortfolio {
-	min-height: 700px;
-  text-align: center;
-  background: url('http://negativespace.co/wp-content/uploads/2015/06/1300x867xnegativespace-71-1300x867.jpg.pagespeed.ic.Ec6JRgLAob.webp') no-repeat center center fixed;
-    background-size: cover;
-}
-
-#sectionContact {
-  text-shadow: 2px 1px 2px #000;
-  color: rgba(200,200,200,1);
-
-  height: 500px;
-  text-align: center;
-  background: url('http://negativespace.co/wp-content/uploads/2015/06/1300x867xnegativespace-151-1300x867.jpg.pagespeed.ic.umY-EwPh7X.webp') no-repeat center center fixed;
-    background-size: cover;
-}
-
-.portfolio-container {
-  border: 1px solid black;
-  background-color: gray;
-}
-.portfolio-container:hover {
-  background-color: rgba(100,100,100,0.8);
-  box-shadow: 5px 5px 5px;
-
-}
-.portfolio-image {
-  margin: 0px 10px 0px 10px;
-}
-.portfolio-text-main {
-  color: white;
-  font-size: 20px;
-  background-color: rgba(0,0,0,0.8);
-  margin: 0px 10px 0px 10px;
-}
-.portfolio-text-sub {
-  color: white;
-  font-size: 12px;
-  background-color: rgba(0,0,0,0.8);
-  margin: 0px 10px 0px 10px;
-}
+/* Remember to shoot for the Moon! */
