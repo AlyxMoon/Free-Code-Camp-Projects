@@ -1,4 +1,4 @@
-# Personal Portfolio
+# Random Quotes Machine
 
 Link to live page:
 http://www.allistermoon.com/freecodecamp/quotes
