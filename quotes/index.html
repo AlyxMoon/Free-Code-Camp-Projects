@@ -5,23 +5,37 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-  <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+  <link rel='shortcut icon' href='../img/favicon.ico' type='image/x-icon'>
+  <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' crossorigin='anonymous'>
   <link rel='stylesheet' type='text/css' href='style.css'>
+
+  <title>FCC - Random Quote Machine</title>
 </head>
 <body>
-  <h1>Random Quotes</h1>
-  <p>We all love quotes, don't we? There are many places to find quotes, but you aren't at those places, you're here. So to celebrate, I went over to those places and brought some quotes back, enjoy!</p>
-
-  <button id='new-quote' class='btn btn-success' type='submit'>New Quote</button>
-
-  <a id='tweet-button' class='btn btn-info btn-xs' href='#' role='button'><i class='fa fa-twitter'></i>Tweet!</a>
-
-  <div class='quote'>
-    <span class='quote-text'>You shouldn't see this!</span>
-    <br/>
-    <span class='quote-author'>You shouldn't see this!</span>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-xs-12'>
+        <h1>Dave Barry Quotes</h1>
+        <h5>Dave Barry, great journalist and writer, fan of exploding whales, has a sewage pumping station named in his honor. Read his words and chortle.</h5>
+      </div>
+    </div>
+    <div class='row'>
+        <div class='col-lg-2 col-md-3 col-sm-4 col-xs-12'>
+            <img class='img-responsive' src='img/davebarry.jpg' />
+        </div>
+        <div class='col-lg-10 col-md-9 col-sm-8 col-xs-12'>
+          <button id='new-quote' class='btn btn-success' type='submit'>Give me another!</button>
+          <a id='tweet-button' class='btn btn-info' href='#' role='button' target='_blank'><i class='fa fa-twitter'></i> I must tell everyone!</a>
+          <div class='well'>
+            <blockquote>
+              <p class='quote-text'></p>
+              <footer class='quote-author'></footer>
+            </blockquote>
+          </div>
+        </div>
+    </div>
   </div>
 
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
