@@ -1,12 +1,5 @@
-$(document).ready(function() {
-  generateQuote();
-
-  $('#new-quote').on('click', function() {
-    generateQuote();
-    console.log('test')
-  });
-
-});
+$(document).ready(generateQuote);
+$('#new-quote').on('click', generateQuote);
 
 function generateQuote() {
   var quotes = [
@@ -37,8 +30,7 @@ function generateQuote() {
   ];
 
   var randomQuote = quotes[Math.floor(Math.random()*quotes.length)];
-  randomQuote = randomQuote.split('&');
-  $('.quote-text').text(randomQuote[0]);
+  $('.quote-text').text(randomQuote);
   $('.quote-author').text('Dave Barry');
   $('#tweet-button').attr('href', 'https://twitter.com/intent/tweet?text=' + randomQuote[0]);
 }
