@@ -1,0 +1,31 @@
+body {
+  text-align: center;
+  background-color: #1C2C35;
+  color: #BBBBBB;
+}
+
+form {
+  margin-bottom: 50px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.wiki-result {
+  margin-bottom: 5px;
+  padding: 1px 10px;
+  text-align: left;
+  color: black;
+  background-color: #E9EAEB;
+  /* 	border: 1px solid #3FB0AC; */
+}
+
+.wiki-result:hover {
+  border-left: 5px solid #3FB0AC;
+  margin-left: -5px;
+}
+
+#random-page {
+  background-color: #813772;
+}
