@@ -1,8 +1,7 @@
 $(document).ready(function() {
-  var channels = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff", "AlyxDeLunar", "monstercat", "comster404", "brunofin"];
+  var channels = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff", "AlyxDeLunar", "potato_fishy", "monstercat", "comster404", "brunofin"];
 	channels.forEach(function(channel) {
 		$.getJSON(createAPI(channel), function(data) {
-      console.log(data)
 			if(data.logo === null || data.status === 404) data.logo = "img/placeholder.png";
 
       var onlineStatus;
@@ -10,7 +9,6 @@ $(document).ready(function() {
       if(data.status !== null && data.status !== 404) {
         onlineStatus = 'online';
         description = data.status;
-        // description = data.status.substr(0,30) + '...';
       }
       else if(data.status === null) {
         onlineStatus = 'offline';
