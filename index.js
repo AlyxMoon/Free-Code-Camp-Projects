@@ -84,6 +84,7 @@ function fillPortfolio(element, data) {
                 .append(
                   $('<a />')
                     .attr('href', data[i].link)
+                    .attr('target', '_blank')
                     .append(
                       $('<img />')
                         .attr('src', data[i].image)
