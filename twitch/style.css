@@ -1,0 +1,75 @@
+body {
+	background-color: #ECF0E7;
+}
+
+h1 {
+	display: block;
+	position: relative;
+	float: left;
+	padding-left: 80px;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    padding-left: 20px;
+  }
+}
+
+#header {
+	background-color: #5C5457;
+	color: #ECF0E7;
+}
+
+.img {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	border: 2px solid #ECF0E7;
+}
+
+.row {
+  line-height: 50px;
+  padding: 5px;
+  margin: 2px 0px;
+}
+
+.menu {
+	text-align: right;
+	float: right;
+	line-height: 20px;
+}
+
+.menu-option {
+  width: 60px;
+  height: 20px;
+  padding-right: 5px;
+  margin-right: -5px;
+
+  background-color: #ECF0E7;
+  color: #5C5457;
+  border-top: 2px solid #5C5457;
+
+	cursor: pointer;
+  font-weight: bold;
+}
+
+.online, .online a, .online a:focus, .online a:hover, .online a:visited {
+	background-color: #B8CCA6;
+	color: #4A5E82;
+}
+
+.offline, .offline a, .offline a:focus, .offline a:hover, .offline a:visited {
+	background-color: #4A5E82;
+	color: #B8CCA6;
+}
+
+.closed, .closed a, .closed a:focus, .closed a:hover, .closed a:visited {
+  background-color: #5C5457;
+  color: #ECF0E7;
+}
+
+.row-status {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
