@@ -52,16 +52,15 @@ body {
 }
 
 /* ===TERTIARY=== */
-.portfolio-container {
+.portfolio-item {
   background-color: rgba(0,0,0,0.8);
   margin-top: 10px;
   border: 1px solid black;
 }
 
-.portfolio-container:hover {
+.portfolio-item:hover {
   background-color: rgba(100,100,100,0.8);
   box-shadow: 5px 5px 5px;
-
 }
 
 .portfolio-text {
