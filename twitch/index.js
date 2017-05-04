@@ -42,9 +42,9 @@ $(document).ready(function() {
     var option = $(this).data('list');
 
     if (option === 'all') {
-      $('.list-group').css('display', 'initial');
+      $('.streamer-list-group').css('display', 'initial');
     } else {
-      $('.list-group').css('display', 'none');
+      $('.streamer-list-group').css('display', 'none');
       $('#' + option + '-list').css('display', 'initial');
     }
 	});
