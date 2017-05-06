@@ -20,14 +20,14 @@ var projects = [
     "image": "img/previews/twitch.png"
   },
   {
+    "title" : "Calculator",
+    "link": "calculator",
+    "image": "img/previews/calculator.png"
+  },
+  {
     "title" : "Pomodoro Clock",
     "link": "http://codepen.io/AlyxMoon/full/OyqMwe",
     "image": "http://codepen.io/AlyxMoon/pen/OyqMwe/image/small.png"
-  },
-  {
-    "title" : "Calculator",
-    "link": "http://codepen.io/AlyxMoon/full/GoKNYG",
-    "image": "http://codepen.io/AlyxMoon/pen/GoKNYG/image/small.png"
   },
   {
     "title" : "Tic Tac Toe",
