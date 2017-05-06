@@ -26,8 +26,8 @@ var projects = [
   },
   {
     "title" : "Pomodoro Clock",
-    "link": "http://codepen.io/AlyxMoon/full/OyqMwe",
-    "image": "http://codepen.io/AlyxMoon/pen/OyqMwe/image/small.png"
+    "link": "pomodoro",
+    "image": "img/previews/pomodoro.png"
   },
   {
     "title" : "Tic Tac Toe",
