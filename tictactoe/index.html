@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang='en'>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+  <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' crossorigin='anonymous'>
+  <link rel='stylesheet' type='text/css' href='style.css'>
+
+  <title>FCC - Tic Tac Toe</title>
+</head>
+<body>
+  <div class="container">
+    <div class='page-header'>
+      <h1>Tic Tac Toe</h1>
+    </div>
+
+    <div class="row">
+      <button id="new-game" class="btn btn-default">New Game</button>
+      <button id="mark-x" class="option btn btn-default">X</button>
+      <button id="mark-o" class="option btn btn-default">O</button>
+      <p class="option">Choose X or O to begin playing</p>
+    </div>
+
+    <div class="row">
+      <div id="gamepad">
+        <div class='gamepad-row'>
+          <div id="top-left" class="square"></div>
+          <div id="top-mid" class="square"></div>
+          <div id="top-right" class="square"></div>
+        </div>
+        <div class='gamepad-row'>
+          <div id="center-left" class="square"></div>
+          <div id="center-mid" class="square"></div>
+          <div id="center-right" class="square"></div>
+        </div>
+        <div class='gamepad-row'>
+          <div id="bottom-left" class="square"></div>
+          <div id="bottom-mid" class="square"></div>
+          <div id="bottom-right" class="square"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

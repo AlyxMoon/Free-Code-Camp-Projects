@@ -1,0 +1,36 @@
+body {
+  background-color: #1C2C35;
+  color: #BBBBBB;
+  text-align: center;
+}
+​
+.btn {
+  margin-top: 10px;
+}
+
+.square {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  margin: -1px 0 0 -5px;
+  line-height: 100px;
+  border: 1px solid #FFFFFF;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 40px;
+}
+
+@media (max-width: 400px) {
+  .square {
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+  }
+}
+
+#gamepad {
+  display: inline-block;
+  margin: auto;
+  padding: 21px 30px 20px 35px;
+  background-color: #000400;
+}
