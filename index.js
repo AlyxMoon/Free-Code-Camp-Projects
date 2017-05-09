@@ -31,8 +31,8 @@ var projects = [
   },
   {
     "title" : "Tic Tac Toe",
-    "link": "http://codepen.io/AlyxMoon/full/zqjqVE",
-    "image": "http://codepen.io/AlyxMoon/pen/zqjqVE/image/small.png"
+    "link": "tictactoe",
+    "image": "img/previews/tictactoe.png"
   },
   {
     "title" : "Simon Game",
