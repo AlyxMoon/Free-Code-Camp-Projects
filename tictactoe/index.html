@@ -19,10 +19,31 @@
     </div>
 
     <div class="row">
+      <div class='col-sm-4 col-xs-12'>
+        <p>Player Score</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" id="score-player" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0" style="width: 0">0</div>
+        </div>
+      </div>
+      <div class='col-sm-4 col-xs-12'>
+        <p>Computer Score</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-danger" id="score-computer" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0" style="width: 0">0</div>
+        </div>
+      </div>
+      <div class='col-sm-4 col-xs-12'>
+        <p>Ties</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-warning" id="score-tie" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0" style="width: 0">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
       <button id="new-game" class="btn btn-default">New Game</button>
+      <span class='option'>Choose X or O</span>
       <button id="mark-x" class="option btn btn-default">X</button>
       <button id="mark-o" class="option btn btn-default">O</button>
-      <p class="option">Choose X or O to begin playing</p>
     </div>
 
     <div class="row">

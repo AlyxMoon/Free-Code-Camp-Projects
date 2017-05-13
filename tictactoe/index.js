@@ -7,7 +7,7 @@ var board = new Array(9);
 var playerMark, computerMark;
 
 $(document).ready(function() {
-  newGame();
+  newGame(false);
 
   // Event Listeners
   //----------------
@@ -22,9 +22,9 @@ $(document).ready(function() {
     if (playerMark !== "" && board[index] === "") {
       markSquare(index, playerMark);
 
-      if (checkVictory(index, playerMark) === false) {
+      if (gameOver() === false) {
         markSquare(computerMove(), computerMark);
-        checkVictory(index, playerMark);
+        gameOver();
       }
     }
   });
@@ -33,13 +33,18 @@ $(document).ready(function() {
 
 // Function Declarations
 //----------------------
-function newGame() {
-  $(".option").show();
-  $(".square").text("");
+function newGame(isGameOver = true) {
+  var time = isGameOver ? 200 : 0;
 
-  playerMark = "";
-  computerMark = "";
-  for (var i = 0; i < 9; i++) board[i] = "";
+  window.setTimeout(function() {
+    updateScoreBars();
+    $(".option").show();
+    $(".square").text("");
+
+    playerMark = "";
+    computerMark = "";
+    for (var i = 0; i < 9; i++) board[i] = "";
+  }, time);
 }
 
 function selectMark(mark) {
@@ -65,7 +70,32 @@ function markSquare(index, mark) {
   return true;
 }
 
-function checkVictory(index, mark) {
+function gameOver() {
+  var victoryCheck = checkVictory();
+
+  if (victoryCheck === playerMark) {
+    score.player += 1;
+    newGame();
+    return true;
+  }
+  if (victoryCheck === computerMark) {
+    score.computer += 1;
+    newGame();
+    return true;
+  }
+
+  if (board.every(function(elem) {
+    return elem;
+  })) {
+    score.tie += 1;
+    newGame();
+    return true;
+  }
+
+  return false;
+}
+
+function checkVictory() {
   //-------------------------------------------------
   // First attempt, easiest to conceptualize approach
 
@@ -76,8 +106,7 @@ function checkVictory(index, mark) {
       board[0 + i] === board[1 + i] &&
       board[1 + i] === board[2 + i]
     ) {
-      newGame();
-      return true;
+      return board[0 + i];
     }
   }
   // Check vertically
@@ -87,20 +116,34 @@ function checkVictory(index, mark) {
       board[i] === board[i + 3] &&
       board[i + 3] === board[i + 6]
     ) {
-      newGame();
-      return true;
+      return board[i];
     }
   }
   // Check diagonals
   if (board[0] !== "" && board[0] === board[4] && board[4] === board[8]) {
-    newGame();
-    return true;
+    return board[0];
   }
   if (board[2] !== "" && board[2] === board[4] && board[4] === board[6]) {
-    newGame();
-    return true;
+    return board[2];
   }
 
   return false;
   //-------------------------------------------------
+}
+
+function updateScoreBars() {
+  var maxScore = score.player + score.computer + score.tie;
+
+  $('#score-player').text(score.player)
+    .attr('aria-valuenow', score.player)
+    .attr('aria-valuemax', maxScore)
+    .css('width', (score.player / maxScore * 100) + '%')
+  $('#score-computer').text(score.computer)
+    .attr('aria-valuenow', score.computer)
+    .attr('aria-valuemax', maxScore)
+    .css('width', (score.computer / maxScore * 100) + '%')
+  $('#score-tie').text(score.tie)
+    .attr('aria-valuenow', score.tie)
+    .attr('aria-valuemax', maxScore)
+    .css('width', (score.tie / maxScore * 100) + '%')
 }
