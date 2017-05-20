@@ -36,8 +36,8 @@ var projects = [
   },
   {
     "title" : "Simon Game",
-    "link": "http://codepen.io/AlyxMoon/full/YqORyx",
-    "image": "http://codepen.io/AlyxMoon/pen/YqORyx/image/small.png"
+    "link": "simon",
+    "image": "img/previews/simon.png"
   },
   {
     "title" : "Recipe Box",
