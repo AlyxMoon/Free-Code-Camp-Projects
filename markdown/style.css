@@ -1,0 +1,35 @@
+body {
+	background-color: #1C2C35;
+	color: #BDBDBD;
+}
+
+.container {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+textarea {
+	resize: vertical;
+	height: 100%;
+}
+
+.display {
+	background-color: #FFF;
+	border: 1px solid #CCC;
+	box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px inset;
+	border-radius: 4px;
+
+	color: #555;
+
+	padding: 6px 12px;
+	height: 414px;
+	overflow: scroll;
+}
+
+#info {
+	border-bottom: 1px solid black;
+}
+
+.center {
+	text-align: center;
+}

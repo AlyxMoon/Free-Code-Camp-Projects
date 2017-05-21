@@ -40,14 +40,14 @@ var projects = [
     "image": "img/previews/simon.png"
   },
   {
+    "title" : "Markdown Previewer",
+    "link": "markdown",
+    "image": "img/previews/markdown.png"
+  },
+  {
     "title" : "Recipe Box",
     "link": "http://codepen.io/AlyxMoon/full/MbzeRy",
     "image": "http://codepen.io/AlyxMoon/pen/MbzeRy/image/small.png"
-  },
-  {
-    "title" : "Markdown Previewer",
-    "link": "http://codepen.io/AlyxMoon/full/VmwYjb",
-    "image": "http://codepen.io/AlyxMoon/pen/VmwYjb/image/small.png"
   },
   {
     "title" : "Free Code Camp Leaderboard",
