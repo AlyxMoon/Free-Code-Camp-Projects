@@ -45,14 +45,14 @@ var projects = [
     "image": "img/previews/markdown.png"
   },
   {
+    "title" : "Free Code Camp Leaderboard",
+    "link": "leaderboard",
+    "image": "img/previews/leaderboard.png"
+  },
+  {
     "title" : "Recipe Box",
     "link": "http://codepen.io/AlyxMoon/full/MbzeRy",
     "image": "http://codepen.io/AlyxMoon/pen/MbzeRy/image/small.png"
-  },
-  {
-    "title" : "Free Code Camp Leaderboard",
-    "link": "http://codepen.io/AlyxMoon/full/MbqBre",
-    "image": "http://codepen.io/AlyxMoon/pen/MbqBre/image/small.png"
   },
   {
     "title" : "Conway's Game of Life",
