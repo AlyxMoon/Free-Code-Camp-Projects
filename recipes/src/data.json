@@ -1,0 +1,6879 @@
+[
+	{
+	"made": false,
+	"name": "acid rain",
+	"ingredients": [
+		[
+			"rain",
+			"smoke"
+		],
+		[
+			"rain",
+			"smog"
+		]
+	]
+}, {
+	"made": false,
+	"name": "airplane",
+	"ingredients": [
+		[
+			"bird",
+			"metal"
+		],
+		[
+			"bird",
+			"steel"
+		]
+	]
+}, {
+	"made": false,
+	"name": "alarm clock",
+	"ingredients": [
+		[
+			"clock",
+			"sound"
+		]
+	]
+}, {
+	"made": false,
+	"name": "alcohol",
+	"ingredients": [
+		[
+			"fruit",
+			"time"
+		],
+		[
+			"juice",
+			"time"
+		]
+	]
+}, {
+	"made": false,
+	"name": "algae",
+	"ingredients": [
+		[
+			"water",
+			"plant"
+		],
+		[
+			"ocean",
+			"plant"
+		],
+		[
+			"sea",
+			"plant"
+		]
+	]
+}, {
+	"made": false,
+	"name": "alien",
+	"ingredients": [
+		[
+			"life",
+			"space"
+		]
+	]
+}, {
+	"made": false,
+	"name": "allergy",
+	"ingredients": [
+		[
+			"human",
+			"dust"
+		]
+	]
+}, {
+	"made": false,
+	"name": "alligator",
+	"ingredients": [
+		[
+			"lizard",
+			"swamp"
+		],
+		[
+			"lizard",
+			"river"
+		]
+	]
+}, {
+	"made": false,
+	"name": "alpaca",
+	"ingredients": [
+		[
+			"mountain",
+			"sheep"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ambulance",
+	"ingredients": [
+		[
+			"hospital",
+			"car"
+		],
+		[
+			"doctor",
+			"car"
+		]
+	]
+}, {
+	"made": false,
+	"name": "angel",
+	"ingredients": [
+		[
+			"human",
+			"bird"
+		]
+	]
+}, {
+	"made": false,
+	"name": "angler",
+	"ingredients": [
+		[
+			"human",
+			"fishing rod"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ant",
+	"ingredients": [
+		[
+			"grass",
+			"wild animal"
+		],
+		[
+			"wild animal",
+			"sugar"
+		]
+	]
+}, {
+	"made": false,
+	"name": "antarctica",
+	"ingredients": [
+		[
+			"snow",
+			"desert"
+		],
+		[
+			"ice",
+			"desert"
+		]
+	]
+}, {
+	"made": false,
+	"name": "aquarium",
+	"ingredients": [
+		[
+			"water",
+			"glass"
+		],
+		[
+			"glass",
+			"fish"
+		]
+	]
+}, {
+	"made": false,
+	"name": "archipelago",
+	"ingredients": [
+		[
+			"isle",
+			"isle"
+		]
+	]
+}, {
+	"made": false,
+	"name": "armadillo",
+	"ingredients": [
+		[
+			"wild animal",
+			"armor"
+		]
+	]
+}, {
+	"made": false,
+	"name": "armor",
+	"ingredients": [
+		[
+			"tool",
+			"metal"
+		],
+		[
+			"tool",
+			"steel"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ash",
+	"ingredients": [
+		[
+			"volcano",
+			"energy"
+		]
+	]
+}, {
+	"made": false,
+	"name": "astronaut",
+	"ingredients": [
+		[
+			"human",
+			"moon"
+		],
+		[
+			"rocket",
+			"human"
+		],
+		[
+			"human",
+			"space station"
+		],
+		[
+			"human",
+			"space"
+		]
+	]
+}, {
+	"made": false,
+	"name": "astronaut ice cream",
+	"ingredients": [
+		[
+			"ice cream",
+			"astronaut"
+		]
+	]
+}, {
+	"made": false,
+	"name": "atmosphere",
+	"ingredients": [
+		[
+			"air",
+			"pressure"
+		],
+		[
+			"sky",
+			"pressure"
+		]
+	]
+}, {
+	"made": false,
+	"name": "atomic bomb",
+	"ingredients": [
+		[
+			"energy",
+			"explosion"
+		]
+	]
+}, {
+	"made": false,
+	"name": "aurora",
+	"ingredients": [
+		[
+			"sun",
+			"antarctica"
+		],
+		[
+			"sky",
+			"antarctica"
+		],
+		[
+			"antarctica",
+			"atmosphere"
+		]
+	]
+}, {
+	"made": false,
+	"name": "avalanche",
+	"ingredients": [
+		[
+			"energy",
+			"snow"
+		]
+	]
+}, {
+	"made": false,
+	"name": "axe",
+	"ingredients": [
+		[
+			"blade",
+			"wood"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bacon",
+	"ingredients": [
+		[
+			"pig",
+			"fire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bacteria",
+	"ingredients": [
+		[
+			"swamp",
+			"life"
+		]
+	]
+}, {
+	"made": false,
+	"name": "baker",
+	"ingredients": [
+		[
+			"human",
+			"bread"
+		],
+		[
+			"human",
+			"flour"
+		],
+		[
+			"human",
+			"dough"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bakery",
+	"ingredients": [
+		[
+			"house",
+			"bread"
+		],
+		[
+			"house",
+			"baker"
+		]
+	]
+}, {
+	"made": false,
+	"name": "banana",
+	"ingredients": [
+		[
+			"fruit",
+			"monkey"
+		]
+	]
+}, {
+	"made": false,
+	"name": "banana bread",
+	"ingredients": [
+		[
+			"bread",
+			"banana"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bandage",
+	"ingredients": [
+		[
+			"blood",
+			"fabric"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bank",
+	"ingredients": [
+		[
+			"house",
+			"money"
+		],
+		[
+			"house",
+			"gold"
+		],
+		[
+			"house",
+			"safe"
+		]
+	]
+}, {
+	"made": false,
+	"name": "barn",
+	"ingredients": [
+		[
+			"livestock",
+			"house"
+		],
+		[
+			"cow",
+			"house"
+		],
+		[
+			"house",
+			"hay"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bat",
+	"ingredients": [
+		[
+			"mouse",
+			"bird"
+		],
+		[
+			"mouse",
+			"sky"
+		]
+	]
+}, {
+	"made": false,
+	"name": "batman",
+	"ingredients": [
+		[
+			"bat",
+			"human"
+		]
+	]
+}, {
+	"made": false,
+	"name": "batter",
+	"ingredients": [
+		[
+			"flour",
+			"milk"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bayonet",
+	"ingredients": [
+		[
+			"gun",
+			"blade"
+		],
+		[
+			"gun",
+			"sword"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bbq",
+	"ingredients": [
+		[
+			"campfire",
+			"meat"
+		],
+		[
+			"campfire",
+			"garden"
+		]
+	]
+}, {
+	"made": false,
+	"name": "beach",
+	"ingredients": [
+		[
+			"sea",
+			"sand"
+		],
+		[
+			"ocean",
+			"sand"
+		],
+		[
+			"water",
+			"sand"
+		]
+	]
+}, {
+	"made": false,
+	"name": "beaver",
+	"ingredients": [
+		[
+			"wild animal",
+			"wood"
+		],
+		[
+			"wild animal",
+			"dam"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bee",
+	"ingredients": [
+		[
+			"flower",
+			"wild animal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "beehive",
+	"ingredients": [
+		[
+			"bee",
+			"house"
+		],
+		[
+			"bee",
+			"tree"
+		]
+	]
+}, {
+	"made": false,
+	"name": "beer",
+	"ingredients": [
+		[
+			"alcohol",
+			"wheat"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bicycle",
+	"ingredients": [
+		[
+			"wheel",
+			"wheel"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bird",
+	"ingredients": [
+		[
+			"life",
+			"sky"
+		],
+		[
+			"egg",
+			"air"
+		],
+		[
+			"egg",
+			"sky"
+		],
+		[
+			"air",
+			"life"
+		]
+	]
+}, {
+	"made": false,
+	"name": "birdhouse",
+	"ingredients": [
+		[
+			"bird",
+			"house"
+		]
+	]
+}, {
+	"made": false,
+	"name": "black hole",
+	"ingredients": [
+		[
+			"star",
+			"pressure"
+		]
+	]
+}, {
+	"made": false,
+	"name": "blade",
+	"ingredients": [
+		[
+			"metal",
+			"stone"
+		]
+	]
+}, {
+	"made": false,
+	"name": "blender",
+	"ingredients": [
+		[
+			"glass",
+			"blade"
+		],
+		[
+			"blade",
+			"electricity"
+		]
+	]
+}, {
+	"made": false,
+	"name": "blizzard",
+	"ingredients": [
+		[
+			"snow",
+			"wind"
+		],
+		[
+			"snow",
+			"storm"
+		],
+		[
+			"snow",
+			"snow"
+		]
+	]
+}, {
+	"made": false,
+	"name": "blood",
+	"ingredients": [
+		[
+			"human",
+			"blade"
+		]
+	]
+}, {
+	"made": false,
+	"name": "boat",
+	"ingredients": [
+		[
+			"water",
+			"wood"
+		]
+	]
+}, {
+	"made": false,
+	"name": "boiler",
+	"ingredients": [
+		[
+			"steam",
+			"metal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bone",
+	"ingredients": [
+		[
+			"corpse",
+			"time"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bonsai tree",
+	"ingredients": [
+		[
+			"tree",
+			"pottery"
+		],
+		[
+			"tree",
+			"scissors"
+		]
+	]
+}, {
+	"made": false,
+	"name": "book",
+	"ingredients": [
+		[
+			"paper",
+			"wood"
+		],
+		[
+			"paper",
+			"story"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bread",
+	"ingredients": [
+		[
+			"dough",
+			"fire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "brick",
+	"ingredients": [
+		[
+			"clay",
+			"fire"
+		],
+		[
+			"mud",
+			"fire"
+		],
+		[
+			"mud",
+			"sun"
+		],
+		[
+			"clay",
+			"sun"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bridge",
+	"ingredients": [
+		[
+			"river",
+			"wood"
+		],
+		[
+			"river",
+			"metal"
+		],
+		[
+			"river",
+			"steel"
+		]
+	]
+}, {
+	"made": false,
+	"name": "broom",
+	"ingredients": [
+		[
+			"wood",
+			"hay"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bullet",
+	"ingredients": [
+		[
+			"gunpowder",
+			"metal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bulletproof vest",
+	"ingredients": [
+		[
+			"bullet",
+			"armor"
+		]
+	]
+}, {
+	"made": false,
+	"name": "bus",
+	"ingredients": [
+		[
+			"car",
+			"car"
+		]
+	]
+}, {
+	"made": false,
+	"name": "butcher",
+	"ingredients": [
+		[
+			"human",
+			"meat"
+		]
+	]
+}, {
+	"made": false,
+	"name": "butter",
+	"ingredients": [
+		[
+			"milk",
+			"pressure"
+		],
+		[
+			"energy",
+			"milk"
+		]
+	]
+}, {
+	"made": false,
+	"name": "butterfly",
+	"ingredients": [
+		[
+			"flower",
+			"wild animal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cactus",
+	"ingredients": [
+		[
+			"sand",
+			"plant"
+		],
+		[
+			"desert",
+			"plant"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cadbury eggs",
+	"ingredients": [
+		[
+			"chocolate",
+			"egg"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cake",
+	"ingredients": [
+		[
+			"dough",
+			"candle"
+		]
+	]
+}, {
+	"made": false,
+	"name": "camel",
+	"ingredients": [
+		[
+			"desert",
+			"horse"
+		],
+		[
+			"desert",
+			"wild animal"
+		],
+		[
+			"livestock",
+			"desert"
+		]
+	]
+}, {
+	"made": false,
+	"name": "campfire",
+	"ingredients": [
+		[
+			"fire",
+			"wood"
+		]
+	]
+}, {
+	"made": false,
+	"name": "candle",
+	"ingredients": [
+		[
+			"wax",
+			"thread"
+		],
+		[
+			"wax",
+			"fire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "candy cane",
+	"ingredients": [
+		[
+			"sugar",
+			"christmas tree"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cannon",
+	"ingredients": [
+		[
+			"gunpowder",
+			"pirate ship"
+		],
+		[
+			"gunpowder",
+			"castle"
+		]
+	]
+}, {
+	"made": false,
+	"name": "car",
+	"ingredients": [
+		[
+			"wheel",
+			"metal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "caramel",
+	"ingredients": [
+		[
+			"sugar",
+			"fire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "caramel apple",
+	"ingredients": [
+		[
+			"caramel",
+			"orchard"
+		]
+	]
+}, {
+	"made": false,
+	"name": "caramelo",
+	"ingredients": [
+		[
+			"chocolate",
+			"caramel"
+		]
+	]
+}, {
+	"made": false,
+	"name": "carbon dioxide",
+	"ingredients": [
+		[
+			"human",
+			"oxygen"
+		],
+		[
+			"plant",
+			"night"
+		],
+		[
+			"tree",
+			"night"
+		]
+	]
+}, {
+	"made": false,
+	"name": "carrot",
+	"ingredients": [
+		[
+			"snowman",
+			"vegetable"
+		],
+		[
+			"sun",
+			"snowman"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cart",
+	"ingredients": [
+		[
+			"wheel",
+			"wood"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cashmere",
+	"ingredients": [
+		[
+			"tool",
+			"mountain goat"
+		],
+		[
+			"thread",
+			"mountain goat"
+		],
+		[
+			"fabric",
+			"mountain goat"
+		],
+		[
+			"scissors",
+			"mountain goat"
+		],
+		[
+			"wool",
+			"mountain goat"
+		]
+	]
+}, {
+	"made": false,
+	"name": "castle",
+	"ingredients": [
+		[
+			"house",
+			"knight"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cat",
+	"ingredients": [
+		[
+			"wild animal",
+			"milk"
+		]
+	]
+}, {
+	"made": false,
+	"name": "catnip",
+	"ingredients": [
+		[
+			"cat",
+			"plant"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cauldron",
+	"ingredients": [
+		[
+			"metal",
+			"witch"
+		],
+		[
+			"steel",
+			"witch"
+		],
+		[
+			"fireplace",
+			"witch"
+		],
+		[
+			"campfire",
+			"witch"
+		]
+	]
+}, {
+	"made": false,
+	"name": "caviar",
+	"ingredients": [
+		[
+			"hard roe",
+			"human"
+		]
+	]
+}, {
+	"made": false,
+	"name": "centaur",
+	"ingredients": [
+		[
+			"horse",
+			"human"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cereal",
+	"ingredients": [
+		[
+			"wheat",
+			"milk"
+		]
+	]
+}, {
+	"made": false,
+	"name": "chain",
+	"ingredients": [
+		[
+			"metal",
+			"rope"
+		],
+		[
+			"steel",
+			"rope"
+		]
+	]
+}, {
+	"made": false,
+	"name": "chainsaw",
+	"ingredients": [
+		[
+			"axe",
+			"electricity"
+		]
+	]
+}, {
+	"made": false,
+	"name": "chameleon",
+	"ingredients": [
+		[
+			"lizard",
+			"rainbow"
+		]
+	]
+}, {
+	"made": false,
+	"name": "charcoal",
+	"ingredients": [
+		[
+			"tree",
+			"fire"
+		],
+		[
+			"wood",
+			"fire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cheese",
+	"ingredients": [
+		[
+			"time",
+			"milk"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cheeseburger",
+	"ingredients": [
+		[
+			"cheese",
+			"hamburger"
+		]
+	]
+}, {
+	"made": false,
+	"name": "chicken",
+	"ingredients": [
+		[
+			"livestock",
+			"bird"
+		],
+		[
+			"egg",
+			"livestock"
+		],
+		[
+			"bird",
+			"farmer"
+		]
+	]
+}, {
+	"made": false,
+	"name": "chicken soup",
+	"ingredients": [
+		[
+			"water",
+			"chicken"
+		]
+	]
+}, {
+	"made": false,
+	"name": "chicken wing",
+	"ingredients": [
+		[
+			"chicken",
+			"bone"
+		]
+	]
+}, {
+	"made": false,
+	"name": "chimney",
+	"ingredients": [
+		[
+			"house",
+			"fireplace"
+		],
+		[
+			"smoke",
+			"brick"
+		],
+		[
+			"fireplace",
+			"brick"
+		]
+	]
+}, {
+	"made": false,
+	"name": "chocolate",
+	"ingredients": [
+		[
+			"willy wonka",
+			"river"
+		]
+	]
+}, {
+	"made": false,
+	"name": "chocolate milk",
+	"ingredients": [
+		[
+			"chocolate",
+			"milk"
+		]
+	]
+}, {
+	"made": false,
+	"name": "christmas stocking",
+	"ingredients": [
+		[
+			"wool",
+			"fireplace"
+		]
+	]
+}, {
+	"made": false,
+	"name": "christmas tree",
+	"ingredients": [
+		[
+			"light bulb",
+			"tree"
+		],
+		[
+			"tree",
+			"star"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cigarette",
+	"ingredients": [
+		[
+			"tobacco",
+			"paper"
+		]
+	]
+}, {
+	"made": false,
+	"name": "city",
+	"ingredients": [
+		[
+			"village",
+			"village"
+		],
+		[
+			"skyscraper",
+			"skyscraper"
+		]
+	]
+}, {
+	"made": false,
+	"name": "clay",
+	"ingredients": [
+		[
+			"sand",
+			"mud"
+		]
+	]
+}, {
+	"made": false,
+	"name": "clock",
+	"ingredients": [
+		[
+			"time",
+			"electricity"
+		],
+		[
+			"time",
+			"wheel"
+		],
+		[
+			"time",
+			"tool"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cloud",
+	"ingredients": [
+		[
+			"air",
+			"steam"
+		]
+	]
+}, {
+	"made": false,
+	"name": "coal",
+	"ingredients": [
+		[
+			"pressure",
+			"plant"
+		],
+		[
+			"sun",
+			"snowman"
+		]
+	]
+}, {
+	"made": false,
+	"name": "coconut",
+	"ingredients": [
+		[
+			"palm",
+			"fruit"
+		]
+	]
+}, {
+	"made": false,
+	"name": "coconut milk",
+	"ingredients": [
+		[
+			"coconut",
+			"tool"
+		],
+		[
+			"milk",
+			"coconut"
+		]
+	]
+}, {
+	"made": false,
+	"name": "coffin",
+	"ingredients": [
+		[
+			"wood",
+			"corpse"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cold",
+	"ingredients": [
+		[
+			"human",
+			"rain"
+		]
+	]
+}, {
+	"made": false,
+	"name": "computer",
+	"ingredients": [
+		[
+			"tool",
+			"nerd"
+		],
+		[
+			"electricity",
+			"nerd"
+		],
+		[
+			"wire",
+			"nerd"
+		]
+	]
+}, {
+	"made": false,
+	"name": "computer mouse",
+	"ingredients": [
+		[
+			"mouse",
+			"computer"
+		]
+	]
+}, {
+	"made": false,
+	"name": "confetti",
+	"ingredients": [
+		[
+			"paper",
+			"blade"
+		],
+		[
+			"paper",
+			"scissors"
+		]
+	]
+}, {
+	"made": false,
+	"name": "constellation",
+	"ingredients": [
+		[
+			"star",
+			"star"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cookie",
+	"ingredients": [
+		[
+			"dough",
+			"sugar"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cookie dough",
+	"ingredients": [
+		[
+			"cookie",
+			"dough"
+		]
+	]
+}, {
+	"made": false,
+	"name": "corpse",
+	"ingredients": [
+		[
+			"human",
+			"gun"
+		],
+		[
+			"human",
+			"grim reaper"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cotton",
+	"ingredients": [
+		[
+			"plant",
+			"cloud"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cotton candy",
+	"ingredients": [
+		[
+			"sugar",
+			"electricity"
+		],
+		[
+			"cloud",
+			"sugar"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cow",
+	"ingredients": [
+		[
+			"grass",
+			"livestock"
+		]
+	]
+}, {
+	"made": false,
+	"name": "crayon",
+	"ingredients": [
+		[
+			"rainbow",
+			"pencil"
+		],
+		[
+			"rainbow",
+			"wax"
+		]
+	]
+}, {
+	"made": false,
+	"name": "crow",
+	"ingredients": [
+		[
+			"bird",
+			"scarecrow"
+		],
+		[
+			"bird",
+			"field"
+		]
+	]
+}, {
+	"made": false,
+	"name": "crystal ball",
+	"ingredients": [
+		[
+			"witch",
+			"glass"
+		],
+		[
+			"wizard",
+			"glass"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cuckoo",
+	"ingredients": [
+		[
+			"clock",
+			"bird"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cyborg",
+	"ingredients": [
+		[
+			"human",
+			"robot"
+		]
+	]
+}, {
+	"made": false,
+	"name": "cyclist",
+	"ingredients": [
+		[
+			"bicycle",
+			"human"
+		]
+	]
+}, {
+	"made": false,
+	"name": "dam",
+	"ingredients": [
+		[
+			"beaver",
+			"river"
+		],
+		[
+			"beaver",
+			"tree"
+		],
+		[
+			"beaver",
+			"wood"
+		],
+		[
+			"wall",
+			"river"
+		]
+	]
+}, {
+	"made": false,
+	"name": "darth vader",
+	"ingredients": [
+		[
+			"jedi",
+			"fire"
+		],
+		[
+			"jedi",
+			"lava"
+		]
+	]
+}, {
+	"made": false,
+	"name": "day",
+	"ingredients": [
+		[
+			"sun",
+			"time"
+		],
+		[
+			"night",
+			"sun"
+		],
+		[
+			"time",
+			"night"
+		],
+		[
+			"sky",
+			"sun"
+		]
+	]
+}, {
+	"made": false,
+	"name": "desert",
+	"ingredients": [
+		[
+			"sand",
+			"sand"
+		],
+		[
+			"sand",
+			"cactus"
+		]
+	]
+}, {
+	"made": false,
+	"name": "dew",
+	"ingredients": [
+		[
+			"fog",
+			"grass"
+		],
+		[
+			"water",
+			"grass"
+		]
+	]
+}, {
+	"made": false,
+	"name": "diamond",
+	"ingredients": [
+		[
+			"pressure",
+			"coal"
+		],
+		[
+			"coal",
+			"time"
+		]
+	]
+}, {
+	"made": false,
+	"name": "dinosaur",
+	"ingredients": [
+		[
+			"lizard",
+			"time"
+		]
+	]
+}, {
+	"made": false,
+	"name": "doctor",
+	"ingredients": [
+		[
+			"human",
+			"hospital"
+		]
+	]
+}, {
+	"made": false,
+	"name": "dog",
+	"ingredients": [
+		[
+			"wild animal",
+			"human"
+		],
+		[
+			"wolf",
+			"bone"
+		]
+	]
+}, {
+	"made": false,
+	"name": "doge",
+	"ingredients": [
+		[
+			"dog",
+			"internet"
+		],
+		[
+			"dog",
+			"computer"
+		]
+	]
+}, {
+	"made": false,
+	"name": "doghouse",
+	"ingredients": [
+		[
+			"dog",
+			"house"
+		]
+	]
+}, {
+	"made": false,
+	"name": "don quixote",
+	"ingredients": [
+		[
+			"windmill",
+			"knight"
+		]
+	]
+}, {
+	"made": false,
+	"name": "donut",
+	"ingredients": [
+		[
+			"dough",
+			"oil"
+		]
+	]
+}, {
+	"made": false,
+	"name": "double rainbow!",
+	"ingredients": [
+		[
+			"rainbow",
+			"rainbow"
+		]
+	]
+}, {
+	"made": false,
+	"name": "dough",
+	"ingredients": [
+		[
+			"water",
+			"flour"
+		]
+	]
+}, {
+	"made": false,
+	"name": "dragon",
+	"ingredients": [
+		[
+			"lizard",
+			"fire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "drone",
+	"ingredients": [
+		[
+			"airplane",
+			"robot"
+		]
+	]
+}, {
+	"made": false,
+	"name": "drum",
+	"ingredients": [
+		[
+			"wood",
+			"leather"
+		]
+	]
+}, {
+	"made": false,
+	"name": "drunk",
+	"ingredients": [
+		[
+			"human",
+			"alcohol"
+		],
+		[
+			"beer",
+			"human"
+		],
+		[
+			"human",
+			"wine"
+		]
+	]
+}, {
+	"made": false,
+	"name": "dry ice",
+	"ingredients": [
+		[
+			"carbon dioxide",
+			"cold"
+		],
+		[
+			"ice",
+			"carbon dioxide"
+		]
+	]
+}, {
+	"made": false,
+	"name": "duck",
+	"ingredients": [
+		[
+			"water",
+			"bird"
+		],
+		[
+			"bird",
+			"pond"
+		],
+		[
+			"bird",
+			"lake"
+		],
+		[
+			"time",
+			"duckling"
+		]
+	]
+}, {
+	"made": false,
+	"name": "duckling",
+	"ingredients": [
+		[
+			"egg",
+			"duck"
+		]
+	]
+}, {
+	"made": false,
+	"name": "dune",
+	"ingredients": [
+		[
+			"sand",
+			"wind"
+		],
+		[
+			"desert",
+			"wind"
+		],
+		[
+			"beach",
+			"wind"
+		]
+	]
+}, {
+	"made": false,
+	"name": "dust",
+	"ingredients": [
+		[
+			"earth",
+			"air"
+		],
+		[
+			"sun",
+			"vampire"
+		],
+		[
+			"day",
+			"vampire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "dynamite",
+	"ingredients": [
+		[
+			"gunpowder",
+			"wire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "eagle",
+	"ingredients": [
+		[
+			"mountain",
+			"bird"
+		]
+	]
+}, {
+	"made": false,
+	"name": "earthquake",
+	"ingredients": [
+		[
+			"earth",
+			"energy"
+		],
+		[
+			"earth",
+			"wave"
+		]
+	]
+}, {
+	"made": false,
+	"name": "eclipse",
+	"ingredients": [
+		[
+			"sun",
+			"moon"
+		]
+	]
+}, {
+	"made": false,
+	"name": "egg",
+	"ingredients": [
+		[
+			"life",
+			"stone"
+		],
+		[
+			"bird",
+			"bird"
+		],
+		[
+			"turtle",
+			"turtle"
+		],
+		[
+			"lizard",
+			"lizard"
+		]
+	]
+}, {
+	"made": false,
+	"name": "egg timer",
+	"ingredients": [
+		[
+			"egg",
+			"clock"
+		],
+		[
+			"egg",
+			"watch"
+		]
+	]
+}, {
+	"made": false,
+	"name": "electric car",
+	"ingredients": [
+		[
+			"car",
+			"electricity"
+		]
+	]
+}, {
+	"made": false,
+	"name": "electric eel",
+	"ingredients": [
+		[
+			"fish",
+			"electricity"
+		]
+	]
+}, {
+	"made": false,
+	"name": "electrician",
+	"ingredients": [
+		[
+			"human",
+			"electricity"
+		],
+		[
+			"human",
+			"wire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "electricity",
+	"ingredients": [
+		[
+			"metal",
+			"energy"
+		],
+		[
+			"solar cell",
+			"sun"
+		],
+		[
+			"wind turbine",
+			"wind"
+		],
+		[
+			"light",
+			"solar cell"
+		]
+	]
+}, {
+	"made": false,
+	"name": "email",
+	"ingredients": [
+		[
+			"letter",
+			"computer"
+		],
+		[
+			"letter",
+			"internet"
+		]
+	]
+}, {
+	"made": false,
+	"name": "energy",
+	"ingredients": [
+		[
+			"air",
+			"fire"
+		],
+		[
+			"plant",
+			"sun"
+		]
+	]
+}, {
+	"made": false,
+	"name": "engineer",
+	"ingredients": [
+		[
+			"human",
+			"tool"
+		]
+	]
+}, {
+	"made": false,
+	"name": "eruption",
+	"ingredients": [
+		[
+			"volcano",
+			"energy"
+		]
+	]
+}, {
+	"made": false,
+	"name": "excalibur",
+	"ingredients": [
+		[
+			"sword",
+			"stone"
+		]
+	]
+}, {
+	"made": false,
+	"name": "explosion",
+	"ingredients": [
+		[
+			"gunpowder",
+			"fire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fabric",
+	"ingredients": [
+		[
+			"thread",
+			"tool"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fairy tale",
+	"ingredients": [
+		[
+			"story",
+			"monarch"
+		],
+		[
+			"story",
+			"castle"
+		],
+		[
+			"knight",
+			"story"
+		],
+		[
+			"dragon",
+			"story"
+		]
+	]
+}, {
+	"made": false,
+	"name": "family",
+	"ingredients": [
+		[
+			"human",
+			"house"
+		]
+	]
+}, {
+	"made": false,
+	"name": "family tree",
+	"ingredients": [
+		[
+			"tree",
+			"family"
+		]
+	]
+}, {
+	"made": false,
+	"name": "farm",
+	"ingredients": [
+		[
+			"farmer",
+			"house"
+		],
+		[
+			"farmer",
+			"barn"
+		]
+	]
+}, {
+	"made": false,
+	"name": "farmer",
+	"ingredients": [
+		[
+			"field",
+			"human"
+		],
+		[
+			"human",
+			"plant"
+		],
+		[
+			"human",
+			"pitchfork"
+		]
+	]
+}, {
+	"made": false,
+	"name": "faun",
+	"ingredients": [
+		[
+			"goat",
+			"human"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fence",
+	"ingredients": [
+		[
+			"wall",
+			"wood"
+		]
+	]
+}, {
+	"made": false,
+	"name": "field",
+	"ingredients": [
+		[
+			"earth",
+			"tool"
+		],
+		[
+			"earth",
+			"farmer"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fire extinguisher",
+	"ingredients": [
+		[
+			"fire",
+			"carbon dioxide"
+		],
+		[
+			"pressure",
+			"carbon dioxide"
+		],
+		[
+			"metal",
+			"carbon dioxide"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fireman",
+	"ingredients": [
+		[
+			"human",
+			"fire"
+		],
+		[
+			"human",
+			"firetruck"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fireplace",
+	"ingredients": [
+		[
+			"house",
+			"campfire"
+		],
+		[
+			"campfire",
+			"brick"
+		],
+		[
+			"campfire",
+			"wall"
+		]
+	]
+}, {
+	"made": false,
+	"name": "firetruck",
+	"ingredients": [
+		[
+			"fireman",
+			"car"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fireworks",
+	"ingredients": [
+		[
+			"explosion",
+			"sky"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fish",
+	"ingredients": [
+		[
+			"hard roe",
+			"time"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fishing rod",
+	"ingredients": [
+		[
+			"tool",
+			"fish"
+		],
+		[
+			"wood",
+			"fish"
+		]
+	]
+}, {
+	"made": false,
+	"name": "flamethrower",
+	"ingredients": [
+		[
+			"fire",
+			"gun"
+		]
+	]
+}, {
+	"made": false,
+	"name": "flashlight",
+	"ingredients": [
+		[
+			"tool",
+			"light"
+		]
+	]
+}, {
+	"made": false,
+	"name": "flood",
+	"ingredients": [
+		[
+			"rain",
+			"rain"
+		],
+		[
+			"rain",
+			"time"
+		]
+	]
+}, {
+	"made": false,
+	"name": "flour",
+	"ingredients": [
+		[
+			"wheat",
+			"stone"
+		],
+		[
+			"windmill",
+			"wheat"
+		]
+	]
+}, {
+	"made": false,
+	"name": "flower",
+	"ingredients": [
+		[
+			"plant",
+			"garden"
+		]
+	]
+}, {
+	"made": false,
+	"name": "flute",
+	"ingredients": [
+		[
+			"wood",
+			"wind"
+		]
+	]
+}, {
+	"made": false,
+	"name": "flying fish",
+	"ingredients": [
+		[
+			"fish",
+			"bird"
+		],
+		[
+			"sky",
+			"fish"
+		]
+	]
+}, {
+	"made": false,
+	"name": "flying squirrel",
+	"ingredients": [
+		[
+			"squirrel",
+			"bird"
+		],
+		[
+			"squirrel",
+			"wind"
+		],
+		[
+			"squirrel",
+			"airplane"
+		],
+		[
+			"sky",
+			"squirrel"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fog",
+	"ingredients": [
+		[
+			"earth",
+			"cloud"
+		]
+	]
+}, {
+	"made": false,
+	"name": "forest",
+	"ingredients": [
+		[
+			"tree",
+			"tree"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fortune cookie",
+	"ingredients": [
+		[
+			"paper",
+			"cookie"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fossil",
+	"ingredients": [
+		[
+			"dinosaur",
+			"time"
+		],
+		[
+			"dinosaur",
+			"earth"
+		],
+		[
+			"stone",
+			"dinosaur"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fountain",
+	"ingredients": [
+		[
+			"statue",
+			"water"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fox",
+	"ingredients": [
+		[
+			"chicken",
+			"wild animal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "frankenstein",
+	"ingredients": [
+		[
+			"zombie",
+			"electricity"
+		],
+		[
+			"electricity",
+			"corpse"
+		]
+	]
+}, {
+	"made": false,
+	"name": "french fries",
+	"ingredients": [
+		[
+			"oil",
+			"vegetable"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fridge",
+	"ingredients": [
+		[
+			"metal",
+			"cold"
+		],
+		[
+			"electricity",
+			"cold"
+		],
+		[
+			"metal",
+			"ice"
+		]
+	]
+}, {
+	"made": false,
+	"name": "frog",
+	"ingredients": [
+		[
+			"wild animal",
+			"pond"
+		]
+	]
+}, {
+	"made": false,
+	"name": "frozen yogurt",
+	"ingredients": [
+		[
+			"yogurt",
+			"cold"
+		],
+		[
+			"ice",
+			"yogurt"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fruit",
+	"ingredients": [
+		[
+			"tree",
+			"farmer"
+		],
+		[
+			"sun",
+			"tree"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fruit tree",
+	"ingredients": [
+		[
+			"fruit",
+			"tree"
+		]
+	]
+}, {
+	"made": false,
+	"name": "fun dip",
+	"ingredients": [
+		[
+			"sugar",
+			"sand"
+		]
+	]
+}, {
+	"made": false,
+	"name": "galaxy",
+	"ingredients": [
+		[
+			"star",
+			"star"
+		]
+	]
+}, {
+	"made": false,
+	"name": "garden",
+	"ingredients": [
+		[
+			"plant",
+			"plant"
+		],
+		[
+			"plant",
+			"grass"
+		],
+		[
+			"house",
+			"grass"
+		],
+		[
+			"flower",
+			"flower"
+		]
+	]
+}, {
+	"made": false,
+	"name": "gardener",
+	"ingredients": [
+		[
+			"human",
+			"garden"
+		]
+	]
+}, {
+	"made": false,
+	"name": "geyser",
+	"ingredients": [
+		[
+			"steam",
+			"earth"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ghost",
+	"ingredients": [
+		[
+			"graveyard",
+			"night"
+		],
+		[
+			"castle",
+			"night"
+		]
+	]
+}, {
+	"made": false,
+	"name": "gift",
+	"ingredients": [
+		[
+			"santa",
+			"christmas tree"
+		],
+		[
+			"santa",
+			"christmas stocking"
+		],
+		[
+			"santa",
+			"cookie"
+		],
+		[
+			"santa",
+			"chimney"
+		],
+		[
+			"santa",
+			"fireplace"
+		]
+	]
+}, {
+	"made": false,
+	"name": "gingerbread house",
+	"ingredients": [
+		[
+			"house",
+			"dough"
+		],
+		[
+			"house",
+			"gingerbread man"
+		]
+	]
+}, {
+	"made": false,
+	"name": "gingerbread man",
+	"ingredients": [
+		[
+			"life",
+			"dough"
+		]
+	]
+}, {
+	"made": false,
+	"name": "glacier",
+	"ingredients": [
+		[
+			"ice",
+			"mountain"
+		]
+	]
+}, {
+	"made": false,
+	"name": "glass",
+	"ingredients": [
+		[
+			"fire",
+			"sand"
+		],
+		[
+			"sand",
+			"electricity"
+		]
+	]
+}, {
+	"made": false,
+	"name": "glasses",
+	"ingredients": [
+		[
+			"glass",
+			"metal"
+		],
+		[
+			"glass",
+			"glass"
+		]
+	]
+}, {
+	"made": false,
+	"name": "gnome",
+	"ingredients": [
+		[
+			"garden",
+			"statue"
+		]
+	]
+}, {
+	"made": false,
+	"name": "goat",
+	"ingredients": [
+		[
+			"livestock",
+			"mountain"
+		]
+	]
+}, {
+	"made": false,
+	"name": "godzilla",
+	"ingredients": [
+		[
+			"dinosaur",
+			"city"
+		]
+	]
+}, {
+	"made": false,
+	"name": "gold",
+	"ingredients": [
+		[
+			"metal",
+			"sun"
+		],
+		[
+			"metal",
+			"rainbow"
+		]
+	]
+}, {
+	"made": false,
+	"name": "goldfish",
+	"ingredients": [
+		[
+			"fish",
+			"cheese"
+		]
+	]
+}, {
+	"made": false,
+	"name": "golem",
+	"ingredients": [
+		[
+			"clay",
+			"life"
+		]
+	]
+}, {
+	"made": false,
+	"name": "granite",
+	"ingredients": [
+		[
+			"lava",
+			"pressure"
+		]
+	]
+}, {
+	"made": false,
+	"name": "grass",
+	"ingredients": [
+		[
+			"plant",
+			"earth"
+		]
+	]
+}, {
+	"made": false,
+	"name": "grave",
+	"ingredients": [
+		[
+			"coffin",
+			"earth"
+		],
+		[
+			"corpse",
+			"earth"
+		]
+	]
+}, {
+	"made": false,
+	"name": "gravestone",
+	"ingredients": [
+		[
+			"grave",
+			"stone"
+		]
+	]
+}, {
+	"made": false,
+	"name": "graveyard",
+	"ingredients": [
+		[
+			"grave",
+			"grave"
+		],
+		[
+			"gravestone",
+			"gravestone"
+		]
+	]
+}, {
+	"made": false,
+	"name": "greenhouse",
+	"ingredients": [
+		[
+			"plant",
+			"glass"
+		]
+	]
+}, {
+	"made": false,
+	"name": "grenade",
+	"ingredients": [
+		[
+			"explosion",
+			"metal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "grilled cheese",
+	"ingredients": [
+		[
+			"cheese",
+			"toast"
+		]
+	]
+}, {
+	"made": false,
+	"name": "grim reaper",
+	"ingredients": [
+		[
+			"human",
+			"scythe"
+		],
+		[
+			"corpse",
+			"scythe"
+		]
+	]
+}, {
+	"made": false,
+	"name": "guiness float",
+	"ingredients": [
+		[
+			"beer",
+			"ice cream"
+		]
+	]
+}, {
+	"made": false,
+	"name": "gun",
+	"ingredients": [
+		[
+			"metal",
+			"bullet"
+		]
+	]
+}, {
+	"made": false,
+	"name": "gunpowder",
+	"ingredients": [
+		[
+			"fire",
+			"dust"
+		]
+	]
+}, {
+	"made": false,
+	"name": "hail",
+	"ingredients": [
+		[
+			"rain",
+			"ice"
+		],
+		[
+			"ice",
+			"storm"
+		],
+		[
+			"ice",
+			"cloud"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ham",
+	"ingredients": [
+		[
+			"meat",
+			"smoke"
+		]
+	]
+}, {
+	"made": false,
+	"name": "hamburger",
+	"ingredients": [
+		[
+			"meat",
+			"bread"
+		]
+	]
+}, {
+	"made": false,
+	"name": "hammer",
+	"ingredients": [
+		[
+			"metal",
+			"wood"
+		]
+	]
+}, {
+	"made": false,
+	"name": "hamster",
+	"ingredients": [
+		[
+			"wheel",
+			"mouse"
+		]
+	]
+}, {
+	"made": false,
+	"name": "hard roe",
+	"ingredients": [
+		[
+			"egg",
+			"water"
+		],
+		[
+			"fish",
+			"fish"
+		],
+		[
+			"egg",
+			"sea"
+		],
+		[
+			"egg",
+			"ocean"
+		],
+		[
+			"egg",
+			"pond"
+		]
+	]
+}, {
+	"made": false,
+	"name": "harp",
+	"ingredients": [
+		[
+			"angel",
+			"music"
+		]
+	]
+}, {
+	"made": false,
+	"name": "hay",
+	"ingredients": [
+		[
+			"grass",
+			"scythe"
+		],
+		[
+			"farmer",
+			"grass"
+		],
+		[
+			"grass",
+			"sun"
+		]
+	]
+}, {
+	"made": false,
+	"name": "hay bale",
+	"ingredients": [
+		[
+			"hay",
+			"hay"
+		]
+	]
+}, {
+	"made": false,
+	"name": "hedge",
+	"ingredients": [
+		[
+			"plant",
+			"fence"
+		],
+		[
+			"leaf",
+			"fence"
+		]
+	]
+}, {
+	"made": false,
+	"name": "helicopter",
+	"ingredients": [
+		[
+			"blade",
+			"airplane"
+		],
+		[
+			"windmill",
+			"airplane"
+		]
+	]
+}, {
+	"made": false,
+	"name": "hero",
+	"ingredients": [
+		[
+			"knight",
+			"dragon"
+		]
+	]
+}, {
+	"made": false,
+	"name": "hippo",
+	"ingredients": [
+		[
+			"horse",
+			"river"
+		],
+		[
+			"horse",
+			"water"
+		]
+	]
+}, {
+	"made": false,
+	"name": "honey",
+	"ingredients": [
+		[
+			"bee",
+			"flower"
+		],
+		[
+			"bee",
+			"beehive"
+		]
+	]
+}, {
+	"made": false,
+	"name": "horizon",
+	"ingredients": [
+		[
+			"sky",
+			"earth"
+		],
+		[
+			"sea",
+			"sky"
+		],
+		[
+			"ocean",
+			"sky"
+		]
+	]
+}, {
+	"made": false,
+	"name": "horse",
+	"ingredients": [
+		[
+			"hay",
+			"livestock"
+		]
+	]
+}, {
+	"made": false,
+	"name": "horseshoe",
+	"ingredients": [
+		[
+			"metal",
+			"horse"
+		]
+	]
+}, {
+	"made": false,
+	"name": "hospital",
+	"ingredients": [
+		[
+			"house",
+			"sickness"
+		],
+		[
+			"house",
+			"ambulance"
+		],
+		[
+			"house",
+			"doctor"
+		]
+	]
+}, {
+	"made": false,
+	"name": "hourglass",
+	"ingredients": [
+		[
+			"sand",
+			"glass"
+		]
+	]
+}, {
+	"made": false,
+	"name": "house",
+	"ingredients": [
+		[
+			"wood",
+			"human"
+		],
+		[
+			"human",
+			"brick"
+		],
+		[
+			"tool",
+			"brick"
+		],
+		[
+			"wall",
+			"wall"
+		]
+	]
+}, {
+	"made": false,
+	"name": "human",
+	"ingredients": [
+		[
+			"earth",
+			"life"
+		]
+	]
+}, {
+	"made": false,
+	"name": "hummingbird",
+	"ingredients": [
+		[
+			"bird",
+			"flower"
+		]
+	]
+}, {
+	"made": false,
+	"name": "hurricane",
+	"ingredients": [
+		[
+			"wind",
+			"energy"
+		]
+	]
+}, {
+	"made": false,
+	"name": "husky",
+	"ingredients": [
+		[
+			"snow",
+			"dog"
+		],
+		[
+			"ice",
+			"dog"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ice",
+	"ingredients": [
+		[
+			"water",
+			"cold"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ice cream",
+	"ingredients": [
+		[
+			"milk",
+			"cold"
+		],
+		[
+			"milk",
+			"ice"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ice cream truck",
+	"ingredients": [
+		[
+			"car",
+			"ice cream"
+		]
+	]
+}, {
+	"made": false,
+	"name": "iceberg",
+	"ingredients": [
+		[
+			"sea",
+			"ice"
+		],
+		[
+			"ocean",
+			"ice"
+		],
+		[
+			"sea",
+			"antarctica"
+		],
+		[
+			"ocean",
+			"antarctica"
+		]
+	]
+}, {
+	"made": false,
+	"name": "iced tea",
+	"ingredients": [
+		[
+			"ice",
+			"tea"
+		],
+		[
+			"cold",
+			"tea"
+		]
+	]
+}, {
+	"made": false,
+	"name": "idea",
+	"ingredients": [
+		[
+			"human",
+			"light bulb"
+		],
+		[
+			"light bulb",
+			"nerd"
+		]
+	]
+}, {
+	"made": false,
+	"name": "igloo",
+	"ingredients": [
+		[
+			"house",
+			"ice"
+		],
+		[
+			"house",
+			"snow"
+		]
+	]
+}, {
+	"made": false,
+	"name": "internet",
+	"ingredients": [
+		[
+			"computer",
+			"computer"
+		],
+		[
+			"computer",
+			"wire"
+		],
+		[
+			"computer",
+			"web"
+		]
+	]
+}, {
+	"made": false,
+	"name": "isle",
+	"ingredients": [
+		[
+			"ocean",
+			"volcano"
+		],
+		[
+			"volcano",
+			"sea"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ivy",
+	"ingredients": [
+		[
+			"plant",
+			"wall"
+		]
+	]
+}, {
+	"made": false,
+	"name": "jack-o'-lantern",
+	"ingredients": [
+		[
+			"pumpkin",
+			"fire"
+		],
+		[
+			"blade",
+			"pumpkin"
+		],
+		[
+			"pumpkin",
+			"candle"
+		]
+	]
+}, {
+	"made": false,
+	"name": "jam",
+	"ingredients": [
+		[
+			"juice",
+			"sugar"
+		]
+	]
+}, {
+	"made": false,
+	"name": "jedi",
+	"ingredients": [
+		[
+			"lightsaber",
+			"human"
+		],
+		[
+			"knight",
+			"lightsaber"
+		]
+	]
+}, {
+	"made": false,
+	"name": "jerky",
+	"ingredients": [
+		[
+			"meat",
+			"sun"
+		],
+		[
+			"meat",
+			"salt"
+		]
+	]
+}, {
+	"made": false,
+	"name": "juice",
+	"ingredients": [
+		[
+			"water",
+			"fruit"
+		],
+		[
+			"pressure",
+			"fruit"
+		]
+	]
+}, {
+	"made": false,
+	"name": "juicy fruit",
+	"ingredients": [
+		[
+			"juice",
+			"fruit"
+		]
+	]
+}, {
+	"made": false,
+	"name": "keyboard cat",
+	"ingredients": [
+		[
+			"cat",
+			"music"
+		]
+	]
+}, {
+	"made": false,
+	"name": "kite",
+	"ingredients": [
+		[
+			"wind",
+			"paper"
+		],
+		[
+			"sky",
+			"paper"
+		]
+	]
+}, {
+	"made": false,
+	"name": "knight",
+	"ingredients": [
+		[
+			"human",
+			"armor"
+		]
+	]
+}, {
+	"made": false,
+	"name": "lake",
+	"ingredients": [
+		[
+			"water",
+			"pond"
+		],
+		[
+			"river",
+			"dam"
+		]
+	]
+}, {
+	"made": false,
+	"name": "lamp",
+	"ingredients": [
+		[
+			"metal",
+			"light bulb"
+		]
+	]
+}, {
+	"made": false,
+	"name": "lasso",
+	"ingredients": [
+		[
+			"cow",
+			"rope"
+		],
+		[
+			"horse",
+			"rope"
+		]
+	]
+}, {
+	"made": false,
+	"name": "lava",
+	"ingredients": [
+		[
+			"earth",
+			"fire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "lava lamp",
+	"ingredients": [
+		[
+			"lava",
+			"lamp"
+		]
+	]
+}, {
+	"made": false,
+	"name": "lawn mower",
+	"ingredients": [
+		[
+			"grass",
+			"tool"
+		],
+		[
+			"electricity",
+			"scythe"
+		]
+	]
+}, {
+	"made": false,
+	"name": "leaf",
+	"ingredients": [
+		[
+			"tree",
+			"wind"
+		]
+	]
+}, {
+	"made": false,
+	"name": "leather",
+	"ingredients": [
+		[
+			"cow",
+			"blade"
+		],
+		[
+			"pig",
+			"blade"
+		]
+	]
+}, {
+	"made": false,
+	"name": "lemonade",
+	"ingredients": [
+		[
+			"fruit",
+			"water"
+		]
+	]
+}, {
+	"made": false,
+	"name": "letter",
+	"ingredients": [
+		[
+			"paper",
+			"pencil"
+		]
+	]
+}, {
+	"made": false,
+	"name": "life",
+	"ingredients": [
+		[
+			"swamp",
+			"energy"
+		],
+		[
+			"love",
+			"time"
+		]
+	]
+}, {
+	"made": false,
+	"name": "light",
+	"ingredients": [
+		[
+			"light bulb",
+			"electricity"
+		],
+		[
+			"electricity",
+			"flashlight"
+		]
+	]
+}, {
+	"made": false,
+	"name": "light bulb",
+	"ingredients": [
+		[
+			"electricity",
+			"glass"
+		]
+	]
+}, {
+	"made": false,
+	"name": "lighthouse",
+	"ingredients": [
+		[
+			"light",
+			"house"
+		],
+		[
+			"light",
+			"beach"
+		],
+		[
+			"light",
+			"ocean"
+		],
+		[
+			"light",
+			"sea"
+		]
+	]
+}, {
+	"made": false,
+	"name": "lightsaber",
+	"ingredients": [
+		[
+			"light",
+			"sword"
+		],
+		[
+			"energy",
+			"sword"
+		],
+		[
+			"electricity",
+			"sword"
+		]
+	]
+}, {
+	"made": false,
+	"name": "lion",
+	"ingredients": [
+		[
+			"wild animal",
+			"cat"
+		]
+	]
+}, {
+	"made": false,
+	"name": "livestock",
+	"ingredients": [
+		[
+			"farmer",
+			"life"
+		],
+		[
+			"wild animal",
+			"human"
+		],
+		[
+			"farmer",
+			"wild animal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "lizard",
+	"ingredients": [
+		[
+			"egg",
+			"swamp"
+		]
+	]
+}, {
+	"made": false,
+	"name": "log cabin",
+	"ingredients": [
+		[
+			"wood",
+			"house"
+		]
+	]
+}, {
+	"made": false,
+	"name": "love",
+	"ingredients": [
+		[
+			"human",
+			"human"
+		]
+	]
+}, {
+	"made": false,
+	"name": "lumberjack",
+	"ingredients": [
+		[
+			"axe",
+			"human"
+		],
+		[
+			"human",
+			"chainsaw"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mac and cheese",
+	"ingredients": [
+		[
+			"cheese",
+			"pasta"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mailman",
+	"ingredients": [
+		[
+			"human",
+			"letter"
+		]
+	]
+}, {
+	"made": false,
+	"name": "manatee",
+	"ingredients": [
+		[
+			"cow",
+			"sea"
+		]
+	]
+}, {
+	"made": false,
+	"name": "map",
+	"ingredients": [
+		[
+			"paper",
+			"earth"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mars",
+	"ingredients": [
+		[
+			"rust",
+			"planet"
+		]
+	]
+}, {
+	"made": false,
+	"name": "marshmallows",
+	"ingredients": [
+		[
+			"sugar",
+			"campfire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mayonnaise",
+	"ingredients": [
+		[
+			"egg",
+			"oil"
+		]
+	]
+}, {
+	"made": false,
+	"name": "meat",
+	"ingredients": [
+		[
+			"cow",
+			"tool"
+		],
+		[
+			"pig",
+			"tool"
+		],
+		[
+			"blade",
+			"livestock"
+		],
+		[
+			"cow",
+			"butcher"
+		],
+		[
+			"pig",
+			"butcher"
+		],
+		[
+			"livestock",
+			"butcher"
+		]
+	]
+}, {
+	"made": false,
+	"name": "medusa",
+	"ingredients": [
+		[
+			"human",
+			"snake"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mermaid",
+	"ingredients": [
+		[
+			"human",
+			"fish"
+		]
+	]
+}, {
+	"made": false,
+	"name": "metal",
+	"ingredients": [
+		[
+			"fire",
+			"stone"
+		]
+	]
+}, {
+	"made": false,
+	"name": "meteor",
+	"ingredients": [
+		[
+			"meteoroid",
+			"atmosphere"
+		],
+		[
+			"sky",
+			"meteoroid"
+		]
+	]
+}, {
+	"made": false,
+	"name": "meteoroid",
+	"ingredients": [
+		[
+			"stone",
+			"space"
+		]
+	]
+}, {
+	"made": false,
+	"name": "microscope",
+	"ingredients": [
+		[
+			"glass",
+			"bacteria"
+		],
+		[
+			"bacteria",
+			"glasses"
+		]
+	]
+}, {
+	"made": false,
+	"name": "milk",
+	"ingredients": [
+		[
+			"farmer",
+			"cow"
+		],
+		[
+			"cow",
+			"human"
+		]
+	]
+}, {
+	"made": false,
+	"name": "milk shake",
+	"ingredients": [
+		[
+			"milk",
+			"ice cream"
+		]
+	]
+}, {
+	"made": false,
+	"name": "milky way",
+	"ingredients": [
+		[
+			"milk",
+			"space"
+		]
+	]
+}, {
+	"made": false,
+	"name": "minotaur",
+	"ingredients": [
+		[
+			"human",
+			"cow"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mirror",
+	"ingredients": [
+		[
+			"glass",
+			"metal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mold",
+	"ingredients": [
+		[
+			"time",
+			"bread"
+		]
+	]
+}, {
+	"made": false,
+	"name": "monarch",
+	"ingredients": [
+		[
+			"human",
+			"castle"
+		],
+		[
+			"excalibur",
+			"human"
+		]
+	]
+}, {
+	"made": false,
+	"name": "money",
+	"ingredients": [
+		[
+			"paper",
+			"gold"
+		]
+	]
+}, {
+	"made": false,
+	"name": "monkey",
+	"ingredients": [
+		[
+			"tree",
+			"wild animal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "moon",
+	"ingredients": [
+		[
+			"sky",
+			"cheese"
+		],
+		[
+			"sky",
+			"stone"
+		]
+	]
+}, {
+	"made": false,
+	"name": "moss",
+	"ingredients": [
+		[
+			"plant",
+			"stone"
+		],
+		[
+			"algae",
+			"stone"
+		]
+	]
+}, {
+	"made": false,
+	"name": "moth",
+	"ingredients": [
+		[
+			"moon",
+			"butterfly"
+		],
+		[
+			"night",
+			"butterfly"
+		]
+	]
+}, {
+	"made": false,
+	"name": "motorcycle",
+	"ingredients": [
+		[
+			"bicycle",
+			"energy"
+		],
+		[
+			"bicycle",
+			"steel"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mounds",
+	"ingredients": [
+		[
+			"chocolate",
+			"coconut"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mountain",
+	"ingredients": [
+		[
+			"earthquake",
+			"earth"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mountain goat",
+	"ingredients": [
+		[
+			"mountain",
+			"goat"
+		],
+		[
+			"goat",
+			"mountain range"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mountain range",
+	"ingredients": [
+		[
+			"mountain",
+			"mountain"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mouse",
+	"ingredients": [
+		[
+			"cheese",
+			"wild animal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mousetrap",
+	"ingredients": [
+		[
+			"wood",
+			"cheese"
+		],
+		[
+			"metal",
+			"cheese"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mud",
+	"ingredients": [
+		[
+			"water",
+			"earth"
+		]
+	]
+}, {
+	"made": false,
+	"name": "mummy",
+	"ingredients": [
+		[
+			"corpse",
+			"pyramid"
+		]
+	]
+}, {
+	"made": false,
+	"name": "music",
+	"ingredients": [
+		[
+			"human",
+			"flute"
+		],
+		[
+			"human",
+			"sound"
+		]
+	]
+}, {
+	"made": false,
+	"name": "narwhal",
+	"ingredients": [
+		[
+			"unicorn",
+			"ocean"
+		],
+		[
+			"unicorn",
+			"water"
+		],
+		[
+			"sea",
+			"unicorn"
+		]
+	]
+}, {
+	"made": false,
+	"name": "needle",
+	"ingredients": [
+		[
+			"metal",
+			"thread"
+		],
+		[
+			"metal",
+			"hay"
+		]
+	]
+}, {
+	"made": false,
+	"name": "nerd",
+	"ingredients": [
+		[
+			"human",
+			"glasses"
+		]
+	]
+}, {
+	"made": false,
+	"name": "nerds",
+	"ingredients": [
+		[
+			"sugar",
+			"nerd"
+		]
+	]
+}, {
+	"made": false,
+	"name": "nessie",
+	"ingredients": [
+		[
+			"story",
+			"lake"
+		]
+	]
+}, {
+	"made": false,
+	"name": "nest",
+	"ingredients": [
+		[
+			"bird",
+			"tree"
+		],
+		[
+			"bird",
+			"hay"
+		],
+		[
+			"egg",
+			"hay"
+		]
+	]
+}, {
+	"made": false,
+	"name": "newspaper",
+	"ingredients": [
+		[
+			"paper",
+			"paper"
+		]
+	]
+}, {
+	"made": false,
+	"name": "night",
+	"ingredients": [
+		[
+			"moon",
+			"time"
+		],
+		[
+			"time",
+			"day"
+		],
+		[
+			"sky",
+			"moon"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ninja",
+	"ingredients": [
+		[
+			"shuriken",
+			"human"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ninja turtle",
+	"ingredients": [
+		[
+			"turtle",
+			"ninja"
+		]
+	]
+}, {
+	"made": false,
+	"name": "oasis",
+	"ingredients": [
+		[
+			"desert",
+			"water"
+		],
+		[
+			"tree",
+			"desert"
+		],
+		[
+			"desert",
+			"palm"
+		]
+	]
+}, {
+	"made": false,
+	"name": "obsidian",
+	"ingredients": [
+		[
+			"lava",
+			"water"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ocean",
+	"ingredients": [
+		[
+			"water",
+			"sea"
+		],
+		[
+			"sea",
+			"sea"
+		]
+	]
+}, {
+	"made": false,
+	"name": "oil",
+	"ingredients": [
+		[
+			"sunflower",
+			"pressure"
+		]
+	]
+}, {
+	"made": false,
+	"name": "omelette",
+	"ingredients": [
+		[
+			"egg",
+			"fire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "optical fiber",
+	"ingredients": [
+		[
+			"wire",
+			"light"
+		]
+	]
+}, {
+	"made": false,
+	"name": "orchard",
+	"ingredients": [
+		[
+			"fruit tree",
+			"fruit tree"
+		],
+		[
+			"field",
+			"fruit tree"
+		]
+	]
+}, {
+	"made": false,
+	"name": "origami",
+	"ingredients": [
+		[
+			"bird",
+			"paper"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ostrich",
+	"ingredients": [
+		[
+			"bird",
+			"earth"
+		],
+		[
+			"bird",
+			"sand"
+		]
+	]
+}, {
+	"made": false,
+	"name": "owl",
+	"ingredients": [
+		[
+			"night",
+			"bird"
+		],
+		[
+			"bird",
+			"wizard"
+		]
+	]
+}, {
+	"made": false,
+	"name": "oxygen",
+	"ingredients": [
+		[
+			"plant",
+			"sun"
+		],
+		[
+			"plant",
+			"carbon dioxide"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ozone",
+	"ingredients": [
+		[
+			"oxygen",
+			"oxygen"
+		],
+		[
+			"electricity",
+			"oxygen"
+		]
+	]
+}, {
+	"made": false,
+	"name": "paint",
+	"ingredients": [
+		[
+			"water",
+			"rainbow"
+		],
+		[
+			"water",
+			"pencil"
+		]
+	]
+}, {
+	"made": false,
+	"name": "palm",
+	"ingredients": [
+		[
+			"isle",
+			"tree"
+		],
+		[
+			"tree",
+			"beach"
+		]
+	]
+}, {
+	"made": false,
+	"name": "paper",
+	"ingredients": [
+		[
+			"wood",
+			"pressure"
+		]
+	]
+}, {
+	"made": false,
+	"name": "paper airplane",
+	"ingredients": [
+		[
+			"airplane",
+			"paper"
+		]
+	]
+}, {
+	"made": false,
+	"name": "parachute",
+	"ingredients": [
+		[
+			"pilot",
+			"fabric"
+		],
+		[
+			"pilot",
+			"umbrella"
+		]
+	]
+}, {
+	"made": false,
+	"name": "parrot",
+	"ingredients": [
+		[
+			"bird",
+			"pirate"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pasta",
+	"ingredients": [
+		[
+			"flour",
+			"egg"
+		]
+	]
+}, {
+	"made": false,
+	"name": "peacock",
+	"ingredients": [
+		[
+			"bird",
+			"rainbow"
+		]
+	]
+}, {
+	"made": false,
+	"name": "peeps",
+	"ingredients": [
+		[
+			"sugar",
+			"chicken"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pegasus",
+	"ingredients": [
+		[
+			"bird",
+			"horse"
+		],
+		[
+			"sky",
+			"horse"
+		],
+		[
+			"bird",
+			"unicorn"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pencil",
+	"ingredients": [
+		[
+			"wood",
+			"coal"
+		],
+		[
+			"wood",
+			"charcoal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pencil sharpener",
+	"ingredients": [
+		[
+			"blade",
+			"pencil"
+		]
+	]
+}, {
+	"made": false,
+	"name": "penguin",
+	"ingredients": [
+		[
+			"ice",
+			"wild animal"
+		],
+		[
+			"ice",
+			"bird"
+		],
+		[
+			"bird",
+			"snow"
+		]
+	]
+}, {
+	"made": false,
+	"name": "penicillin",
+	"ingredients": [
+		[
+			"doctor",
+			"mold"
+		]
+	]
+}, {
+	"made": false,
+	"name": "perfume",
+	"ingredients": [
+		[
+			"water",
+			"rose"
+		],
+		[
+			"water",
+			"flower"
+		],
+		[
+			"steam",
+			"rose"
+		],
+		[
+			"steam",
+			"flower"
+		],
+		[
+			"alcohol",
+			"rose"
+		],
+		[
+			"alcohol",
+			"flower"
+		]
+	]
+}, {
+	"made": false,
+	"name": "petroleum",
+	"ingredients": [
+		[
+			"fossil",
+			"time"
+		],
+		[
+			"fossil",
+			"pressure"
+		]
+	]
+}, {
+	"made": false,
+	"name": "phoenix",
+	"ingredients": [
+		[
+			"fire",
+			"bird"
+		]
+	]
+}, {
+	"made": false,
+	"name": "picnic",
+	"ingredients": [
+		[
+			"grass",
+			"sandwich"
+		],
+		[
+			"beach",
+			"sandwich"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pie",
+	"ingredients": [
+		[
+			"dough",
+			"fruit"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pig",
+	"ingredients": [
+		[
+			"livestock",
+			"mud"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pigeon",
+	"ingredients": [
+		[
+			"bird",
+			"city"
+		],
+		[
+			"bird",
+			"letter"
+		],
+		[
+			"bird",
+			"statue"
+		]
+	]
+}, {
+	"made": false,
+	"name": "piggy bank",
+	"ingredients": [
+		[
+			"pig",
+			"money"
+		],
+		[
+			"pottery",
+			"pig"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pilot",
+	"ingredients": [
+		[
+			"airplane",
+			"human"
+		],
+		[
+			"seaplane",
+			"human"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pinocchio",
+	"ingredients": [
+		[
+			"wood",
+			"life"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pipe",
+	"ingredients": [
+		[
+			"tobacco",
+			"wood"
+		]
+	]
+}, {
+	"made": false,
+	"name": "piranha",
+	"ingredients": [
+		[
+			"fish",
+			"blood"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pirate",
+	"ingredients": [
+		[
+			"sword",
+			"sailor"
+		],
+		[
+			"sailor",
+			"pirate ship"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pirate ship",
+	"ingredients": [
+		[
+			"sailboat",
+			"pirate"
+		],
+		[
+			"boat",
+			"pirate"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pitchfork",
+	"ingredients": [
+		[
+			"tool",
+			"hay"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pizza",
+	"ingredients": [
+		[
+			"cheese",
+			"dough"
+		]
+	]
+}, {
+	"made": false,
+	"name": "planet",
+	"ingredients": [
+		[
+			"earth",
+			"space"
+		]
+	]
+}, {
+	"made": false,
+	"name": "plankton",
+	"ingredients": [
+		[
+			"water",
+			"life"
+		],
+		[
+			"ocean",
+			"life"
+		],
+		[
+			"sea",
+			"life"
+		]
+	]
+}, {
+	"made": false,
+	"name": "plant",
+	"ingredients": [
+		[
+			"rain",
+			"earth"
+		]
+	]
+}, {
+	"made": false,
+	"name": "platypus",
+	"ingredients": [
+		[
+			"beaver",
+			"duck"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pokki",
+	"ingredients": [
+		[
+			"computer",
+			"squirrel"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pond",
+	"ingredients": [
+		[
+			"water",
+			"garden"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pop rocks",
+	"ingredients": [
+		[
+			"stone",
+			"explosion"
+		]
+	]
+}, {
+	"made": false,
+	"name": "popsicle",
+	"ingredients": [
+		[
+			"juice",
+			"ice"
+		],
+		[
+			"juice",
+			"cold"
+		]
+	]
+}, {
+	"made": false,
+	"name": "popsicle",
+	"ingredients": [
+		[
+			"juice",
+			"ice"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pottery",
+	"ingredients": [
+		[
+			"fire",
+			"clay"
+		],
+		[
+			"clay",
+			"wheel"
+		],
+		[
+			"clay",
+			"tool"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pressure",
+	"ingredients": [
+		[
+			"earth",
+			"earth"
+		],
+		[
+			"air",
+			"air"
+		]
+	]
+}, {
+	"made": false,
+	"name": "printer",
+	"ingredients": [
+		[
+			"paper",
+			"computer"
+		]
+	]
+}, {
+	"made": false,
+	"name": "prism",
+	"ingredients": [
+		[
+			"glass",
+			"rainbow"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pterodactyl",
+	"ingredients": [
+		[
+			"air",
+			"dinosaur"
+		],
+		[
+			"bird",
+			"dinosaur"
+		]
+	]
+}, {
+	"made": false,
+	"name": "puddle",
+	"ingredients": [
+		[
+			"sun",
+			"ice"
+		],
+		[
+			"sun",
+			"snowman"
+		],
+		[
+			"snowman",
+			"flamethrower"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pumpkin",
+	"ingredients": [
+		[
+			"vegetable",
+			"fire"
+		],
+		[
+			"vegetable",
+			"light"
+		]
+	]
+}, {
+	"made": false,
+	"name": "pyramid",
+	"ingredients": [
+		[
+			"desert",
+			"grave"
+		],
+		[
+			"desert",
+			"stone"
+		]
+	]
+}, {
+	"made": false,
+	"name": "quicksand",
+	"ingredients": [
+		[
+			"sand",
+			"swamp"
+		]
+	]
+}, {
+	"made": false,
+	"name": "rain",
+	"ingredients": [
+		[
+			"water",
+			"air"
+		],
+		[
+			"cloud",
+			"water"
+		]
+	]
+}, {
+	"made": false,
+	"name": "rainbow",
+	"ingredients": [
+		[
+			"rain",
+			"sun"
+		],
+		[
+			"rain",
+			"light"
+		]
+	]
+}, {
+	"made": false,
+	"name": "rat",
+	"ingredients": [
+		[
+			"wild animal",
+			"pirate ship"
+		],
+		[
+			"sailboat",
+			"wild animal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "recipe",
+	"ingredients": [
+		[
+			"flour",
+			"paper"
+		],
+		[
+			"paper",
+			"baker"
+		]
+	]
+}, {
+	"made": false,
+	"name": "red vines",
+	"ingredients": [
+		[
+			"sugar",
+			"wire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "reindeer",
+	"ingredients": [
+		[
+			"santa",
+			"wild animal"
+		],
+		[
+			"livestock",
+			"santa"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ring",
+	"ingredients": [
+		[
+			"diamond",
+			"metal"
+		],
+		[
+			"diamond",
+			"gold"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ring pop",
+	"ingredients": [
+		[
+			"sugar",
+			"diamond"
+		]
+	]
+}, {
+	"made": false,
+	"name": "river",
+	"ingredients": [
+		[
+			"mountain",
+			"water"
+		],
+		[
+			"rain",
+			"mountain"
+		]
+	]
+}, {
+	"made": false,
+	"name": "robot",
+	"ingredients": [
+		[
+			"metal",
+			"life"
+		],
+		[
+			"steel",
+			"life"
+		],
+		[
+			"life",
+			"armor"
+		]
+	]
+}, {
+	"made": false,
+	"name": "rocket",
+	"ingredients": [
+		[
+			"airplane",
+			"space"
+		]
+	]
+}, {
+	"made": false,
+	"name": "roller coaster",
+	"ingredients": [
+		[
+			"train",
+			"mountain"
+		],
+		[
+			"mountain",
+			"cart"
+		]
+	]
+}, {
+	"made": false,
+	"name": "roomba",
+	"ingredients": [
+		[
+			"robot",
+			"vacuum cleaner"
+		]
+	]
+}, {
+	"made": false,
+	"name": "rope",
+	"ingredients": [
+		[
+			"thread",
+			"thread"
+		]
+	]
+}, {
+	"made": false,
+	"name": "rose",
+	"ingredients": [
+		[
+			"plant",
+			"love"
+		],
+		[
+			"flower",
+			"love"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ruins",
+	"ingredients": [
+		[
+			"time",
+			"castle"
+		],
+		[
+			"time",
+			"house"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ruler",
+	"ingredients": [
+		[
+			"wood",
+			"pencil"
+		]
+	]
+}, {
+	"made": false,
+	"name": "rust",
+	"ingredients": [
+		[
+			"air",
+			"metal"
+		],
+		[
+			"metal",
+			"oxygen"
+		],
+		[
+			"steel",
+			"oxygen"
+		],
+		[
+			"air",
+			"steel"
+		]
+	]
+}, {
+	"made": false,
+	"name": "rv",
+	"ingredients": [
+		[
+			"house",
+			"car"
+		]
+	]
+}, {
+	"made": false,
+	"name": "saddle",
+	"ingredients": [
+		[
+			"horse",
+			"leather"
+		]
+	]
+}, {
+	"made": false,
+	"name": "safe",
+	"ingredients": [
+		[
+			"metal",
+			"money"
+		],
+		[
+			"metal",
+			"gold"
+		],
+		[
+			"steel",
+			"money"
+		],
+		[
+			"steel",
+			"gold"
+		]
+	]
+}, {
+	"made": false,
+	"name": "safety glasses",
+	"ingredients": [
+		[
+			"tool",
+			"glasses"
+		],
+		[
+			"explosion",
+			"glasses"
+		],
+		[
+			"engineer",
+			"glasses"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sailboat",
+	"ingredients": [
+		[
+			"boat",
+			"wind"
+		],
+		[
+			"boat",
+			"fabric"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sailor",
+	"ingredients": [
+		[
+			"human",
+			"boat"
+		],
+		[
+			"human",
+			"sailboat"
+		]
+	]
+}, {
+	"made": false,
+	"name": "salt",
+	"ingredients": [
+		[
+			"sea",
+			"sun"
+		],
+		[
+			"ocean",
+			"sun"
+		],
+		[
+			"fire",
+			"sea"
+		],
+		[
+			"fire",
+			"ocean"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sand",
+	"ingredients": [
+		[
+			"air",
+			"stone"
+		],
+		[
+			"wind",
+			"stone"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sand castle",
+	"ingredients": [
+		[
+			"sand",
+			"castle"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sandpaper",
+	"ingredients": [
+		[
+			"sand",
+			"paper"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sandstone",
+	"ingredients": [
+		[
+			"stone",
+			"sand"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sandstorm",
+	"ingredients": [
+		[
+			"sand",
+			"storm"
+		],
+		[
+			"sand",
+			"hurricane"
+		],
+		[
+			"sand",
+			"energy"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sandwich",
+	"ingredients": [
+		[
+			"bread",
+			"ham"
+		],
+		[
+			"cheese",
+			"bread"
+		],
+		[
+			"bread",
+			"bacon"
+		]
+	]
+}, {
+	"made": false,
+	"name": "santa",
+	"ingredients": [
+		[
+			"human",
+			"christmas tree"
+		]
+	]
+}, {
+	"made": false,
+	"name": "scalpel",
+	"ingredients": [
+		[
+			"blade",
+			"doctor"
+		],
+		[
+			"blade",
+			"hospital"
+		]
+	]
+}, {
+	"made": false,
+	"name": "scarecrow",
+	"ingredients": [
+		[
+			"human",
+			"hay"
+		]
+	]
+}, {
+	"made": false,
+	"name": "scissors",
+	"ingredients": [
+		[
+			"blade",
+			"blade"
+		]
+	]
+}, {
+	"made": false,
+	"name": "scorpion",
+	"ingredients": [
+		[
+			"wild animal",
+			"dune"
+		],
+		[
+			"wild animal",
+			"sand"
+		]
+	]
+}, {
+	"made": false,
+	"name": "scythe",
+	"ingredients": [
+		[
+			"blade",
+			"grass"
+		],
+		[
+			"blade",
+			"wheat"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sea",
+	"ingredients": [
+		[
+			"water",
+			"water"
+		]
+	]
+}, {
+	"made": false,
+	"name": "seagull",
+	"ingredients": [
+		[
+			"bird",
+			"sea"
+		],
+		[
+			"bird",
+			"ocean"
+		],
+		[
+			"bird",
+			"beach"
+		]
+	]
+}, {
+	"made": false,
+	"name": "seahorse",
+	"ingredients": [
+		[
+			"horse",
+			"sea"
+		],
+		[
+			"ocean",
+			"horse"
+		],
+		[
+			"fish",
+			"horse"
+		]
+	]
+}, {
+	"made": false,
+	"name": "seal",
+	"ingredients": [
+		[
+			"dog",
+			"sea"
+		]
+	]
+}, {
+	"made": false,
+	"name": "seaplane",
+	"ingredients": [
+		[
+			"airplane",
+			"water"
+		],
+		[
+			"airplane",
+			"ocean"
+		],
+		[
+			"airplane",
+			"sea"
+		]
+	]
+}, {
+	"made": false,
+	"name": "seasickness",
+	"ingredients": [
+		[
+			"sickness",
+			"sea"
+		],
+		[
+			"sickness",
+			"ocean"
+		],
+		[
+			"boat",
+			"sickness"
+		],
+		[
+			"steamboat",
+			"sickness"
+		],
+		[
+			"sailboat",
+			"sickness"
+		]
+	]
+}, {
+	"made": false,
+	"name": "seaweed",
+	"ingredients": [
+		[
+			"plant",
+			"sea"
+		],
+		[
+			"plant",
+			"ocean"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sewing machine",
+	"ingredients": [
+		[
+			"electricity",
+			"needle"
+		],
+		[
+			"robot",
+			"needle"
+		]
+	]
+}, {
+	"made": false,
+	"name": "shark",
+	"ingredients": [
+		[
+			"blood",
+			"ocean"
+		],
+		[
+			"sea",
+			"blood"
+		],
+		[
+			"ocean",
+			"wild animal"
+		],
+		[
+			"sea",
+			"wild animal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sheep",
+	"ingredients": [
+		[
+			"cloud",
+			"livestock"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sheet music",
+	"ingredients": [
+		[
+			"paper",
+			"music"
+		]
+	]
+}, {
+	"made": false,
+	"name": "shuriken",
+	"ingredients": [
+		[
+			"star",
+			"blade"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sickness",
+	"ingredients": [
+		[
+			"human",
+			"rain"
+		],
+		[
+			"human",
+			"sickness"
+		],
+		[
+			"human",
+			"sickness"
+		],
+		[
+			"human",
+			"bacteria"
+		]
+	]
+}, {
+	"made": false,
+	"name": "skateboard",
+	"ingredients": [
+		[
+			"snowboard",
+			"wheel"
+		]
+	]
+}, {
+	"made": false,
+	"name": "skeleton",
+	"ingredients": [
+		[
+			"corpse",
+			"time"
+		],
+		[
+			"bone",
+			"bone"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ski goggles",
+	"ingredients": [
+		[
+			"glasses",
+			"snow"
+		]
+	]
+}, {
+	"made": false,
+	"name": "skittles",
+	"ingredients": [
+		[
+			"sugar",
+			"rainbow"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sky",
+	"ingredients": [
+		[
+			"air",
+			"cloud"
+		]
+	]
+}, {
+	"made": false,
+	"name": "skyscraper",
+	"ingredients": [
+		[
+			"house",
+			"sky"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sledge",
+	"ingredients": [
+		[
+			"snow",
+			"cart"
+		],
+		[
+			"snow",
+			"wagon"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sloth",
+	"ingredients": [
+		[
+			"wild animal",
+			"time"
+		]
+	]
+}, {
+	"made": false,
+	"name": "smog",
+	"ingredients": [
+		[
+			"smoke",
+			"fog"
+		],
+		[
+			"fog",
+			"city"
+		]
+	]
+}, {
+	"made": false,
+	"name": "smoke",
+	"ingredients": [
+		[
+			"fire",
+			"wood"
+		]
+	]
+}, {
+	"made": false,
+	"name": "smoke signal",
+	"ingredients": [
+		[
+			"campfire",
+			"fabric"
+		],
+		[
+			"smoke",
+			"fabric"
+		]
+	]
+}, {
+	"made": false,
+	"name": "smoothie",
+	"ingredients": [
+		[
+			"fruit",
+			"blender"
+		]
+	]
+}, {
+	"made": false,
+	"name": "snake",
+	"ingredients": [
+		[
+			"wild animal",
+			"wire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "snow",
+	"ingredients": [
+		[
+			"rain",
+			"cold"
+		],
+		[
+			"steam",
+			"cold"
+		]
+	]
+}, {
+	"made": false,
+	"name": "snow globe",
+	"ingredients": [
+		[
+			"snow",
+			"crystal ball"
+		]
+	]
+}, {
+	"made": false,
+	"name": "snowball",
+	"ingredients": [
+		[
+			"snow",
+			"human"
+		]
+	]
+}, {
+	"made": false,
+	"name": "snowboard",
+	"ingredients": [
+		[
+			"wood",
+			"snow"
+		],
+		[
+			"snow",
+			"surfer"
+		]
+	]
+}, {
+	"made": false,
+	"name": "snowman",
+	"ingredients": [
+		[
+			"snow",
+			"human"
+		],
+		[
+			"snowball",
+			"snowball"
+		],
+		[
+			"snow",
+			"carrot"
+		],
+		[
+			"snowball",
+			"carrot"
+		]
+	]
+}, {
+	"made": false,
+	"name": "snowmobile",
+	"ingredients": [
+		[
+			"snow",
+			"motorcycle"
+		],
+		[
+			"snow",
+			"car"
+		]
+	]
+}, {
+	"made": false,
+	"name": "soap",
+	"ingredients": [
+		[
+			"oil",
+			"ash"
+		]
+	]
+}, {
+	"made": false,
+	"name": "soda",
+	"ingredients": [
+		[
+			"water",
+			"carbon dioxide"
+		],
+		[
+			"juice",
+			"carbon dioxide"
+		]
+	]
+}, {
+	"made": false,
+	"name": "solar cell",
+	"ingredients": [
+		[
+			"sun",
+			"tool"
+		]
+	]
+}, {
+	"made": false,
+	"name": "solar system",
+	"ingredients": [
+		[
+			"sun",
+			"planet"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sound",
+	"ingredients": [
+		[
+			"air",
+			"wave"
+		]
+	]
+}, {
+	"made": false,
+	"name": "space",
+	"ingredients": [
+		[
+			"sky",
+			"star"
+		],
+		[
+			"sun",
+			"star"
+		],
+		[
+			"moon",
+			"star"
+		]
+	]
+}, {
+	"made": false,
+	"name": "space station",
+	"ingredients": [
+		[
+			"space",
+			"house"
+		]
+	]
+}, {
+	"made": false,
+	"name": "spaceship",
+	"ingredients": [
+		[
+			"airplane",
+			"astronaut"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sphinx",
+	"ingredients": [
+		[
+			"human",
+			"lion"
+		]
+	]
+}, {
+	"made": false,
+	"name": "spider",
+	"ingredients": [
+		[
+			"wild animal",
+			"thread"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sprinkles",
+	"ingredients": [
+		[
+			"sugar",
+			"confetti"
+		]
+	]
+}, {
+	"made": false,
+	"name": "squirrel",
+	"ingredients": [
+		[
+			"mouse",
+			"tree"
+		]
+	]
+}, {
+	"made": false,
+	"name": "star",
+	"ingredients": [
+		[
+			"sky",
+			"night"
+		],
+		[
+			"night",
+			"telescope"
+		]
+	]
+}, {
+	"made": false,
+	"name": "starburst",
+	"ingredients": [
+		[
+			"rocket",
+			"fruit"
+		]
+	]
+}, {
+	"made": false,
+	"name": "starfish",
+	"ingredients": [
+		[
+			"fish",
+			"star"
+		],
+		[
+			"sea",
+			"star"
+		],
+		[
+			"ocean",
+			"star"
+		]
+	]
+}, {
+	"made": false,
+	"name": "statue",
+	"ingredients": [
+		[
+			"stone",
+			"tool"
+		],
+		[
+			"human",
+			"medusa"
+		]
+	]
+}, {
+	"made": false,
+	"name": "steak",
+	"ingredients": [
+		[
+			"meat",
+			"bbq"
+		],
+		[
+			"fire",
+			"cow"
+		]
+	]
+}, {
+	"made": false,
+	"name": "steam",
+	"ingredients": [
+		[
+			"water",
+			"fire"
+		],
+		[
+			"water",
+			"energy"
+		]
+	]
+}, {
+	"made": false,
+	"name": "steam engine",
+	"ingredients": [
+		[
+			"boiler",
+			"tool"
+		],
+		[
+			"boiler",
+			"wheel"
+		]
+	]
+}, {
+	"made": false,
+	"name": "steamboat",
+	"ingredients": [
+		[
+			"steam engine",
+			"water"
+		],
+		[
+			"steam engine",
+			"boat"
+		]
+	]
+}, {
+	"made": false,
+	"name": "steel",
+	"ingredients": [
+		[
+			"metal",
+			"coal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "steel wool",
+	"ingredients": [
+		[
+			"steel",
+			"wool"
+		],
+		[
+			"wire",
+			"wool"
+		]
+	]
+}, {
+	"made": false,
+	"name": "stethoscope",
+	"ingredients": [
+		[
+			"tool",
+			"doctor"
+		]
+	]
+}, {
+	"made": false,
+	"name": "stone",
+	"ingredients": [
+		[
+			"air",
+			"lava"
+		]
+	]
+}, {
+	"made": false,
+	"name": "storm",
+	"ingredients": [
+		[
+			"energy",
+			"cloud"
+		],
+		[
+			"cloud",
+			"electricity"
+		]
+	]
+}, {
+	"made": false,
+	"name": "story",
+	"ingredients": [
+		[
+			"human",
+			"campfire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sugar",
+	"ingredients": [
+		[
+			"fruit",
+			"energy"
+		],
+		[
+			"juice",
+			"fire"
+		],
+		[
+			"juice",
+			"energy"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sun",
+	"ingredients": [
+		[
+			"fire",
+			"sky"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sundial",
+	"ingredients": [
+		[
+			"clock",
+			"sun"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sunflower",
+	"ingredients": [
+		[
+			"plant",
+			"sun"
+		],
+		[
+			"flower",
+			"sun"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sunglasses",
+	"ingredients": [
+		[
+			"sun",
+			"glasses"
+		],
+		[
+			"beach",
+			"glasses"
+		]
+	]
+}, {
+	"made": false,
+	"name": "super nova",
+	"ingredients": [
+		[
+			"explosion",
+			"star"
+		]
+	]
+}, {
+	"made": false,
+	"name": "surfer",
+	"ingredients": [
+		[
+			"human",
+			"wave"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sushi",
+	"ingredients": [
+		[
+			"fish",
+			"seaweed"
+		],
+		[
+			"caviar",
+			"seaweed"
+		]
+	]
+}, {
+	"made": false,
+	"name": "swamp",
+	"ingredients": [
+		[
+			"mud",
+			"plant"
+		],
+		[
+			"mud",
+			"grass"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sweater",
+	"ingredients": [
+		[
+			"wool",
+			"tool"
+		],
+		[
+			"human",
+			"wool"
+		]
+	]
+}, {
+	"made": false,
+	"name": "swedish fish",
+	"ingredients": [
+		[
+			"sugar",
+			"fish"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sweethearts",
+	"ingredients": [
+		[
+			"sugar",
+			"love"
+		]
+	]
+}, {
+	"made": false,
+	"name": "swim goggles",
+	"ingredients": [
+		[
+			"glasses",
+			"water"
+		]
+	]
+}, {
+	"made": false,
+	"name": "swimmer",
+	"ingredients": [
+		[
+			"human",
+			"swim goggles"
+		]
+	]
+}, {
+	"made": false,
+	"name": "sword",
+	"ingredients": [
+		[
+			"blade",
+			"metal"
+		],
+		[
+			"blade",
+			"steel"
+		]
+	]
+}, {
+	"made": false,
+	"name": "swordfish",
+	"ingredients": [
+		[
+			"fish",
+			"sword"
+		]
+	]
+}, {
+	"made": false,
+	"name": "tank",
+	"ingredients": [
+		[
+			"car",
+			"armor"
+		],
+		[
+			"car",
+			"gun"
+		]
+	]
+}, {
+	"made": false,
+	"name": "tardis",
+	"ingredients": [
+		[
+			"time",
+			"space"
+		]
+	]
+}, {
+	"made": false,
+	"name": "taser",
+	"ingredients": [
+		[
+			"gun",
+			"electricity"
+		]
+	]
+}, {
+	"made": false,
+	"name": "tea",
+	"ingredients": [
+		[
+			"water",
+			"leaf"
+		]
+	]
+}, {
+	"made": false,
+	"name": "telescope",
+	"ingredients": [
+		[
+			"glass",
+			"sky"
+		],
+		[
+			"glass",
+			"star"
+		],
+		[
+			"glass",
+			"space"
+		]
+	]
+}, {
+	"made": false,
+	"name": "tent",
+	"ingredients": [
+		[
+			"wood",
+			"fabric"
+		],
+		[
+			"house",
+			"fabric"
+		]
+	]
+}, {
+	"made": false,
+	"name": "the doctor",
+	"ingredients": [
+		[
+			"doctor",
+			"tardis"
+		]
+	]
+}, {
+	"made": false,
+	"name": "the one ring",
+	"ingredients": [
+		[
+			"volcano",
+			"ring"
+		]
+	]
+}, {
+	"made": false,
+	"name": "thread",
+	"ingredients": [
+		[
+			"cotton",
+			"tool"
+		],
+		[
+			"wheel",
+			"wool"
+		]
+	]
+}, {
+	"made": false,
+	"name": "tide",
+	"ingredients": [
+		[
+			"sea",
+			"moon"
+		],
+		[
+			"ocean",
+			"moon"
+		]
+	]
+}, {
+	"made": false,
+	"name": "time",
+	"ingredients": [
+		[
+			"sand",
+			"glass"
+		]
+	]
+}, {
+	"made": false,
+	"name": "titanic",
+	"ingredients": [
+		[
+			"steamboat",
+			"iceberg"
+		]
+	]
+}, {
+	"made": false,
+	"name": "toast",
+	"ingredients": [
+		[
+			"sandwich",
+			"fire"
+		],
+		[
+			"bread",
+			"fire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "tobacco",
+	"ingredients": [
+		[
+			"plant",
+			"fire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "tool",
+	"ingredients": [
+		[
+			"metal",
+			"human"
+		]
+	]
+}, {
+	"made": false,
+	"name": "toucan",
+	"ingredients": [
+		[
+			"bird",
+			"rainbow"
+		]
+	]
+}, {
+	"made": false,
+	"name": "tractor",
+	"ingredients": [
+		[
+			"farmer",
+			"car"
+		],
+		[
+			"field",
+			"car"
+		]
+	]
+}, {
+	"made": false,
+	"name": "train",
+	"ingredients": [
+		[
+			"steam engine",
+			"steel"
+		],
+		[
+			"steam engine",
+			"metal"
+		],
+		[
+			"steam engine",
+			"wheel"
+		],
+		[
+			"steam engine",
+			"wagon"
+		]
+	]
+}, {
+	"made": false,
+	"name": "treasure",
+	"ingredients": [
+		[
+			"pirate",
+			"treasure map"
+		]
+	]
+}, {
+	"made": false,
+	"name": "treasure map",
+	"ingredients": [
+		[
+			"pirate",
+			"map"
+		]
+	]
+}, {
+	"made": false,
+	"name": "tree",
+	"ingredients": [
+		[
+			"plant",
+			"time"
+		]
+	]
+}, {
+	"made": false,
+	"name": "treehouse",
+	"ingredients": [
+		[
+			"tree",
+			"house"
+		]
+	]
+}, {
+	"made": false,
+	"name": "trojan horse",
+	"ingredients": [
+		[
+			"horse",
+			"wood"
+		]
+	]
+}, {
+	"made": false,
+	"name": "tsunami",
+	"ingredients": [
+		[
+			"ocean",
+			"earthquake"
+		],
+		[
+			"sea",
+			"earthquake"
+		]
+	]
+}, {
+	"made": false,
+	"name": "tunnel",
+	"ingredients": [
+		[
+			"engineer",
+			"mountain"
+		]
+	]
+}, {
+	"made": false,
+	"name": "turtle",
+	"ingredients": [
+		[
+			"egg",
+			"sand"
+		]
+	]
+}, {
+	"made": false,
+	"name": "twilight",
+	"ingredients": [
+		[
+			"day",
+			"night"
+		]
+	]
+}, {
+	"made": false,
+	"name": "twix",
+	"ingredients": [
+		[
+			"caramelo",
+			"cookie"
+		]
+	]
+}, {
+	"made": false,
+	"name": "tyrannosaurus rex",
+	"ingredients": [
+		[
+			"meat",
+			"dinosaur"
+		]
+	]
+}, {
+	"made": false,
+	"name": "ufo",
+	"ingredients": [
+		[
+			"rocket",
+			"alien"
+		],
+		[
+			"airplane",
+			"alien"
+		]
+	]
+}, {
+	"made": false,
+	"name": "umbrella",
+	"ingredients": [
+		[
+			"tool",
+			"rain"
+		],
+		[
+			"rain",
+			"fabric"
+		]
+	]
+}, {
+	"made": false,
+	"name": "unicorn",
+	"ingredients": [
+		[
+			"rainbow",
+			"horse"
+		],
+		[
+			"rainbow",
+			"life"
+		],
+		[
+			"double rainbow!",
+			"horse"
+		],
+		[
+			"double rainbow!",
+			"life"
+		]
+	]
+}, {
+	"made": false,
+	"name": "vacuum cleaner",
+	"ingredients": [
+		[
+			"electricity",
+			"broom"
+		]
+	]
+}, {
+	"made": false,
+	"name": "vampire",
+	"ingredients": [
+		[
+			"human",
+			"blood"
+		],
+		[
+			"human",
+			"vampire"
+		],
+		[
+			"human",
+			"vampire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "vase",
+	"ingredients": [
+		[
+			"plant",
+			"pottery"
+		],
+		[
+			"pottery",
+			"flower"
+		]
+	]
+}, {
+	"made": false,
+	"name": "vegetable",
+	"ingredients": [
+		[
+			"field",
+			"fruit"
+		]
+	]
+}, {
+	"made": false,
+	"name": "village",
+	"ingredients": [
+		[
+			"house",
+			"house"
+		]
+	]
+}, {
+	"made": false,
+	"name": "volcano",
+	"ingredients": [
+		[
+			"lava",
+			"earth"
+		],
+		[
+			"lava",
+			"mountain"
+		],
+		[
+			"fire",
+			"mountain"
+		]
+	]
+}, {
+	"made": false,
+	"name": "vulture",
+	"ingredients": [
+		[
+			"bird",
+			"corpse"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wagon",
+	"ingredients": [
+		[
+			"cart",
+			"horse"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wall",
+	"ingredients": [
+		[
+			"brick",
+			"brick"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wand",
+	"ingredients": [
+		[
+			"wizard",
+			"wood"
+		]
+	]
+}, {
+	"made": false,
+	"name": "warrior",
+	"ingredients": [
+		[
+			"sword",
+			"human"
+		]
+	]
+}, {
+	"made": false,
+	"name": "watch",
+	"ingredients": [
+		[
+			"human",
+			"clock"
+		]
+	]
+}, {
+	"made": false,
+	"name": "water",
+	"ingredients": [
+		[
+			"ice",
+			"fire"
+		]
+	]
+}, {
+	"made": false,
+	"name": "water gun",
+	"ingredients": [
+		[
+			"water",
+			"gun"
+		]
+	]
+}, {
+	"made": false,
+	"name": "water lily",
+	"ingredients": [
+		[
+			"flower",
+			"pond"
+		]
+	]
+}, {
+	"made": false,
+	"name": "water pipe",
+	"ingredients": [
+		[
+			"water",
+			"pipe"
+		]
+	]
+}, {
+	"made": false,
+	"name": "waterfall",
+	"ingredients": [
+		[
+			"mountain",
+			"river"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wave",
+	"ingredients": [
+		[
+			"sea",
+			"wind"
+		],
+		[
+			"ocean",
+			"wind"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wax",
+	"ingredients": [
+		[
+			"bee",
+			"beehive"
+		]
+	]
+}, {
+	"made": false,
+	"name": "web",
+	"ingredients": [
+		[
+			"spider",
+			"thread"
+		]
+	]
+}, {
+	"made": false,
+	"name": "werewolf",
+	"ingredients": [
+		[
+			"wolf",
+			"human"
+		],
+		[
+			"werewolf",
+			"human"
+		],
+		[
+			"werewolf",
+			"human"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wheat",
+	"ingredients": [
+		[
+			"field",
+			"farmer"
+		],
+		[
+			"plant",
+			"farmer"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wheel",
+	"ingredients": [
+		[
+			"tool",
+			"wood"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wild animal",
+	"ingredients": [
+		[
+			"forest",
+			"life"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wild boar",
+	"ingredients": [
+		[
+			"pig",
+			"wild animal"
+		],
+		[
+			"pig",
+			"forest"
+		]
+	]
+}, {
+	"made": false,
+	"name": "willy wonka",
+	"ingredients": [
+		[
+			"engineer",
+			"sugar"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wind",
+	"ingredients": [
+		[
+			"pressure",
+			"air"
+		],
+		[
+			"air",
+			"energy"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wind turbine",
+	"ingredients": [
+		[
+			"windmill",
+			"electricity"
+		]
+	]
+}, {
+	"made": false,
+	"name": "windmill",
+	"ingredients": [
+		[
+			"house",
+			"wind"
+		],
+		[
+			"wheel",
+			"wind"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wine",
+	"ingredients": [
+		[
+			"fruit",
+			"alcohol"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wire",
+	"ingredients": [
+		[
+			"electricity",
+			"metal"
+		]
+	]
+}, {
+	"made": false,
+	"name": "witch",
+	"ingredients": [
+		[
+			"wizard",
+			"broom"
+		],
+		[
+			"human",
+			"broom"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wizard",
+	"ingredients": [
+		[
+			"human",
+			"energy"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wolf",
+	"ingredients": [
+		[
+			"wild animal",
+			"dog"
+		],
+		[
+			"wild animal",
+			"moon"
+		],
+		[
+			"dog",
+			"forest"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wood",
+	"ingredients": [
+		[
+			"tool",
+			"tree"
+		]
+	]
+}, {
+	"made": false,
+	"name": "woodpecker",
+	"ingredients": [
+		[
+			"bird",
+			"wood"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wool",
+	"ingredients": [
+		[
+			"sheep",
+			"tool"
+		],
+		[
+			"scissors",
+			"sheep"
+		]
+	]
+}, {
+	"made": false,
+	"name": "wrapping paper",
+	"ingredients": [
+		[
+			"gift",
+			"paper"
+		]
+	]
+}, {
+	"made": false,
+	"name": "yeti",
+	"ingredients": [
+		[
+			"mountain",
+			"story"
+		],
+		[
+			"story",
+			"mountain range"
+		]
+	]
+}, {
+	"made": false,
+	"name": "yoda",
+	"ingredients": [
+		[
+			"jedi",
+			"swamp"
+		]
+	]
+}, {
+	"made": false,
+	"name": "yogurt",
+	"ingredients": [
+		[
+			"milk",
+			"bacteria"
+		]
+	]
+}, {
+	"made": false,
+	"name": "zombie",
+	"ingredients": [
+		[
+			"corpse",
+			"life"
+		],
+		[
+			"human",
+			"zombie"
+		],
+		[
+			"human",
+			"zombie"
+		]
+	]
+}]

@@ -1,0 +1,32 @@
+h4 {
+	display: inline-block;
+}
+
+tr {
+	cursor: pointer;
+}
+
+#recipe-box {
+	width: 80%;
+	margin: auto;
+	margin-bottom: 30px;
+
+}
+
+.right-border {
+	border-right: 2px dashed black;
+}
+
+.bottom-border {
+	border-bottom: 2px solid black;
+	margin-bottom: 5px;
+}
+
+.right {
+	float: right;
+}
+
+.limit-height {
+	height: 450px;
+	overflow-y: scroll;
+}
