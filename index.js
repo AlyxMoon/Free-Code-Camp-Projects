@@ -51,8 +51,8 @@ var projects = [
   },
   {
     "title" : "Recipe Box",
-    "link": "http://codepen.io/AlyxMoon/full/MbzeRy",
-    "image": "http://codepen.io/AlyxMoon/pen/MbzeRy/image/small.png"
+    "link": "recipes",
+    "image": "img/previews/recipes.png"
   },
   {
     "title" : "Conway's Game of Life",
