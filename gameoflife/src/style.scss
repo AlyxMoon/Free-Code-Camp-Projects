@@ -1,0 +1,86 @@
+$cell-alive: #3FB0AC;
+$cell-dead: #000000;
+$cell-border: #0B486B;
+$menu-border: #AAAAAA;
+$button-active: #3FB0AC;
+$button-border: #0B486B;
+$background: #F1F1F1;
+
+h1 {
+ text-align: center;
+}
+
+button {
+ width: 80px;
+ margin: 2px -2px;
+ border: none;
+ border-left: 1px solid black;
+ background-color: inherit;
+ cursor: pointer;
+}
+
+button:last-of-type {
+ border-right: 1px solid black;
+}
+
+button#show-history {
+ border-right: none;
+ width: 120px;
+}
+
+.grid {
+ width: 240px;
+ height: 240px;
+ border: 1 solid $cell-border;
+
+ cursor: default;
+ -webkit-user-select: none;
+ -khtml-user-select: none;
+ -moz-user-select: none;
+ -o-user-select: none;
+ user-select: none;
+}
+
+.row {
+ background-color: $background;
+ border: 1px solid $menu-border;
+ width: 50%;
+}
+
+.row-label {
+ margin: 2px 5px;
+ display: inline-block;
+ width: 20%;
+}
+
+.row-buttons {
+ margin: 2px 0;
+ display: inline-block;
+ width: auto;
+}
+
+.cell {
+ background-color: $cell-dead;
+ border: none;
+ display: inline-block;
+ float: left;
+ margin: 0;
+ width: 10px;
+ height: 10px;
+}
+
+.bordered {
+ border: 1px solid $cell-border;
+}
+
+.cell:nth-child(20n + 1) {
+ clear: both;
+}
+
+.alive {
+ background-color: $cell-alive;
+}
+
+.active {
+ background-color: $button-active;
+}

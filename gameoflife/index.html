@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang='en'>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+  <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon'>
+  <link rel='stylesheet' type='text/css' href='dist/style.css'>
+
+  <title>FCC - Game of Life</title>
+</head>
+<body>
+  <h1>Conway's Game of Life</h1>
+
+  <h3>The simulation:</h3>
+  <div class="row">
+    <div class="row-label">Commands:</div>
+    <div class="row-buttons">
+    	<button id="command-run" class="active">Run</button>
+    	<button id="command-pause">Pause</button>
+    	<button id="command-clear">Clear</button>
+    	<button id="command-randomize">Randomize</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-label">Board Size:</div>
+    <div class="row-buttons">
+    	<button id="size-1">10 x 10</button>
+    	<button id="size-2" class="active">20 x 20</button>
+    	<button id="size-3">50 x 50</button>
+    	<button id="size-4">100 x 100</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-label">Sim Speed:</div>
+    <div class="row-buttons">
+    	<button id="speed-1">Slow</button>
+    	<button id="speed-2" class="active">Normal</button>
+    	<button id="speed-3">Faster</button>
+    	<button id="speed-4">Fastest</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-label">Looks:</div>
+    <div class="row-buttons">
+    	<button id="border-toggle">Borders</button>
+    </div>
+  </div>
+
+  <div class="row"></div>
+  <div id="stats">
+  	<span>Generation:</span>
+  	<span id="generation-count">0</span>
+  </div>
+
+  <div id="game-board" class="grid"></div>
+
+  <h3>Simulation History:</h3>
+  <div class="row">
+    <div class="row-label">Generation Select:</div>
+    <div class="row-buttons">
+    	<button id="prev-history">Previous</button>
+    	<button id="next-history">Next</button>
+    	<button id="show-history">Show Generation</button>
+    	<span id="history"></span>
+    </div>
+  </div>
+
+  <div id="history-board" class="grid"></div>
+
+  <h3>About Conway's Game of Life:</h3>
+  <p>Game of Life is a cellular automaton devised by Jonathan Conway, a British Mathematician, in 1970. Full details can be found on the <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">wiki page</a>.</p>
+
+  <h3>How it works:</h3>
+  <p>It's a "zero-player" game, which means that the initial state is given and then plays itself out based upon a set of rules. Every spot in the grid is a cell, and is either alive or dead.</p>
+  <p>Every generation (one turn) an algorithm is run that determines whether a cell will be alive or dead in the next generation. The rules are:
+  </p>
+  <ul>
+  <li>Any live cell with fewer than two live neighbours dies, as if caused by under-population.</li>
+  <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+  <li>Any live cell with more than three live neighbours dies, as if by over-population.</li>
+  <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
+  </ul>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="dist/bundle.js"></script>
+</body>
+</html>

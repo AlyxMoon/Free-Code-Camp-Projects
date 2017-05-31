@@ -56,8 +56,8 @@ var projects = [
   },
   {
     "title" : "Conway's Game of Life",
-    "link": "http://codepen.io/AlyxMoon/full/kkEOXv",
-    "image": "http://codepen.io/AlyxMoon/pen/kkEOXv/image/small.png"
+    "link": "gameoflife",
+    "image": "img/previews/gameoflife.png"
   }
 ]
 
