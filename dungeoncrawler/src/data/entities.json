@@ -1,0 +1,26 @@
+{
+    "player": {
+        "location": [1, 2],
+        "sprite": "player.png",
+        "level": 1 ,
+        "experienceToLevel": 10,
+        "healthOnLevel": 10,
+        "attackOnLevel": 2,
+        "experience": 0,
+        "health": 20,
+        "attack": 4,
+        "sight": 3
+    },
+    "enemies": [
+        {
+            "location": [0, 14],
+            "sprite": "boss.png",
+            "health": 20,
+            "attack": 4,
+            "experience": 10,
+            "boss": true
+        }
+    ],
+    "items": [
+    ]
+}

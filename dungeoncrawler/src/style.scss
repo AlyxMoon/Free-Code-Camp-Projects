@@ -1,0 +1,52 @@
+$color-wall:        black;
+$color-floor:       white;
+$color-tile-border: black;
+
+$tile-width:    40px;
+$tile-height:   40px;
+
+#app {
+    margin: auto;
+    width: 80%;
+}
+
+.map {
+    margin: auto;
+    width: $tile-width * 8;
+}
+
+.stats {
+    margin: auto;
+    width: $tile-width * 8;
+}
+
+.row {
+    height: $tile-height;
+    width: 100%;
+}
+.row:empty {
+    display: none;
+}
+
+.tile {
+    display: inline-block;
+    width: $tile-width;
+    height: $tile-height;
+    border: 1px solid $color-tile-border;
+    margin: 0 0 -1px -1px;
+}
+
+.wall {
+    background-color: $color-wall;
+}
+
+.floor {
+    background-color: $color-floor;
+}
+
+.sprite {
+    display: flex; /* Just in case two sprites drawn on same tile */
+    height: $tile-height - 3;
+    width: $tile-width - 2;
+    margin: 1px 1px 2px 1px;
+}

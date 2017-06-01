@@ -58,6 +58,11 @@ var projects = [
     "title" : "Conway's Game of Life",
     "link": "gameoflife",
     "image": "img/previews/gameoflife.png"
+  },
+  {
+    "title": "Roguelike Dungeon Crawler",
+    "link": "dungeoncrawler",
+    "image": "img/previews/dungeoncrawler.png"
   }
 ]
 
