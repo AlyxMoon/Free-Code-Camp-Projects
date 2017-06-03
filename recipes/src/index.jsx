@@ -33,6 +33,16 @@ class RecipeBox extends React.Component {
   		activeRecipe: this.props.recipes[0],
   		activeRecipeIndex: 0
   	};
+
+    this.showRecipe = this.showRecipe.bind(this)
+    this.openAdd = this.openAdd.bind(this)
+    this.openEdit = this.openEdit.bind(this)
+    this.close = this.close.bind(this)
+    this.add = this.add.bind(this)
+    this.edit = this.edit.bind(this)
+    this.changeMadeRecipe = this.changeMadeRecipe.bind(this)
+    this.changeShowFilter = this.changeShowFilter.bind(this)
+    this.delete = this.delete.bind(this)
   }
 
 	showRecipe(index) {
@@ -257,6 +267,9 @@ class RecipePrompt extends React.Component {
 				ingredients: this.props.activeRecipe.ingredients
 			};
 		}
+
+    this.trackNameChange = this.trackNameChange.bind(this)
+    this.trackIngredientsChange = this.trackIngredientsChange.bind(this)
 	}
 
 	componentWillReceiveProps(newProps) {
