@@ -173,7 +173,7 @@ class RecipeBox extends React.Component {
 						</div>
 					</Col>
 					<Col sm={8} xs={6}>
-						<RecipeDetails recipes={this.state.recipes[this.state.activeRecipeIndex]} index={this.state.activeRecipeIndex} delete={this.delete} openEdit={this.openEdit} changeMadeRecipe={this.changeMadeRecipe} />
+						<RecipeDetails recipe={this.state.recipes[this.state.activeRecipeIndex]} index={this.state.activeRecipeIndex} delete={this.delete} openEdit={this.openEdit} changeMadeRecipe={this.changeMadeRecipe} />
 					</Col>
 
 				</Row>
@@ -227,13 +227,14 @@ class RecipeDetails extends React.Component {
 	render() {
 		return (
 			<div>
+        <h2>{this.props.recipe.name}</h2>
+        <Checkbox onChange={this.props.changeMadeRecipe} checked={this.props.recipe.made}>Made Recipe</Checkbox>
 				<ButtonToolbar>
 					<Button onClick={() => {this.props.delete(this.props.index)} } bsStyle='danger'>Delete</Button>
 					<Button onClick={() => {this.props.openEdit(this.props.index)} }>Edit</Button>
 				</ButtonToolbar>
-				<Checkbox onChange={this.props.changeMadeRecipe} checked={this.props.recipes.made}>Made Recipe</Checkbox>
 				<hr />
-				{this.props.recipes.ingredients.map(function(recipe, index) {
+				{this.props.recipe.ingredients.map(function(recipe, index) {
 					return (
 						<div key={index}>
 							<h4> Variation {index + 1} </h4>
