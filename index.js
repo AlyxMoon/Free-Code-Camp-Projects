@@ -63,6 +63,11 @@ var projects = [
     "title": "Roguelike Dungeon Crawler",
     "link": "dungeoncrawler",
     "image": "img/previews/dungeoncrawler.png"
+  },
+  {
+    title: 'D3 - Bar Graph',
+    link: 'data-viz-bar',
+    image: 'img/previews/data-viz-bar.png'
   }
 ]
 
