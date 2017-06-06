@@ -68,6 +68,11 @@ var projects = [
     title: 'D3 - Bar Graph',
     link: 'data-viz-bar',
     image: 'img/previews/data-viz-bar.png'
+  },
+  {
+    title: 'D3 - Scatterplot',
+    link: 'data-viz-scatterplot',
+    image: 'img/previews/data-viz-scatterplot.png'
   }
 ]
 
