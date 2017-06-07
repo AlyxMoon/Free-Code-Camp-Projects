@@ -1,0 +1,36 @@
+body {
+  background-color: #1C2C35;
+  color: #2B8CBE;
+  text-align: center;
+}
+
+.graph-container {
+  background-color: #FFF;
+
+  width: 1300px;
+  height: 700px;
+
+  margin: 50px auto;
+}
+
+rect:hover {
+  fill: lightsteelblue;
+}
+
+.axis-label {
+  text-anchor: middle;
+  font-size: 20px;
+}
+
+.tooltip {
+  color: black;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  font: 12px sans-serif;
+  font-weight: bold;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 5px;
+  pointer-events: none;
+}
