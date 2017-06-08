@@ -73,6 +73,11 @@ var projects = [
     title: 'D3 - Scatterplot',
     link: 'data-viz-scatterplot',
     image: 'img/previews/data-viz-scatterplot.png'
+  },
+  {
+    title: 'D3 - Heat Map',
+    link: 'data-viz-heatmap',
+    image: 'img/previews/data-viz-heatmap.png'
   }
 ]
 
