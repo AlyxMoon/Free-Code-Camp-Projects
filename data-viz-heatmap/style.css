@@ -4,12 +4,18 @@ body {
   text-align: center;
 }
 
+h1, h2, p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+h1 {
+  padding-top: 5px;
+}
+
 .graph-container {
   background-color: #FFF;
-
   width: 1300px;
-  height: 700px;
-
   margin: 50px auto;
 }
 
@@ -20,6 +26,10 @@ rect:hover {
 .axis-label {
   text-anchor: middle;
   font-size: 20px;
+}
+
+.legend-label {
+  text-anchor: middle;
 }
 
 .tooltip {
@@ -33,4 +43,13 @@ rect:hover {
   border: 0px;
   border-radius: 5px;
   pointer-events: none;
+}
+
+/* Hide the y-axis lines */
+.y > path {
+  display: none;
+}
+
+.y .tick line {
+  display: none;
 }

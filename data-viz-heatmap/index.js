@@ -1,9 +1,14 @@
-var margin = { top: 40, right: 30, bottom: 40, left: 30 }
+var margin = { top: 40, right: 30, bottom: 40, left: 60 }
 var width = 1250 - margin.right - margin.left
 var height = 700 - margin.top - margin.bottom
 var tooltipWidth = 100
 var tooltipHeight = 40
 var pad = 5
+
+var legendRectWidth = 40
+var legendRectHeight = 20
+
+var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 var tooltip = d3
 	.select('.tooltip')
@@ -26,6 +31,10 @@ var formatTooltip = function (d) {
   string += 'Variance: ' + d.variance + '<br />'
 
   return string
+}
+
+var formatMonth = function (d) {
+  return months[d - 1]
 }
 
 function onDataRecieved() {
@@ -67,8 +76,8 @@ function onDataRecieved() {
     		tooltip.transition().duration(100).style('opacity', 0.9);
     		tooltip
     			.html(formatTooltip(d))
-    			.style('left', d3.event.pageX + 'px')
-    			.style('top', d3.event.pageY - tooltipHeight + 'px');
+    			.style('left', (d3.event.pageX + 5) + 'px')
+    			.style('top', (d3.event.pageY - tooltipHeight - 5) + 'px');
     	})
     	.on('mouseout', function(d) {
     		tooltip.transition().duration(100).style('opacity', 0);
@@ -81,6 +90,7 @@ function onDataRecieved() {
     .text('Year')
   // The x-axis ticks
   svg.append('g')
+    .attr('class', 'x axis')
     .attr('transform', 'translate(0,' + (height - (margin.top / 2) ) + ')')
     .call(d3.axisBottom(x)
       .ticks((maxYear - minYear) / 10)
@@ -96,8 +106,43 @@ function onDataRecieved() {
 
   // The y-axis ticks
   svg.append('g')
+    .attr('class', 'y axis')
     .attr('transform', 'translate(-' + pad + ',' + (rectHeight / 2) + ')')
-    .call(d3.axisLeft(y))
+    .call(d3.axisLeft(y)
+      .tickFormat(formatMonth)
+    )
+
+  // Heat Map Legend
+  var legendVals = [
+    0,
+    maxVariance * 1 / 6,
+    maxVariance * 2 / 6,
+    maxVariance * 3 / 6,
+    maxVariance * 4 / 6,
+    maxVariance * 5 / 6,
+    maxVariance
+  ]
+  var legendValsWidth = legendVals.length * legendRectWidth
+  var legend = svg.append('g')
+    .attr('class', 'legend')
+    .attr('transform', 'translate(' + (width - legendValsWidth) + ',' + (height + (margin.top / 2) ) + ')')
+  legend.selectAll('.legend-rect')
+    .data(legendVals)
+    .enter().append('rect')
+      .attr('class', 'legend-rect')
+      .attr('width', legendRectWidth)
+      .attr('height', legendRectHeight)
+      .attr('x', function (d,i) { return i * legendRectWidth })
+      .attr('y', 0)
+      .attr('fill', function (d) { return color(d) })
+  legend.selectAll('.legend-label')
+    .data(legendVals)
+    .enter().append('text')
+      .attr('class', 'legend-label')
+      .attr('x', function (d,i) { return i * legendRectWidth + (legendRectWidth / 2) })
+      .attr('y', legendRectHeight)
+      .attr('dy', '1em')
+      .text(function (d) { return d.toFixed(2) })
 }
 
 var request = new XMLHttpRequest()
