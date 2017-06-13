@@ -1,0 +1,53 @@
+body {
+  background-color: #1C2C35;
+  color: #2B8CBE;
+  text-align: center;
+}
+
+h1, h2, p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+h1 {
+  padding-top: 5px;
+}
+
+.graph-container {
+  background-color: #FFF;
+  width: 850px;
+  margin: 50px auto;
+}
+
+.axis-label {
+  text-anchor: middle;
+  font-size: 20px;
+}
+
+.legend-label {
+  text-anchor: middle;
+}
+
+.tooltip {
+  color: black;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  font: 12px sans-serif;
+  font-weight: bold;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.node {
+    fill: #ccc;
+    stroke: #fff;
+    stroke-width: 1px;
+}
+
+.link {
+    stroke: #777;
+    stroke-width: 2px;
+}
