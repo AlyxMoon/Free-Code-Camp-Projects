@@ -78,6 +78,11 @@ var projects = [
     title: 'D3 - Heat Map',
     link: 'data-viz-heatmap',
     image: 'img/previews/data-viz-heatmap.png'
+  },
+  {
+    title: 'D3 - Force Directed Graph',
+    'link': 'data-viz-force',
+    image: 'img/previews/data-viz-force.png'
   }
 ]
 
