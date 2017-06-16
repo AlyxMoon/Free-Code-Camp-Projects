@@ -1,27 +1,20 @@
 body {
   background-color: #1C2C35;
   color: #2B8CBE;
+}
+
+h1, p {
   text-align: center;
 }
 
 #container {
   background-color: #FFF;
   width: 1200px;
-  height: 800px;
+  height: 900px;
   margin: 20px auto;
   padding: 15px 0;
 }
 
-.tooltip {
-  color: black;
-  opacity: 0;
-  position: absolute;
-  z-index: 2;
-  text-align: center;
-  font: 12px sans-serif;
-  font-weight: bold;
-  background: lightsteelblue;
-  border: 0px;
-  border-radius: 5px;
-  pointer-events: none;
+.datamaps-hoverover {
+  transform: translate(200px, 10px); 
 }

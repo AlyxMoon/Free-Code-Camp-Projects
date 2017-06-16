@@ -81,8 +81,13 @@ var projects = [
   },
   {
     title: 'D3 - Force Directed Graph',
-    'link': 'data-viz-force',
+    link: 'data-viz-force',
     image: 'img/previews/data-viz-force.png'
+  },
+  {
+    title: 'D3 - Meteorite Map',
+    link: 'data-viz-map',
+    image: 'img/previews/data-viz-map.png'
   }
 ]
 
