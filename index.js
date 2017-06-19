@@ -88,6 +88,11 @@ var projects = [
     title: 'D3 - Meteorite Map',
     link: 'data-viz-map',
     image: 'img/previews/data-viz-map.png'
+  },
+  {
+    title: 'API - Timestamp Microservice',
+    link: 'api-timestamp',
+    image: 'img/previews/api-timestamp.png'
   }
 ]
 
