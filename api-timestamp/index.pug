@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  head
+    title="FCC - Timestamp Microservice"
+    link(rel="shortcut icon" type="image/x-icon" href="favicon.ico")
+    link(rel="stylesheet" href="style.css")
+  body
+    div#container
+      h1 FCC Project - Timestamp Microservice API
+      p To use the API, add a date or UNIX timestamp to the address bar, or into the form below
+      
+      form#convert
+      input(type="text" name="datetime" id="datetime" value="953078400")
+      button(type="button" onclick="submit()") Convert
+      button(type="button" onclick="submitRandom()") I'm Feeling Lucky
+      
+      h3 Example Input:
+      p 
+        a(href="/March%2015,%202000" target="_blank") March 15,2000
+      p 
+        a(href="/953078400" target="_blank") 953078400
+        
+      h3 Example Output:
+      p
+        code { "unix": 953078400, "natural": "March 15, 2000" }
+        
+    script(src="submit.js")
