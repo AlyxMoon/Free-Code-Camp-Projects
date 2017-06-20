@@ -1,7 +1,5 @@
-function submit (datetime) {
-  if (value === undefined) {
-    datetime = document.getElementById('datetime').value
-  }
+function submit () {
+  var datetime = document.getElementById('datetime').value
   window.location.href = 'http://freecodecamp.allistermoon.com/api-timestamp/' + datetime
 }
 
