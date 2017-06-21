@@ -93,6 +93,11 @@ var projects = [
     title: 'API - Timestamp Microservice',
     link: 'api-timestamp',
     image: 'img/previews/api-timestamp.png'
+  },
+  {
+    title: 'API - Request Header Parser',
+    link: 'api-header',
+    image: 'img/previews/api-header.png'
   }
 ]
 
