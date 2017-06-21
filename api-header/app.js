@@ -16,6 +16,11 @@ app.get('/api', function (req, res) {
   res.send(parseRequest(req))
 })
 
+app.get('/test', function (req, res) {
+  res.setHeader('content-type', 'application/json')
+  res.send(req.headers)
+})
+
 app.listen(port, function () {
   console.log(`FCC - Request Header Parser: Listening on port ${port}`)
 })
@@ -31,5 +36,5 @@ function parseRequest(req) {
   result.software = userAgents.slice(userAgents.indexOf('(') + 1, userAgents.indexOf(')')) // Get first relevant part
   result.queries = JSON.stringify(req.query)
 
-  return req.headers
+  return result
 }
