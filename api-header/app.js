@@ -24,8 +24,9 @@ function parseRequest(req) {
   const result = {}
   const langs = req.get('Accept-Language')
   const userAgents = req.get('User-Agent')
+  const proxyIP = req.get('X-Real-IP')
 
-  result.ipaddress = req.ip
+  result.ipaddress = proxyIP ? proxyIP : req.ip
   result.language = langs.slice(0, langs.indexOf(',')) // Just get first accepted language
   result.software = userAgents.slice(userAgents.indexOf('(') + 1, userAgents.indexOf(')')) // Get first relevant part
   result.queries = JSON.stringify(req.query)
