@@ -31,5 +31,5 @@ function parseRequest(req) {
   result.software = userAgents.slice(userAgents.indexOf('(') + 1, userAgents.indexOf(')')) // Get first relevant part
   result.queries = JSON.stringify(req.query)
 
-  return result
+  return req.headers
 }
