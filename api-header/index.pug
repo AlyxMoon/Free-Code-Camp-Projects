@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+  head
+    title="FCC - Request Header Parser Microservice"
+    link(rel="shortcut icon" type="image/x-icon" href="favicon.ico")
+    link(rel="stylesheet" href="style.css")
+  body
+    div#container
+      h1 FCC Project - Request Header Parser Microservice API
+      h5 Wow, that's a mouthful!
+      
+      p To use the API, append /api to the URL and go or click the button below
+      a(class="button" href="http://freecodecamp.allistermoon.com/api-header/api?you=awesome" target="_blank") Click Me!
+      
+      h3 Example Input:
+      p
+        code freecodecamp.allistermoon.com/api-header/api?you=awesome
+        
+      h3 Example Output:
+      p
+        pre
+          code 
+            | { 
+            |    ipaddress: "127.0.0.1", 
+            |    language: "en-US", 
+            |    software: "Windows NT 10.0; Win64; x64", 
+            |    queries: "{"you":"awesome"}" 
+            |  }
+        
+    script(src="analytics.js")
+      
+        
