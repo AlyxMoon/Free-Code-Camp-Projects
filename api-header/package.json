@@ -4,8 +4,7 @@
   "description": "A FreeCodeCamp project",
   "main": "app.js",
   "scripts": {
-    "build": ":",
-    "start": "node app.js"
+    "start": "pm2 restart api-timestamp -s"
   },
   "repository": {
     "type": "git",
