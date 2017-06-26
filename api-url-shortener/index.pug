@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  head
+    title="FCC - URL Shortener Microservice"
+    link(rel="shortcut icon" type="image/x-icon" href="favicon.ico")
+    link(rel="stylesheet" href="style.css")
+  body
+    div#container
+      h1 FCC Project - URL Shortener Microservice
+      
+      p To use the API, go to the url like in Example Input below, or click this button.
+      a(class="button" href="http://freecodecamp.allistermoon.com/api-url-shortener/add/https://www.google.com" target="_blank") Click Me!
+      
+      h3 Example Input:
+      p
+        code freecodecamp.allistermoon.com/api-url-shortener/add/https://www.google.com
+        
+      h3 Example Output:
+      p Disclaimer, the short_url below may not be what you get. Results may vary.
+      p
+        pre
+          code 
+            | { 
+            |    original_url: "https://www.google.com",
+            |    short_url: "http://freecodecamp.allistermoon.com/go/SzExx75S"
+            |  }
+            
+      h3 Usage:
+      p Go to the provided #[b short_url] and be redirected to #[b original_url].
+        
+    script(src="analytics.js")
+      
+        
