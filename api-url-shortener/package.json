@@ -18,6 +18,8 @@
   "homepage": "https://github.com/AlyxMoon/Free-Code-Camp-Projects#readme",
   "dependencies": {
     "express": "^4.15.3",
-    "pug": "^2.0.0-rc.2"
+    "mongodb": "^2.2.29",
+    "pug": "^2.0.0-rc.2",
+    "randomstring": "^1.1.5"
   }
 }

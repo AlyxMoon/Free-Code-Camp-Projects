@@ -1,31 +1,48 @@
 const path = require('path')
+const pug = require('pug')
 const express = require('express')
 const app = express()
 const port = 50022
 
-const pug = require('pug')
+const db = require(path.join(__dirname, 'db.js'))
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/', function (req, res) {
-  res.send(pug.renderFile(path.join(__dirname, '/index.pug')))
+app.get('/', (req, res) => {
+  res.send(pug.renderFile(path.join(__dirname, 'index.pug')))
 })
 
-app.get('/add/*', function (req, res) {
+app.get('/add/*', (req, res) => {
   console.log(`Attempting to add url: ${req.params[0]}`)
-  const reply = {
-    original_url: 'https://www.google.com',
-    short_url: 'http://freecodecamp.allistermoon.com/go/SzExx75S'
-  }
 
   res.setHeader('content-type', 'application/json')
-  res.send(reply)
+  db.add(req.params[0], function (err, reply) {
+    if (err) {
+      console.log('Error while adding url', err)
+      res.send({ original_url: '', short_url: '' })
+    } else {
+      res.send(reply)
+    }
+  })
 })
 
-app.get('/go', function (req, res) {
-  res.redirect('https://www.google.com')
+app.get('/go/*', (req, res) => {
+  db.get(req.params[0], function (err, reply) {
+    if (err) {
+      console.log('Error while getting url', err)
+      res.setHeader('content-type', 'application/json')
+      res.send({ result: 'Error while retrieving original url'})
+    } else {
+      if (reply.original_url === '') {
+        res.setHeader('content-type', 'application/json')
+        res.send(reply)
+      } else {
+        res.redirect(reply.original_url)
+      }
+    }
+  })
 })
 
-app.listen(port, function () {
+app.listen(port, () => {
   console.log(`FCC - URL Shortener Microservice: Listening on port ${port}`)
 })
