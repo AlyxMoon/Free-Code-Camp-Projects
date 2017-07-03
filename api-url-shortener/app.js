@@ -14,42 +14,46 @@ app.get('/', (req, res) => {
 
 app.get('/add/*', (req, res) => {
   console.log(`Attempting to add url: ${req.params[0]}`)
-
   res.setHeader('content-type', 'application/json')
-  db.add(req.params[0], function (err, reply) {
-    if (err) {
-      console.log('Error while adding url', err)
-      res.send({ original_url: '', short_url: '' })
-    } else {
-      res.send(reply)
-    }
+
+  db.add(req.params[0]).then(result => {
+    res.send(result)
+  }, err => {
+    res.send({ original_url: '', short_url: '', error: 'There was an error setting that url' })
   })
 })
 
 app.get('/go/*', (req, res) => {
-  db.get(req.params[0], function (err, reply) {
-    if (err) {
-      console.log('Error while getting url', err)
+  db.get(req.params[0]).then(result => {
+    if (result.original_url === '') {
       res.setHeader('content-type', 'application/json')
-      res.send({ result: 'Error while retrieving original url'})
+      res.send({ error: 'Error while retrieving original url'})
     } else {
-      if (reply.original_url === '') {
-        res.setHeader('content-type', 'application/json')
-        res.send(reply)
-      } else {
-        res.redirect(reply.original_url)
-      }
+      res.redirect(result.original_url)
     }
+  }, err => {
+    console.log('Error while getting url', err)
+    res.setHeader('content-type', 'application/json')
+    res.send({ error: 'Error while retrieving original url'})
   })
 })
 
-app.listen(port, () => {
+app.get('/all/', (req, res) => {
+  res.setHeader('content-type', 'application/json')
+  db.showAll().then(result => {
+    res.send(result)
+  }, () => {
+    res.send({ error: 'There was an error retrieving the data' })
+  })
+})
+
+const server = app.listen(port, () => {
   console.log(`FCC - URL Shortener Microservice: Listening on port ${port}`)
   db.init().then(() => {
     console.log('Initialized the database successfully')
   }, (reason) => {
     console.log(`Error initializing database: ${reason}`)
     console.log(`Shutting down the app`)
-    app.close()
+    setTimeout(server.close, 5000)
   })
 })
