@@ -3,9 +3,21 @@ const random = require('randomstring')
 
 const dbUrl = 'mongodb://localhost:27017/urlShortener'
 const collectionName = 'urls'
+const collectionOpts = { capped: true, size: 100 }
 const serverWebPath = 'http://freecodecamp.allistermoon.com/api-url-shortener/'
 
 module.exports = {
+  // Clear out any old settings and start fresh
+  init: () => {
+    return new Promise((resolve, reject) => {
+      MongoClient.connect(dbUrl).then(db => {
+        db.dropCollection(collectionName).then(() => {
+          db.createCollection(collectionName, collectionOpts).then(resolve, reject)
+        }, reject)
+      }, reject)
+    })
+  },
+
   add: (url, callback) => {
     if (typeof callback !== 'function') callback = () => {}
     let result = { original_url: url, short_url: ''}

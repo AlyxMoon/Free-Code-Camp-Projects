@@ -45,4 +45,11 @@ app.get('/go/*', (req, res) => {
 
 app.listen(port, () => {
   console.log(`FCC - URL Shortener Microservice: Listening on port ${port}`)
+  db.init().then(() => {
+    console.log('Initialized the database successfully')
+  }, (reason) => {
+    console.log(`Error initializing database: ${reason}`)
+    console.log(`Shutting down the app`)
+    app.close()
+  })
 })
