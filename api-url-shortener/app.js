@@ -19,7 +19,7 @@ app.get('/add/*', (req, res) => {
   db.add(req.params[0]).then(result => {
     res.send(result)
   }, err => {
-    res.send({ original_url: '', short_url: '', error: 'There was an error setting that url' })
+    res.send({ error: err })
   })
 })
 

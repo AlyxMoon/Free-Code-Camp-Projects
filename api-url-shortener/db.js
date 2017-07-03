@@ -1,5 +1,6 @@
 const MongoClient = require('mongodb').MongoClient
 const random = require('randomstring')
+const validUrl = require('valid-url')
 
 const dbUrl = 'mongodb://localhost:27017/urlShortener'
 const collectionName = 'urls'
@@ -19,6 +20,10 @@ module.exports = {
 
   add: url => {
     return new Promise((resolve, reject) => {
+      if (!validUrl.isUri(url)) {
+        reject('The URL provided was not recognized as valid.')
+      }
+
       let result = { original_url: url, short_url: ''}
       MongoClient.connect(dbUrl).then(db => {
         let collection = db.collection(collectionName)
