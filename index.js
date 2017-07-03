@@ -98,6 +98,11 @@ var projects = [
     title: 'API - Request Header Parser',
     link: 'api-header',
     image: 'img/previews/api-header.png'
+  },
+  {
+    title: 'API - URL shortener',
+    link: 'api-url-shortener',
+    image: 'img/previews/api-url-shortener.png'
   }
 ]
 
