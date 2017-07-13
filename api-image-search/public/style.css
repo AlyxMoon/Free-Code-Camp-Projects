@@ -1,0 +1,10 @@
+body {
+  background-color: #1C2C35;
+}
+
+#container {
+  background-color: #FFF;
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+}

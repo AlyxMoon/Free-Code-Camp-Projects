@@ -6,6 +6,9 @@ npm-debug.log*
 # Webpack builds
 dist
 
+# Environment File
+.env
+
 # Runtime data
 pids
 *.pid
