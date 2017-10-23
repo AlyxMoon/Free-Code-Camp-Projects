@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/AlyxMoon/Free-Code-Camp-Projects#readme",
   "dependencies": {
+    "dotenv": "^4.0.0",
     "express": "^4.15.3",
-    "pug": "^2.0.0-rc.2"
+    "pug": "^2.0.0-rc.2",
+    "request": "^2.81.0"
   }
 }
