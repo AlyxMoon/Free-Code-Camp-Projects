@@ -61,12 +61,15 @@ function getGoogle(query, props) {
 }
 
 function formatApiData(data) {
-  let result = {}
+  let results = {}
   try {
-    result.results = JSON.parse(data).items
+    results = JSON.parse(data).items
   } catch(err) {
     return { error: err }
   }
 
-  return result
+  // Cut out unnecessary parts of the results that I don't want.
+  return results.map(item => {
+    return (({title, link, snippet, pagemap}) => ({title, link, snippet, pagemap}))(item)
+  })
 }
