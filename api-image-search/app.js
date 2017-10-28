@@ -6,6 +6,11 @@ const port = 50023
 const pug = require('pug')
 const request = require('request')
 
+const db = require(path.join(__dirname, 'db.js'))
+db.init()
+
+const serverURL = 'http://freecodecamp.allistermoon/api-image-search'
+
 require('dotenv').config()
 
 // key = search property in my API, val = search property in Google API
@@ -18,21 +23,34 @@ const extraAllowedProps = {
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.send(pug.renderFile(path.join(__dirname, '/index.pug')))
 })
 
-app.get('/search/*', function (req, res) {
-  getGoogle(req.params[0], req.query).then(data => {
-    res.setHeader('content-type', 'application/json')
+app.get('/search/*', (req, res) => {
+  let searchQuery = req.params[0]
+  let searchProps = req.query
+  let fullUrl     = `${serverURL}${req.originalUrl}`
+
+  res.setHeader('content-type', 'application/json')
+  getGoogle(searchQuery, searchProps).then(data => {
+    db.add(searchQuery, searchProps, fullUrl)
     res.send(data)
   }, err => {
-    res.setHeader('content-type', 'application/json')
     res.send(err)
   })
 })
 
-app.listen(port, function () {
+app.get('/history', (req, res) => {
+  res.setHeader('content-type', 'application/json')
+  db.get().then(history => {
+    res.send(history)
+  }, err => {
+    res.send(err)
+  })
+})
+
+app.listen(port, () => {
   console.log(`FCC - Image Search Abstraction Layer: Listening on port ${port}`)
 })
 
