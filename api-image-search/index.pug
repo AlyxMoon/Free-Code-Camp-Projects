@@ -5,8 +5,147 @@ html(lang="en")
     link(rel="shortcut icon" type="image/x-icon" href="favicon.ico")
     link(rel="stylesheet" href="style.css")
   body
-    div#container
+    div.container
       h1 FCC Project - Image Search API
+      p To use the API, either use the REST API or the form at the bottom to see the results on the page
+      
+      h2 Using the REST API:
+      p This API returns a json formatted collection of images obtained through a search engine using #[a(href="https://developers.google.com/custom-search/") Google Custom Search API]. It was made to complete the #[a(href="https://www.freecodecamp.org/challenges/image-search-abstraction-layer") Image Search Abstraction Layer] challenge as part of the #[a(href="https://www.freecodecamp.org") Free Code Camp] course.
+      
+      h3 API URL:
+      p
+        cite http://freecodecamp.allistermoon/api-image-search/search/
+        
+      h3 Resource Information:
+      table
+        tbody
+          tr
+            td Response format
+            td JSON
+          tr
+            td Requires authentication?
+            td No
+          tr
+            td Rate limited?
+            td Yes
+          tr
+            td Requests / day (combined from all users)
+            td 100
+          tr
+            td Maximum requests / query
+            td 100
+          
+      h3 Parameters:
+      table
+        thead
+          tr
+            th Name
+            th Required
+            th Description
+            th Default Value
+            th Example
+        tbody
+          tr
+            td offset
+            td optional
+            td The index of the first result to return (note: combined with count, the value can not give a search result who index would be greater than 100. For example, offset=101 and count=1 would request the 101st search result, which would be invalid)
+            td
+            td 1
+          tr
+            td count
+            td optional
+            td Number of search results to return (note: this can not be higher than 100. If combined with offset, the values can not give a search result whose index would be greater than 100. For example, offset=60 and count=2 would request the 120th search result, which would be invalid)
+            td
+            td 1
+          tr
+            td exactTerms
+            td optional
+            td A phrase that the search results must contain
+            td
+            td cute fluffy
+          tr
+            td excludeTerms
+            td optional
+            td a word or phrase that should not appear in any of the search results
+            td
+            td dog
+    
+      h3 Example Search: 
+      p
+        cite http://localhost:50023/search/cats?offset=1&count=1&exactTerms=cute%20fluffy&excludeTerms=dog
+        
+      h3 Example Response:
+      p
+        pre
+          code
+            | [
+            |   {
+            |     title: "cute fluffy cat breeds - Album on Imgur",
+            |     link: "https://imgur.com/gallery/QjkyA",
+            |     snippet: "Jul 31, 2016 ... Post with 1 votes and 73 views. Shared by zainikhan. cute fluffy cat breeds.",
+            |     pagemap: {
+            |       cse_thumbnail: [
+            |         {
+            |           width: "310",
+            |           height: "163",
+            |           src:  "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSPIxYHf8epj6aTXyRl8NkIYNoaHFW07EdR96IxW4n_XP0P_pmD_RgBCUPX"
+            |         }
+            |       ],
+            |       imageobject: [
+            |         {
+            |           contenturl: "https://i.imgur.com/FU7PBNi.jpg",
+            |           datepublished: "2016-07-31"
+            |         }
+            |       ],
+            |       person: [
+            |         {
+            |           url: "https://imgur.com/user/zainikhan"
+            |         }
+            |       ],
+            |       metatags: [
+            |         {
+            |           viewport: "width=1138",
+            |           copyright: "Copyright 2017 Imgur, Inc.",
+            |           msapplication-tilecolor: "#2cd63c",
+            |           msapplication-tileimage: "//s.imgur.com/images/favicon-144.png",
+            |           og:url: "https://imgur.com/gallery/QjkyA",
+            |           p:domain_verify: "a1e7abe8af908cc6dfaf935dd9a20384",
+            |           og:site_name: "Imgur",
+            |           fb:admins: "12331492",
+            |           fb:app_id: "127621437303857",
+            |           al:android:url: "imgur://imgur.com/gallery/QjkyA?from=fbreferral",
+            |           al:android:app_name: "Imgur",
+            |           al:android:package: "com.imgur.mobile",
+            |           al:ios:url: "imgur://imgur.com/gallery/QjkyA?from=fbreferral",
+            |           al:ios:app_store_id: "639881495",
+            |           al:ios:app_name: "Imgur",
+            |           al:web:url: "https://imgur.com/gallery/QjkyA",
+            |           twitter:site: "@imgur",
+            |           twitter:domain: "imgur.com",
+            |           twitter:app:id:googleplay: "com.imgur.mobile",
+            |           twitter:title: "cute fluffy cat breeds",
+            |           og:title: "cute fluffy cat breeds",
+            |           author: "Imgur",
+            |           article:author: "Imgur",
+            |           article:publisher: "https://www.facebook.com/imgur",
+            |           og:type: "article",
+            |           og:image: "https://i.imgur.com/FU7PBNi.jpg?fb",
+            |           og:image:width: "600",
+            |           og:image:height: "315",
+            |           twitter:card: "summary_large_image",
+            |           twitter:image: "https://i.imgur.com/FU7PBNih.jpg",
+            |           og:description: "Imgur: The most awesome images on the Internet.",
+            |           twitter:description: "Imgur: The most awesome images on the Internet."
+            |         }
+            |       ],
+            |       cse_image: [
+            |         {
+            |           src: "https://i.imgur.com/FU7PBNi.jpg?fb"
+            |         }
+            |       ]
+            |     }
+            |   }
+            | ]
         
     script(src="analytics.js")
       

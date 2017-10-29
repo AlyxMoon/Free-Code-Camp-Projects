@@ -2,9 +2,9 @@ body {
   background-color: #1C2C35;
 }
 
-#container {
+.container {
   background-color: #FFF;
   width: 80%;
-  margin: auto;
+  margin: 10px auto;
   padding: 10px;
 }
