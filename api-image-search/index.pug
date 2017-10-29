@@ -146,6 +146,31 @@ html(lang="en")
             |     }
             |   }
             | ]
+            
+            
+      div.container
+      h1 The Search Form
+      form#api-form
+        p
+          label(for="query") The search query
+          input(type="text" name="query" placeholder="" required)
+        p
+          label(for="offset") offset
+          input(type="number" name="offset" min="0" placeholder="")
+        p
+          label(for="count") count
+          input(type="number" name="count" min="1" placeholder="")
+        p
+          label(for="exactTerms") exactTerms
+          input(type="text" name="exactTerms" placeholder="")
+        p
+          label(for="excludeTerms") excludeTerms
+          input(type="text" name="excludeTerms" placeholder="")
+        p
+          input(type="submit")
+      
+      div#api-results
         
+    script(src="index.js")
     script(src="analytics.js")
       
