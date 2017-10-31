@@ -4,7 +4,7 @@
   "description": "A FreeCodeCamp project",
   "main": "app.js",
   "scripts": {
-    "start": "pm2 restart api-timestamp -s"
+    "start": "pm2 restart api-image-search -s"
   },
   "repository": {
     "type": "git",
