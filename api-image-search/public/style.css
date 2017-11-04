@@ -8,3 +8,11 @@ body {
   margin: 10px auto;
   padding: 10px;
 }
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}

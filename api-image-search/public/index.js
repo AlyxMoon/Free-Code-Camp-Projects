@@ -7,6 +7,24 @@ window.onload = function() {
   } else {
     form.addEventListener('submit', handleForm)
   }
+
+  var navButtons = document.getElementsByClassName('nav-button')
+  for(var i = 0; i < navButtons.length; i++) {
+    if (navButtons[i].attachEvent) {
+      navButtons[i].attachEvent('click', handleNavs)
+    } else {
+      navButtons[i].addEventListener('click', handleNavs)
+    }
+  }
+}
+
+function fillAjaxData() {
+  if (httpRequest.readyState === XMLHttpRequest.DONE) {
+    if (httpRequest.status === 200) {
+      var prettyText = JSON.stringify(JSON.parse(httpRequest.responseText), null, 2)
+      document.getElementById('api-results').innerHTML = '<pre><code>' + prettyText + '</code></pre>'
+    }
+  }
 }
 
 function handleForm(event) {
@@ -33,12 +51,20 @@ function handleForm(event) {
   return false
 }
 
-function fillAjaxData() {
-  if (httpRequest.readyState === XMLHttpRequest.DONE) {
-    if (httpRequest.status === 200) {
-      console.log(httpRequest.responseText)
-      var prettyText = JSON.stringify(JSON.parse(httpRequest.responseText), null, 2)
-      document.getElementById('api-results').innerHTML = '<pre><code>' + prettyText + '</code></pre>'
-    }
+function handleNavs(event) {
+  event.preventDefault()
+
+  var navs = document.getElementsByClassName('nav-item')
+  for (var i = 0; i < navs.length; i++) {
+    navs[i].classList.remove('active')
   }
+  event.target.parentElement.classList.add('active')
+
+  var tabs = document.getElementsByClassName('tab')
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].classList.remove('active')
+  }
+  document.getElementById(event.target.getAttribute('href').substr(1)).classList.add('active')
+
+  return false
 }
