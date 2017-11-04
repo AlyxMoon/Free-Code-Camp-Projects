@@ -9,7 +9,7 @@ const request = require('request')
 const db = require(path.join(__dirname, 'db.js'))
 db.init()
 
-const serverURL = 'http://freecodecamp.allistermoon/api-image-search'
+const serverURL = 'http://freecodecamp.allistermoon.com/api-image-search'
 
 require('dotenv').config()
 
