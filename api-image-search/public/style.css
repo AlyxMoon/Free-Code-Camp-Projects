@@ -2,6 +2,33 @@ body {
   background-color: #1C2C35;
 }
 
+code {
+  white-space: pre-wrap;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+}
+
+table tbody th {
+  text-align: right;
+}
+
+.code-container {
+  max-width: 100%;
+  max-height: 400px;
+
+  overflow-x: auto;
+  overflow-y: auto;
+
+  background: #EFF0F1;
+}
+
 .container {
   background-color: #FFF;
   width: 80%;
@@ -16,3 +43,25 @@ body {
 .tab.active {
   display: block;
 }
+
+form {
+  width: 50%;
+}
+
+form label {
+  display: inline-block;
+  width: 50%;
+  padding-right: 5px;
+
+  text-align: right;
+}
+
+.required {
+  font-weight: bold;
+  color: red;
+}
+
+form input {
+  width: 45%;
+}
+

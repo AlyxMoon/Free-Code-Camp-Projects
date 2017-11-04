@@ -21,26 +21,26 @@ html(lang="en")
         p This API returns a json formatted collection of images obtained through a search engine using #[a(href="https://developers.google.com/custom-search/") Google Custom Search API]. It was made to complete the #[a(href="https://www.freecodecamp.org/challenges/image-search-abstraction-layer") Image Search Abstraction Layer] challenge as part of the #[a(href="https://www.freecodecamp.org") Free Code Camp] course.
         
         h3 API URL:
-        p
+        p.code-container
           cite http://freecodecamp.allistermoon.com/api-image-search/search/
           
         h3 Resource Information:
         table
           tbody
             tr
-              td Response format
+              th Response format
               td JSON
             tr
-              td Requires authentication?
+              th Requires authentication?
               td No
             tr
-              td Rate limited?
+              th Rate limited?
               td Yes
             tr
-              td Requests / day (combined from all users)
+              th Requests / day (combined from all users)
               td 100
             tr
-              td Maximum requests / query
+              th Maximum requests / query
               td 100
             
         h3 Parameters:
@@ -79,114 +79,112 @@ html(lang="en")
               td dog
       
         h3 Example Search: 
-        p
+        p.code-container
           cite http://localhost:50023/search/cats?offset=1&count=1&exactTerms=cute%20fluffy&excludeTerms=dog
           
         h3 Example Response:
-        p
-          pre
-            code
-              | [
-              |   {
-              |     title: "cute fluffy cat breeds - Album on Imgur",
-              |     link: "https://imgur.com/gallery/QjkyA",
-              |     snippet: "Jul 31, 2016 ... Post with 1 votes and 73 views. Shared by zainikhan. cute fluffy cat breeds.",
-              |     pagemap: {
-              |       cse_thumbnail: [
-              |         {
-              |           width: "310",
-              |           height: "163",
-              |           src:  "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSPIxYHf8epj6aTXyRl8NkIYNoaHFW07EdR96IxW4n_XP0P_pmD_RgBCUPX"
-              |         }
-              |       ],
-              |       imageobject: [
-              |         {
-              |           contenturl: "https://i.imgur.com/FU7PBNi.jpg",
-              |           datepublished: "2016-07-31"
-              |         }
-              |       ],
-              |       person: [
-              |         {
-              |           url: "https://imgur.com/user/zainikhan"
-              |         }
-              |       ],
-              |       metatags: [
-              |         {
-              |           viewport: "width=1138",
-              |           copyright: "Copyright 2017 Imgur, Inc.",
-              |           msapplication-tilecolor: "#2cd63c",
-              |           msapplication-tileimage: "//s.imgur.com/images/favicon-144.png",
-              |           og:url: "https://imgur.com/gallery/QjkyA",
-              |           p:domain_verify: "a1e7abe8af908cc6dfaf935dd9a20384",
-              |           og:site_name: "Imgur",
-              |           fb:admins: "12331492",
-              |           fb:app_id: "127621437303857",
-              |           al:android:url: "imgur://imgur.com/gallery/QjkyA?from=fbreferral",
-              |           al:android:app_name: "Imgur",
-              |           al:android:package: "com.imgur.mobile",
-              |           al:ios:url: "imgur://imgur.com/gallery/QjkyA?from=fbreferral",
-              |           al:ios:app_store_id: "639881495",
-              |           al:ios:app_name: "Imgur",
-              |           al:web:url: "https://imgur.com/gallery/QjkyA",
-              |           twitter:site: "@imgur",
-              |           twitter:domain: "imgur.com",
-              |           twitter:app:id:googleplay: "com.imgur.mobile",
-              |           twitter:title: "cute fluffy cat breeds",
-              |           og:title: "cute fluffy cat breeds",
-              |           author: "Imgur",
-              |           article:author: "Imgur",
-              |           article:publisher: "https://www.facebook.com/imgur",
-              |           og:type: "article",
-              |           og:image: "https://i.imgur.com/FU7PBNi.jpg?fb",
-              |           og:image:width: "600",
-              |           og:image:height: "315",
-              |           twitter:card: "summary_large_image",
-              |           twitter:image: "https://i.imgur.com/FU7PBNih.jpg",
-              |           og:description: "Imgur: The most awesome images on the Internet.",
-              |           twitter:description: "Imgur: The most awesome images on the Internet."
-              |         }
-              |       ],
-              |       cse_image: [
-              |         {
-              |           src: "https://i.imgur.com/FU7PBNi.jpg?fb"
-              |         }
-              |       ]
-              |     }
-              |   }
-              | ]
+        p.code-container
+          code
+            | [
+            |   {
+            |     title: "cute fluffy cat breeds - Album on Imgur",
+            |     link: "https://imgur.com/gallery/QjkyA",
+            |     snippet: "Jul 31, 2016 ... Post with 1 votes and 73 views. Shared by zainikhan. cute fluffy cat breeds.",
+            |     pagemap: {
+            |       cse_thumbnail: [
+            |         {
+            |           width: "310",
+            |           height: "163",
+            |           src:  "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSPIxYHf8epj6aTXyRl8NkIYNoaHFW07EdR96IxW4n_XP0P_pmD_RgBCUPX"
+            |         }
+            |       ],
+            |       imageobject: [
+            |         {
+            |           contenturl: "https://i.imgur.com/FU7PBNi.jpg",
+            |           datepublished: "2016-07-31"
+            |         }
+            |       ],
+            |       person: [
+            |         {
+            |           url: "https://imgur.com/user/zainikhan"
+            |         }
+            |       ],
+            |       metatags: [
+            |         {
+            |           viewport: "width=1138",
+            |           copyright: "Copyright 2017 Imgur, Inc.",
+            |           msapplication-tilecolor: "#2cd63c",
+            |           msapplication-tileimage: "//s.imgur.com/images/favicon-144.png",
+            |           og:url: "https://imgur.com/gallery/QjkyA",
+            |           p:domain_verify: "a1e7abe8af908cc6dfaf935dd9a20384",
+            |           og:site_name: "Imgur",
+            |           fb:admins: "12331492",
+            |           fb:app_id: "127621437303857",
+            |           al:android:url: "imgur://imgur.com/gallery/QjkyA?from=fbreferral",
+            |           al:android:app_name: "Imgur",
+            |           al:android:package: "com.imgur.mobile",
+            |           al:ios:url: "imgur://imgur.com/gallery/QjkyA?from=fbreferral",
+            |           al:ios:app_store_id: "639881495",
+            |           al:ios:app_name: "Imgur",
+            |           al:web:url: "https://imgur.com/gallery/QjkyA",
+            |           twitter:site: "@imgur",
+            |           twitter:domain: "imgur.com",
+            |           twitter:app:id:googleplay: "com.imgur.mobile",
+            |           twitter:title: "cute fluffy cat breeds",
+            |           og:title: "cute fluffy cat breeds",
+            |           author: "Imgur",
+            |           article:author: "Imgur",
+            |           article:publisher: "https://www.facebook.com/imgur",
+            |           og:type: "article",
+            |           og:image: "https://i.imgur.com/FU7PBNi.jpg?fb",
+            |           og:image:width: "600",
+            |           og:image:height: "315",
+            |           twitter:card: "summary_large_image",
+            |           twitter:image: "https://i.imgur.com/FU7PBNih.jpg",
+            |           og:description: "Imgur: The most awesome images on the Internet.",
+            |           twitter:description: "Imgur: The most awesome images on the Internet."
+            |         }
+            |       ],
+            |       cse_image: [
+            |         {
+            |           src: "https://i.imgur.com/FU7PBNi.jpg?fb"
+            |         }
+            |       ]
+            |     }
+            |   }
+            | ]
             
       div.tab#history(role="tabpanel")
         h3 Using the history API:
         p This API returns a json formatted collection of searches done on the search api.
         
         h3 API URL:
-        p
+        p.code-container
           cite http://freecodecamp.allistermoon.com/api-image-search/history/
           
         h3 Resource Information:
         table
           tbody
             tr
-              td Response format
+              th Response format
               td JSON
             tr
-              td Requires authentication?
+              th Requires authentication?
               td No
             tr
-              td Rate limited?
+              th Rate limited?
               td No
                 
         h3 Parameters:
         p None
         
         h3 Example Search: 
-        p
+        p.code-container
           cite http://localhost:50023/history/
           
         h3 Example Response:
-        p
-          pre
-            code
+        p.code-container
+          code
             |  [
             |    {
             |      _id: "59f53480f966453e58afd30c",
@@ -248,11 +246,11 @@ html(lang="en")
             |    }
             |  ]
             
-      div.container
+    div.container
       h1 API Example - Search
       form.api-form(data-endpoint="search")
         p
-          label(for="query") The search query
+          label.required(for="query") The search query *
           input(type="text" name="query" placeholder="" required)
         p
           label(for="offset") offset
@@ -267,6 +265,7 @@ html(lang="en")
           label(for="excludeTerms") excludeTerms
           input(type="text" name="excludeTerms" placeholder="")
         p
+          label #[span.required bold red *] = required
           input(type="submit" value="Search")
       
       h1 API Example - History
@@ -274,7 +273,7 @@ html(lang="en")
         p
           input(type="submit" value="Get History")
       
-      div#api-results
+      div#api-results.code-container
         
     script(src="index.js")
     script(src="analytics.js")
