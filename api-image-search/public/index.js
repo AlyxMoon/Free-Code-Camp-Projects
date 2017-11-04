@@ -32,7 +32,7 @@ function fillAjaxData() {
 function handleForm(event) {
   event.preventDefault()
 
-  var serverURL = 'http://localhost:50023/'
+  var serverURL = 'http://freecodecamp.allistermoon.com/api-image-search/'
 
   httpRequest = new XMLHttpRequest()
   httpRequest.onreadystatechange = fillAjaxData
@@ -58,7 +58,7 @@ function handleForm(event) {
   }
 
   httpRequest.send()
-  
+
   return false
 }
 
