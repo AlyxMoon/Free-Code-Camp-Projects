@@ -9,9 +9,6 @@ html(lang="en")
       h1 FCC Project - Image Search API
       p To use the API, either use the REST API or the form at the bottom to see the results on the page
       
-      h2 Using the REST API:
-      p This API returns a json formatted collection of images obtained through a search engine using #[a(href="https://developers.google.com/custom-search/") Google Custom Search API]. It was made to complete the #[a(href="https://www.freecodecamp.org/challenges/image-search-abstraction-layer") Image Search Abstraction Layer] challenge as part of the #[a(href="https://www.freecodecamp.org") Free Code Camp] course.
-      
       h2 API Endpoints:
       ul.nav(role="tablist")
         li.nav-item.active(role="presentation")
@@ -20,9 +17,12 @@ html(lang="en")
           a.nav-button(href="#history" role="button" aria-controls="history") History
       
       div.tab.active#search(role="tabpanel")
+        h3 Using the search API:
+        p This API returns a json formatted collection of images obtained through a search engine using #[a(href="https://developers.google.com/custom-search/") Google Custom Search API]. It was made to complete the #[a(href="https://www.freecodecamp.org/challenges/image-search-abstraction-layer") Image Search Abstraction Layer] challenge as part of the #[a(href="https://www.freecodecamp.org") Free Code Camp] course.
+        
         h3 API URL:
         p
-          cite http://freecodecamp.allistermoon/api-image-search/search/
+          cite http://freecodecamp.allistermoon.com/api-image-search/search/
           
         h3 Resource Information:
         table
@@ -156,9 +156,97 @@ html(lang="en")
               | ]
             
       div.tab#history(role="tabpanel")
+        h3 Using the history API:
+        p This API returns a json formatted collection of searches done on the search api.
+        
         h3 API URL:
         p
-          cite http://freecodecamp.allistermoon/api-image-search/history/
+          cite http://freecodecamp.allistermoon.com/api-image-search/history/
+          
+        h3 Resource Information:
+        table
+          tbody
+            tr
+              td Response format
+              td JSON
+            tr
+              td Requires authentication?
+              td No
+            tr
+              td Rate limited?
+              td No
+                
+        h3 Parameters:
+        p None
+        
+        h3 Example Search: 
+        p
+          cite http://localhost:50023/history/
+          
+        h3 Example Response:
+        p
+          pre
+            code
+            |  [
+            |    {
+            |      _id: "59f53480f966453e58afd30c",
+            |      query: "Awesome Cats",
+            |      props: {
+            |      count: "5",
+            |      offset: "2"
+            |      },
+            |      fullUrl: "http://freecodecamp.allistermoon.com/api-image-search/search/Awesome%20Cats?count=5&offset=2",
+            |      timestamp: {
+            |        unix: 1509241984755,
+            |        natural: "2017-10-29 1:53:4 UTC"
+            |      }
+            |    },
+            |    {
+            |      _id: "59f53ca5f966453e58afd30d",
+            |      query: "cats",
+            |      props: {
+            |        offset: "2",
+            |        count: "5",
+            |        exactTerms: "cute fluffy",
+            |        excludeTerms: "dog"
+            |      },
+            |      fullUrl: "http://freecodecamp.allistermoon.com/api-image-search/search/cats?offset=2&count=5&exactTerms=cute%20fluffy&excludeTerms=dog",
+            |      timestamp: {
+            |        unix: 1509244069135,
+            |        natural: "2017-10-29 2:27:49 UTC"
+            |      }
+            |    },
+            |    {
+            |      _id: "59f53cc7f966453e58afd30e",
+            |      query: "cats",
+            |      props: {
+            |        offset: "1",
+            |        count: "1",
+            |        exactTerms: "cute fluffy",
+            |        excludeTerms: "dog"
+            |      },
+            |      fullUrl: "http://freecodecamp.allistermoon.com/api-image-search/search/cats?offset=1&count=1&exactTerms=cute%20fluffy&excludeTerms=dog",
+            |      timestamp: {
+            |        unix: 1509244103604,
+            |        natural: "2017-10-29 2:28:23 UTC"
+            |      }
+            |    },
+            |    {
+            |      _id: "59f61a3a6bb2f32a08843c4e",
+            |      query: "cats",
+            |      props: {
+            |        offset: "1",
+            |        count: "2",
+            |        exactTerms: "",
+            |        excludeTerms: ""
+            |      },
+            |      fullUrl: "http://freecodecamp.allistermoon.com/api-image-search/search/cats?offset=1&count=2&exactTerms=&excludeTerms=",
+            |      timestamp: {
+            |        unix: 1509300794328,
+            |        natural: "2017-10-29 18:13:14 UTC"
+            |      }
+            |    }
+            |  ]
             
       div.container
       h1 The Search Form
