@@ -1,11 +1,13 @@
 var httpRequest
 
 window.onload = function() {
-  var form = document.getElementById('api-form')
-  if (form.attachEvent) {
-    form.attachEvent('submit', handleForm)
-  } else {
-    form.addEventListener('submit', handleForm)
+  var forms = document.getElementsByClassName('api-form')
+  for(var i = 0; i < forms.length; i++) {
+    if (forms[i].attachEvent) {
+      forms[i].attachEvent('submit', handleForm)
+    } else {
+      forms[i].addEventListener('submit', handleForm)
+    }
   }
 
   var navButtons = document.getElementsByClassName('nav-button')
@@ -30,24 +32,33 @@ function fillAjaxData() {
 function handleForm(event) {
   event.preventDefault()
 
-  var inputs = event.target.elements
-  var apiURL = 'http://freecodecamp.allistermoon.com/api-image-search/search/'
-  var query = inputs.query.value
-  var params = {
-    offset: inputs.offset.value,
-    count: inputs.count.value,
-    exactTerms: inputs.exactTerms.value,
-    excludeTerms: inputs.excludeTerms.value
-  }
-  var formattedParams = Object.keys(params)
-    .map(k => k + '=' + encodeURIComponent(params[k]))
-    .join('&')
+  var serverURL = 'http://localhost:50023/'
 
   httpRequest = new XMLHttpRequest()
   httpRequest.onreadystatechange = fillAjaxData
-  httpRequest.open('GET', apiURL + query + '?' + formattedParams)
-  httpRequest.send()
 
+  if (event.target.dataset.endpoint === 'search') {
+    var inputs = event.target.elements
+    var apiURL = serverURL + 'search/'
+    var query = inputs.query.value
+    var params = {
+      offset: inputs.offset.value,
+      count: inputs.count.value,
+      exactTerms: inputs.exactTerms.value,
+      excludeTerms: inputs.excludeTerms.value
+    }
+    var formattedParams = Object.keys(params)
+      .map(k => k + '=' + encodeURIComponent(params[k]))
+      .join('&')
+
+    httpRequest.open('GET', apiURL + query + '?' + formattedParams)
+  }
+  if (event.target.dataset.endpoint === 'history') {
+    httpRequest.open('GET', serverURL + 'history/')
+  }
+
+  httpRequest.send()
+  
   return false
 }
 

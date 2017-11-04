@@ -249,8 +249,8 @@ html(lang="en")
             |  ]
             
       div.container
-      h1 The Search Form
-      form#api-form
+      h1 API Example - Search
+      form.api-form(data-endpoint="search")
         p
           label(for="query") The search query
           input(type="text" name="query" placeholder="" required)
@@ -267,7 +267,12 @@ html(lang="en")
           label(for="excludeTerms") excludeTerms
           input(type="text" name="excludeTerms" placeholder="")
         p
-          input(type="submit")
+          input(type="submit" value="Search")
+      
+      h1 API Example - History
+      form.api-form(data-endpoint="history")
+        p
+          input(type="submit" value="Get History")
       
       div#api-results
         
