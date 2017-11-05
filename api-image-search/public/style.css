@@ -1,11 +1,17 @@
+/* Table of Contents */
+/* 1) Main Structure Elements */
+/* 2) Secondary Structure Elements */
+/* 3) Navigation Elements */
+/* 4) Form Elements */
+/* 5) Text/Color and Misc. */
+
+
+/* 1) Main Structure Elements */
 body {
   background-color: #1C2C35;
 }
 
-code {
-  white-space: pre-wrap;
-}
-
+/* 2) Secondary Structure Elements */
 table {
   border-collapse: collapse;
 }
@@ -17,6 +23,10 @@ td, th {
 
 table tbody th {
   text-align: right;
+}
+
+code {
+  white-space: pre-wrap;
 }
 
 .code-container {
@@ -36,6 +46,37 @@ table tbody th {
   padding: 10px;
 }
 
+/* 3) Navigation Elements */
+.nav {
+  padding: 0 10px;
+  margin: 0 -10px;
+  border-bottom: 1px solid #DDD;
+
+  list-style-type: none;
+}
+
+.nav-item {
+  display: inline-block;
+  min-width: 50px;
+  height: 20px;
+  padding: 5px;
+  margin: 0 3px;
+
+  border: 2px solid #DDD;
+  border-bottom-width: 0;
+  border-radius: 20% 20% 0 0;
+
+  text-align: center;
+}
+
+.nav-item.active {
+  background-color: #DDD;
+}
+
+.nav-button {
+  text-decoration: none;
+}
+
 .tab {
   display: none;
 }
@@ -43,6 +84,8 @@ table tbody th {
 .tab.active {
   display: block;
 }
+
+/* 4) Form Elements */
 
 form {
   width: 50%;
@@ -56,12 +99,17 @@ form label {
   text-align: right;
 }
 
+form input {
+  width: 45%;
+}
+
 .required {
   font-weight: bold;
   color: red;
 }
 
-form input {
-  width: 45%;
-}
+/* 5) Text/Color and Misc. */
 
+a {
+  color: #337AB7;
+}
