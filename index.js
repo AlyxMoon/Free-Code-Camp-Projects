@@ -103,6 +103,11 @@ var projects = [
     title: 'API - URL shortener',
     link: 'api-url-shortener',
     image: 'img/previews/api-url-shortener.png'
+  },
+  {
+    title: 'API - Image Search Abstraction Layer',
+    link: 'api-image-search',
+    image: 'img/previews/api-image-search.png'
   }
 ]
 
