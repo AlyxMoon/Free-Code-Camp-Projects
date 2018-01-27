@@ -1,0 +1,23 @@
+{
+  "name": "api-file-metadata",
+  "version": "1.0.0",
+  "description": "A FreeCodeCamp project",
+  "main": "app.js",
+  "scripts": {
+    "start": "pm2 restart api-file-metadata -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlyxMoon/Free-Code-Camp-Projects.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlyxMoon/Free-Code-Camp-Projects/issues"
+  },
+  "homepage": "https://github.com/AlyxMoon/Free-Code-Camp-Projects#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "pug": "^2.0.0-rc.4"
+  }
+}
