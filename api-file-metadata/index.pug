@@ -3,8 +3,16 @@ html(lang="en")
     title="FCC - File Metadata Microservice"
     link(rel="shortcut icon" type="image/x-icon" href="favicon.ico")
   body
-    p Hello world
+    h4 Output Information Via API:
+    p Use this form to select files and get a reply via JSON API
+    form
+      input(type="file" name="file" multiple)
+      input(type="submit")
     
-    
+    h4 Output Information Live:
+    p Use this form to select files and see info immediately
+    input(type="file" id="live-file-reader" name="file-reader" multiple)
+    output(id="file-list")
+      
     script(src="analytics.js")
     script(src="index.js")
