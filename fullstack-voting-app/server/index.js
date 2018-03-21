@@ -5,7 +5,7 @@ const db = require(path.join(__dirname, 'db'))
 db.init().then(() => {
   console.log('database stuff successful')
 }).catch(err => {
-  console.log('database stuff failed')
+  console.log('database stuff failed', err)
 })
 
 const app = express()

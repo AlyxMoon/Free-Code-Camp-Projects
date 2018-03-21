@@ -7,7 +7,6 @@ const optsPolls = { capped: true, size: 1000000, max: 255 }
 
 module.exports = {
   init: () => {
-
     return new Promise((resolve, reject) => {
       let db
       let client

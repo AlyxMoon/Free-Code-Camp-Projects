@@ -1,13 +1,12 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div id="poll">
+    <h1>Hello World</h1>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'App'
+  name: 'Poll'
 }
 </script>
 

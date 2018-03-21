@@ -1,39 +1,43 @@
 ### Roadmap
 
-- Plan out initial framework
-- Get required libraries
-  - Node / Express / Vue
-  - MongoDB
-  - Authentication stuff
-  - data display thingy
-- Set up MongoDB
-- Set up authentication
-  - Twitter, Google, Github, Email
-- Set up frontend
-  - Persistent navbar
-    - link to create a poll
-    - link to login/signup page
-  - View: Individual poll
-    - options
-    - results so far
-    - sharing link
-  - View: Listing of polls
-    - polls
-    - link to each poll
-  - View: Login/Signup page
+- [x] Plan out initial framework
+- [ ] Get required libraries
+  - [x] Node / Express / Vue
+  - [x] MongoDB
+  - [ ] Authentication stuff
+  - [ ] data display thingy
+- [x] Set up MongoDB
+- [ ] Set up authentication
+  - [ ] Twitter, Google, Github, Email
+- [ ] Set up frontend
+  - [ ] Styling (maybe pull in a library) - Pure.css
+  - [ ] Persistent navbar
+    - [ ] link to create a poll
+    - [ ] link to login/signup page
+  - [ ] View: Individual poll
+    - [ ] options
+    - [ ] results so far
+    - [ ] sharing link
+  - [ ] View: Listing of polls
+    - [ ] polls
+    - [ ] link to each poll
+    - [ ] creator
+    - [ ] finished
+  - [ ] View: Login/Signup page
     -
-- Set up backend
-- Plan out data structures
-  - polls
-  - users
+- [ ] Set up backend
+- [ ] Plan out data structures
+  - [ ] polls
+  - [ ] users
 
 
 ### Data
 
 poll {
+  name        STRING
   creator       STRING
-  created-at    DATE
-  finish-at     DATE
+  createdAt    DATE
+  finishAt     DATE
   finished      BOOLEAN
   options       ARRAY
     [
