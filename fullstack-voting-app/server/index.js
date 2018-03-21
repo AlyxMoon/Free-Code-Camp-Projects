@@ -1,6 +1,13 @@
 const path = require('path')
 const express = require('express')
 
+const db = require(path.join(__dirname, 'db'))
+db.init().then(() => {
+  console.log('database stuff successful')
+}).catch(err => {
+  console.log('database stuff failed')
+})
+
 const app = express()
 const port = 50031
 
