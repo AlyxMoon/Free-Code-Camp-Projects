@@ -8,12 +8,12 @@
   - [ ] data display thingy
 - [x] Set up MongoDB
 - [ ] Set up authentication
+  - [ ] passport.js?
   - [ ] Twitter, Google, Github, Email
 - [ ] Set up frontend
-  - [ ] Styling (maybe pull in a library) - Pure.css
   - [ ] Persistent navbar
-    - [ ] link to create a poll
-    - [ ] link to login/signup page
+    - [x] link to create a poll
+    - [x] link to login/signup page
   - [ ] View: Individual poll
     - [ ] options
     - [ ] results so far

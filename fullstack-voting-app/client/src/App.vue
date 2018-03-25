@@ -1,13 +1,18 @@
 <template>
   <div id="app">
+    <component-navbar></component-navbar>
     <router-view/>
   </div>
 </template>
 
 <script>
+import Navbar from '@/components/Navbar'
 
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'component-navbar': Navbar
+  }
 }
 </script>
 
@@ -84,6 +89,21 @@ span[class^="voting-"] {
 }
 .voting-finished {
   background-color: #C82333;
+}
+
+.icon {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
+
+.icon-delete {
+  color: red;
+  cursor: pointer;
+
+  &:before {
+    content: 'X';
+  }
 }
 
 </style>
