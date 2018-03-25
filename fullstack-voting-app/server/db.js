@@ -32,5 +32,21 @@ module.exports = {
       client.close()
       return doc.ops[0]
     }).catch()
+  },
+  getPolls: () => {
+    let db
+    let client
+    return MongoClient.connect(dbUrl).then(connection => {
+      client = connection
+      db = connection.db(dbName)
+      return db.collection('polls')
+    }).then((collection) => {
+      return collection.find()
+    }).then((docs) => {
+      return docs.toArray()
+    }).then(polls => {
+      client.close()
+      return polls
+    }).catch()
   }
 }

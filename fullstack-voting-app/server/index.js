@@ -43,8 +43,11 @@ app.post('/api/poll/add', (req, res) => {
 
 // TODO : flesh this out
 app.get('/api/polls', (req, res) => {
-  console.log('you hit api polls')
-  res.send('success')
+  db.getPolls().then(polls => {
+    res.json(polls)
+  }).catch(error => {
+    res.json({ error: error })
+  })
 })
 
 // TODO : flesh this out
