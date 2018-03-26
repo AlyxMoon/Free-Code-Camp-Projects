@@ -62,7 +62,15 @@ app.get('/api/vote/:poll_id/:vote', (req, res) => {
   }).catch(error => {
     res.json({ error: error })
   })
+})
 
+app.get('/api/options/:poll_id/:option', (req, res) => {
+  console.log(req.params.poll_id, req.params.option)
+  db.addOption(req.params.poll_id, req.params.option).then(() => {
+    res.json({ message: 'options added successfully' })
+  }).catch(error => {
+    res.json({ error: error })
+  })
 })
 
 app.use((req, res) => {

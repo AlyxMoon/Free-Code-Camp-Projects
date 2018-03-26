@@ -14,6 +14,11 @@
       <label :for="key">{{ option.name }}</label>
     </div>
     <button v-on:click="vote">Vote</button>
+    <div class="input-group">
+      <button v-on:click="addOption">Add Option and Vote</button>
+      <input type="text" v-model="newOption" />
+    </div>
+
   </div>
 </template>
 
@@ -24,23 +29,44 @@ export default {
   props: ['poll'],
   data () {
     return {
-      currentVote: ''
+      currentVote: '',
+      newOption: ''
     }
   },
   methods: {
     vote: function () {
-      if (this.currentVote === '') alert('No option was selected!')
-      axios.get(`http://localhost:50031/api/vote/${this.poll._id}/${this.currentVote}`).then(response => {
-        if (response.data.error) {
-          console.log('error on correct return?', response.data.error)
+      if (this.currentVote === '') {
+        alert('No option was selected!')
+      } else {
+        axios.get(`http://localhost:50031/api/vote/${this.poll._id}/${this.currentVote}`).then(response => {
+          if (response.data.error) {
+            console.log('error on correct return?', response.data.error)
+            alert('There was a problem registering your vote. Try again!')
+          } else {
+            window.location.reload()
+          }
+        }).catch(error => {
+          console.log(error)
           alert('There was a problem registering your vote. Try again!')
-        } else {
-          window.location.reload()
-        }
-      }).catch(error => {
-        console.log(error)
-        alert('There was a problem registering your vote. Try again!')
-      })
+        })
+      }
+    },
+    addOption: function () {
+      if (this.newOption === '') {
+        alert('You forgot to add a name to the new option!')
+      } else {
+        axios.get(`http://localhost:50031/api/options/${this.poll._id}/${this.newOption}`).then(response => {
+          if (response.data.error) {
+            console.log('error on correct return?', response.data.error)
+            alert('There was a problem registering your new option. Try again!')
+          } else {
+            window.location.reload()
+          }
+        }).catch(error => {
+          console.log(error)
+          alert('There was a problem registering your new option. Try again!')
+        })
+      }
     }
   }
 }

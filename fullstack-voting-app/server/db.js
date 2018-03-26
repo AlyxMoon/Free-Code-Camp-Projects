@@ -80,5 +80,23 @@ module.exports = {
       client.close()
       return poll
     }).catch()
+  },
+  addOption: (poll_id, optionName) => {
+    let db
+    let client
+    return MongoClient.connect(dbUrl).then(connection => {
+      client = connection
+      db = connection.db(dbName)
+      return db.collection('polls')
+    }).then((collection) => {
+      return collection.update(
+        { _id: ObjectId(poll_id) },
+        { $push: { options: {  name: optionName, votes: 1 } } }
+      )
+    }).then(poll => {
+      client.close()
+      return poll
+    }).catch()
   }
 }
+
