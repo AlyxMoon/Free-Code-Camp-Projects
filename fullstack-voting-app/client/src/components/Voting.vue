@@ -31,8 +31,14 @@ export default {
     vote: function () {
       if (this.currentVote === '') alert('No option was selected!')
       axios.get(`http://localhost:50031/api/vote/${this.poll._id}/${this.currentVote}`).then(response => {
-        alert('Vote registered successfully!')
+        if (response.data.error) {
+          console.log('error on correct return?', response.data.error)
+          alert('There was a problem registering your vote. Try again!')
+        } else {
+          window.location.reload()
+        }
       }).catch(error => {
+        console.log(error)
         alert('There was a problem registering your vote. Try again!')
       })
     }

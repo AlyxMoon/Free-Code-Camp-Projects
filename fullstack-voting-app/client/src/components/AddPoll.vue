@@ -75,7 +75,6 @@ export default {
       }
     },
     removeOption (index) {
-      console.log(index)
       this.poll.options.splice(index, 1)
     }
   }
