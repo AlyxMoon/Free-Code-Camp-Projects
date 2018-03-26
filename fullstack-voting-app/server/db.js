@@ -3,8 +3,8 @@ const ObjectId = require('mongodb').ObjectId
 
 const dbUrl = 'mongodb://localhost:27017'
 const dbName = 'votingApp'
-const optsUsers = { capped: true, size: 1000000, max: 3000 }
-const optsPolls = { capped: true, size: 1000000, max: 1000 }
+const optsUsers = { max: 3000 }
+const optsPolls = { max: 1000 }
 
 module.exports = {
   init: () => {
@@ -59,9 +59,26 @@ module.exports = {
       return db.collection('polls')
     }).then((collection) => {
       return collection.findOne(ObjectId(poll_id))
-    }).then(polls => {
+    }).then(poll => {
       client.close()
-      return polls
+      return poll
+    }).catch()
+  },
+  addVote: (poll_id, option) => {
+    let db
+    let client
+    return MongoClient.connect(dbUrl).then(connection => {
+      client = connection
+      db = connection.db(dbName)
+      return db.collection('polls')
+    }).then((collection) => {
+      return collection.update(
+        { _id: ObjectId(poll_id) },
+        { $inc: { [`options.${option}.votes`]: 1 }}
+      )
+    }).then(poll => {
+      client.close()
+      return poll
     }).catch()
   }
 }

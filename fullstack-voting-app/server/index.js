@@ -24,7 +24,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'))
 })
 
-// TODO : flesh this out
 app.post('/api/poll/add', (req, res) => {
   let formattedPoll = formatNewPoll(req.body.poll)
   if (formattedPoll) {
@@ -41,7 +40,6 @@ app.post('/api/poll/add', (req, res) => {
   }
 })
 
-// TODO : flesh this out
 app.get('/api/polls', (req, res) => {
   db.getPolls().then(polls => {
     res.json(polls)
@@ -50,10 +48,17 @@ app.get('/api/polls', (req, res) => {
   })
 })
 
-// TODO : flesh this out
 app.get('/api/poll/:poll_id', (req, res) => {
   db.getPoll(req.params.poll_id).then(poll => {
     res.json(poll)
+  }).catch(error => {
+    res.json({ error: error })
+  })
+})
+
+app.get('/api/vote/:poll_id/:vote', (req, res) => {
+  db.addVote(req.params.poll_id, req.params.vote).then(() => {
+    res.json({ message: 'vote registered successfully' })
   }).catch(error => {
     res.json({ error: error })
   })

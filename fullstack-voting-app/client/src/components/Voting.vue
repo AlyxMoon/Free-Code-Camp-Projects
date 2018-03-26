@@ -10,17 +10,33 @@
     </h4>
     <hr />
     <div v-for="(option, key) in poll.options" :key="key">
-      <input type="radio" name="vote" :value="key" />
+      <input type="radio" name="vote" :value="key" v-model="currentVote" />
       <label :for="key">{{ option.name }}</label>
     </div>
-    <button>Vote</button>
+    <button v-on:click="vote">Vote</button>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'voting',
-  props: ['poll']
+  props: ['poll'],
+  data () {
+    return {
+      currentVote: ''
+    }
+  },
+  methods: {
+    vote: function () {
+      if (this.currentVote === '') alert('No option was selected!')
+      axios.get(`http://localhost:50031/api/vote/${this.poll._id}/${this.currentVote}`).then(response => {
+        alert('Vote registered successfully!')
+      }).catch(error => {
+        alert('There was a problem registering your vote. Try again!')
+      })
+    }
+  }
 }
 </script>
 
