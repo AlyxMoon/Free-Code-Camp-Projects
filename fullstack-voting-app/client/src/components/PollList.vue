@@ -20,40 +20,21 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'PollList',
   data () {
     return {
-      polls: [{
-        _id: 1,
-        name: 'Are things working?',
-        creator: 'AlyxDeLunar',
-        createdAt: '2018-03-21',
-        finishedAt: '',
-        finished: false,
-        options: [{
-          name: 'yes',
-          votes: 1
-        }, {
-          name: 'no',
-          votes: 0
-        }]
-      }, {
-        _id: 2,
-        name: 'Do you like cheese',
-        creator: 'SomeGuyWithAReallyLongNameThatMessesUpFormatting',
-        createdAt: '2018-03-21',
-        finishedAt: '',
-        finished: true,
-        options: [{
-          name: 'yes',
-          votes: 1000
-        }, {
-          name: 'no',
-          votes: 1
-        }]
-      }]
+      polls: []
     }
+  },
+  created: function () {
+    axios.get('http://localhost:50031/api/polls').then(response => {
+      this.polls = response.data
+    }).catch(error => {
+      console.log('error getting info from polls api', error)
+    })
   }
 }
 </script>
