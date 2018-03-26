@@ -11,23 +11,22 @@
   - [ ] passport.js?
   - [ ] Twitter, Google, Github, Email
 - [ ] Set up frontend
-  - [ ] Persistent navbar
+  - [x] Persistent navbar
     - [x] link to create a poll
     - [x] link to login/signup page
-  - [ ] View: Individual poll
-    - [ ] options
-    - [ ] results so far
-    - [ ] sharing link
-  - [ ] View: Listing of polls
-    - [ ] polls
-    - [ ] link to each poll
-    - [ ] creator
-    - [ ] finished
+  - [x] View: Individual poll
+    - [x] options
+    - [x] results so far
+    - [x] sharing link
+  - [x] View: Listing of polls
+    - [x] polls
+    - [x] link to each poll
+    - [x] creator
+    - [x] finished
   - [ ] View: Login/Signup page
-    -
-- [ ] Set up backend
-- [ ] Plan out data structures
-  - [ ] polls
+- [x] Set up backend
+- [x] Plan out data structures
+  - [x] polls
   - [ ] users
 
 

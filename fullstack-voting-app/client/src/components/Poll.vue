@@ -27,7 +27,6 @@ export default {
   created: function () {
     axios.get(`http://localhost:50031/api/poll/${this.poll_id}`).then(response => {
       this.poll = response.data
-      console.log(JSON.stringify(this.poll))
     }).catch(error => {
       console.log('There was an error getting the poll data', error)
     })

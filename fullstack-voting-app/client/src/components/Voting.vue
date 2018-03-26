@@ -1,6 +1,7 @@
 <template>
   <div id="voting">
     <h1>{{ poll.name }}</h1>
+    <a target="_blank" :href="`https://twitter.com/intent/tweet?text=${tweetText}`">Tweet</a>
     <h3>Creator: {{ poll.creator }}</h3>
     <h4>Started On: {{ poll.createdAt }}</h4>
     <h4>
@@ -31,6 +32,11 @@ export default {
     return {
       currentVote: '',
       newOption: ''
+    }
+  },
+  computed: {
+    tweetText: function () {
+      return `Check out my poll: ${this.poll.name} ${window.location.href}`
     }
   },
   methods: {

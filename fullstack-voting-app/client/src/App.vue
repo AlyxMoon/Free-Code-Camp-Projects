@@ -14,6 +14,23 @@ export default {
     'component-navbar': Navbar
   }
 }
+
+window.twttr = (function (d, s, id) {
+  let js = d.getElementsByTagName(s)[0]
+  let fjs = d.getElementsByTagName(s)[0]
+  let t = window.twttr || {}
+  if (d.getElementById(id)) return t
+  js = d.createElement(s)
+  js.id = id
+  js.src = 'https://platform.twitter.com/widgets.js'
+  fjs.parentNode.insertBefore(js, fjs)
+
+  t._e = []
+  t.ready = function (f) {
+    t._e.push(f)
+  }
+  return t
+}(document, 'script', 'twitter-wjs'))
 </script>
 
 <style lang="scss">
@@ -61,7 +78,7 @@ div[class^="col-"] {
 }
 
 .col-2 {
-  width: 16.66%
+  width: 16.66%;
 }
 .col-3 {
   width: 25%;
@@ -70,7 +87,7 @@ div[class^="col-"] {
   width: 50%;
 }
 .col-7 {
-  width: 58.33
+  width: 58.33;
 }
 .col-9 {
   width: 75%;
