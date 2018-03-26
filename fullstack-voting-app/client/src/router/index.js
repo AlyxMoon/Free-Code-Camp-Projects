@@ -20,9 +20,10 @@ export default new Router({
       component: AddPoll
     },
     {
-      path: '/poll/:poll',
+      path: '/poll/:poll_id',
       name: 'Poll',
-      component: Poll
+      component: Poll,
+      props: true
     },
     {
       path: '*',

@@ -52,8 +52,12 @@ app.get('/api/polls', (req, res) => {
 
 // TODO : flesh this out
 app.get('/api/poll/:poll_id', (req, res) => {
-  console.log('you hit the api poll id')
-  res.send('success!')
+  db.getPoll(req.params.poll_id).then(poll => {
+    res.json(poll)
+  }).catch(error => {
+    res.json({ error: error })
+  })
+
 })
 
 app.use((req, res) => {

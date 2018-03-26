@@ -20,6 +20,9 @@ module.exports = {
     formattedPoll.createdAt = Date.now()
     formattedPoll.finished = false
     formattedPoll.creator = 'Testing McBob'
+    formattedPoll.options.forEach(option => {
+      option.votes = 0
+    })
 
     return formattedPoll
   }

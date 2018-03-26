@@ -20,43 +20,7 @@
 <script>
 export default {
   name: 'voting',
-  data () {
-    return {
-      poll: {
-        _id: 1,
-        name: 'Are things working?',
-        creator: 'AlyxDeLunar',
-        createdAt: '2018-03-21',
-        finishedAt: '2018-05-30',
-        finished: false,
-        options: [{
-          name: 'yes',
-          votes: 1
-        }, {
-          name: 'no',
-          votes: 0
-        }, {
-          name: 'no1',
-          votes: 0
-        }, {
-          name: 'no2',
-          votes: 0
-        }, {
-          name: 'no3',
-          votes: 0
-        }, {
-          name: 'no4',
-          votes: 0
-        }, {
-          name: 'no5',
-          votes: 0
-        }, {
-          name: 'no6',
-          votes: 0
-        }]
-      }
-    }
-  }
+  props: ['poll']
 }
 </script>
 
