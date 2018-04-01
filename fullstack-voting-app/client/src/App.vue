@@ -31,6 +31,13 @@ window.twttr = (function (d, s, id) {
   }
   return t
 }(document, 'script', 'twitter-wjs'))
+
+let styleFontAwesome = document.createElement('link')
+styleFontAwesome.setAttribute('rel', 'stylesheet')
+styleFontAwesome.setAttribute('integrity', 'sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1')
+styleFontAwesome.setAttribute('crossorigin', 'anonymous')
+styleFontAwesome.href = 'https://use.fontawesome.com/releases/v5.0.9/css/all.css'
+document.head.appendChild(styleFontAwesome)
 </script>
 
 <style lang="scss">

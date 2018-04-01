@@ -9,7 +9,10 @@
           <a class="nav-link" href="/polls">See Polls</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/auth/twitter">Login/Register</a>
+          <a class="nav-link" href="/auth/twitter">
+            <i class="fab fa-twitter"></i>
+            Login/Register
+          </a>
         </li>
       </ul>
     </nav>
@@ -60,6 +63,11 @@ export default {
   color: white;
   text-decoration: none;
   text-align: center;
+
+  &:hover {
+    color: #3FB0AC;
+    transition-duration: 0.2s;
+  }
 }
 
 </style>
