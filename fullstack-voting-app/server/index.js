@@ -86,7 +86,6 @@ app.get('/auth/twitter/callback',
                                     failureRedirect: '/login' }))
 
 app.use((req, res) => {
-  console.log(req.user)
   res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'))
 })
 

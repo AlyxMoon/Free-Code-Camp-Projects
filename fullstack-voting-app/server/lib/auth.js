@@ -19,12 +19,10 @@ module.exports = {
 }
 
 passport.serializeUser((user, done) => {
-  console.log('are we serializing?', user)
   done(null, user.userId)
 })
 
 passport.deserializeUser((id, done) => {
-  console.log('deserializeUser called', id)
   findUserById(id).then(user => {
     done(null, user)
   }).catch(err => {
