@@ -9,7 +9,17 @@
           <a class="nav-link" href="/polls">See Polls</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/auth/twitter">
+          <div class="nav-dropdown" v-if="username">
+            <a class="nav-link" href="#" v-on:click.prevent="toggleLogout">
+              {{ username }}
+              <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="nav-dropdown-menu" v-if="showLogout">
+              <a href="auth/logout">Logout</a>
+            </div>
+          </div>
+
+          <a class="nav-link" href="/auth/twitter" v-else>
             <i class="fab fa-twitter"></i>
             Login/Register
           </a>
@@ -20,8 +30,29 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  data () {
+    return {
+      username: '',
+      showLogout: false
+    }
+  },
+  methods: {
+    toggleLogout: function () {
+      this.showLogout = !this.showLogout
+    }
+  },
+  created: function () {
+    axios.get('http://localhost:50031/api/user').then(response => {
+      console.log(response)
+      if (response.data.user) {
+        this.username = response.data.user
+      }
+    })
+  }
 }
 </script>
 
@@ -33,7 +64,7 @@ export default {
 
 .nav {
   background-color: black;
-  height: 50px;
+  height: 30px;
   left: 0;
   position: fixed;
   right: 0;
@@ -50,6 +81,7 @@ export default {
 
 .nav-item {
   display: inline-block;
+  position: relative;
   border-right: 1px solid white;
   padding: 0 5px;
 
@@ -58,7 +90,24 @@ export default {
   }
 }
 
-.nav-link {
+.nav-dropdown-menu {
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+
+  min-width: 80px;
+  padding: 5px;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 30px;
+
+  a {
+    color: black;
+  }
+}
+
+a {
   font-size: 20px;
   color: white;
   text-decoration: none;

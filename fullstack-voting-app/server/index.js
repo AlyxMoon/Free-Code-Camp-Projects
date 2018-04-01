@@ -80,10 +80,22 @@ app.get('/api/options/:poll_id/:option', (req, res) => {
   })
 })
 
+app.get('/api/user', (req, res) => {
+  if (req.user) {
+    res.json({ user: req.user.name })
+  } else {
+    res.json({ user: undefined })
+  }
+})
+
 app.get('/auth/twitter', auth.authenticate('twitter'))
 app.get('/auth/twitter/callback',
   auth.authenticate('twitter', {  successRedirect: '/',
                                     failureRedirect: '/login' }))
+app.get('/auto/logout', (req, res) => {
+  req.logout()
+  res.redirect('/')
+})
 
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'))
