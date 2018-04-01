@@ -24,6 +24,7 @@ module.exports = {
     formattedPoll.options.forEach(option => {
       option.votes = 0
     })
+    formattedPoll.userVotes = {}
 
     return formattedPoll
   }

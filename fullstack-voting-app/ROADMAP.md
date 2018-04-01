@@ -27,28 +27,37 @@
   - [x] users
 
 - [ ] Add authentication stuff to polls
-  - [ ] When creating poll, add in authenticated user to poll
-  - [ ] Tie voting to authenticated users
+  - [x] When creating poll, add in authenticated user to poll
+  - [x] Tie voting to authenticated users
   - [ ] Only allow creating a new option if authenticated user
 
 - [ ] Set up a user view for polls they have created
 - [ ] Allow user to delete their polls
 - [ ] Have some way of tracking votes for unauthenticated users (track IP)
+- [ ] When logging in, redirect to current page
+
 
 ### Data
 
 poll {
-  name        STRING
+  name          STRING
   creator       STRING
-  createdAt    DATE
-  finishAt     DATE
+  creatorName   STRING
+  createdAt     DATE
+  finishAt      DATE
   finished      BOOLEAN
   options       ARRAY
-    [
-      option1 {
-          name    STRING
-          votes   INT
-      }
-    ]
+  [
+    option1 {
+      name    STRING
+      votes   INT
+    }
+  ]
+  userVotes   ARRAY
+  [
+    userId {
+      vote: optionId
+    }
+  ]
 }
 

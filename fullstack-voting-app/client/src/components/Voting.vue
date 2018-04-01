@@ -46,14 +46,12 @@ export default {
       } else {
         axios.get(`http://localhost:50031/api/vote/${this.poll._id}/${this.currentVote}`).then(response => {
           if (response.data.error) {
-            console.log('error on correct return?', response.data.error)
-            alert('There was a problem registering your vote. Try again!')
+            alert(response.data.error)
           } else {
             window.location.reload()
           }
         }).catch(error => {
-          console.log(error)
-          alert('There was a problem registering your vote. Try again!')
+          alert(error)
         })
       }
     },

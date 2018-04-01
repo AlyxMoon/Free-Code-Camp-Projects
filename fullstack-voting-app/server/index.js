@@ -69,11 +69,16 @@ app.get('/api/poll/:poll_id', (req, res) => {
 })
 
 app.get('/api/vote/:poll_id/:vote', (req, res) => {
-  db.addVote(req.params.poll_id, req.params.vote).then(() => {
-    res.json({ message: 'vote registered successfully' })
-  }).catch(error => {
-    res.json({ error: error })
-  })
+  if (req.user) {
+    db.addVote(req.params.poll_id, req.params.vote, req.user.userId).then(() => {
+      res.json({ message: 'vote registered successfully' })
+    }).catch(error => {
+      res.json({ error: error })
+    })
+  } else {
+    res.json({ error: 'currently only authenticated users can vote. Will fix in post ;) '})
+  }
+
 })
 
 app.get('/api/options/:poll_id/:option', (req, res) => {

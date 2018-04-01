@@ -64,17 +64,30 @@ module.exports = {
       return poll
     }).catch()
   },
-  addVote: (poll_id, option) => {
+  addVote: (poll_id, option, userId) => {
     let db
     let client
     return MongoClient.connect(dbUrl).then(connection => {
       client = connection
       db = connection.db(dbName)
       return db.collection('polls')
+    }).then(collection => {
+      return collection.findOne({
+        _id: ObjectId(poll_id)
+      })
+    }).then(poll => {
+      if (poll.userVotes[userId]) {
+        return Promise.reject(new Error('user has already voted on this poll'))
+      } else {
+        return db.collection('polls')
+      }
     }).then((collection) => {
-      return collection.update(
+      return collection.updateOne(
         { _id: ObjectId(poll_id) },
-        { $inc: { [`options.${option}.votes`]: 1 }}
+        {
+          $inc: { [`options.${option}.votes`]: 1 },
+          $set: { [`userVotes.${userId}.vote`]: option }
+        }
       )
     }).then(poll => {
       client.close()
