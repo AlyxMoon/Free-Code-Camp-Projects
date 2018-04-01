@@ -2,7 +2,7 @@
   <div id="voting">
     <h1>{{ poll.name }}</h1>
     <a target="_blank" :href="`https://twitter.com/intent/tweet?text=${tweetText}`">Tweet</a>
-    <h3>Creator: {{ poll.creator }}</h3>
+    <h3>Creator: {{ poll.creatorName }}</h3>
     <h4>Started On: {{ poll.createdAt }}</h4>
     <h4>
       Finishing On: {{ poll.finishedAt }}

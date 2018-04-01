@@ -32,19 +32,24 @@ app.get('/', (req, res) => {
 })
 
 app.post('/api/poll/add', (req, res) => {
-  let formattedPoll = formatNewPoll(req.body.poll)
-  if (formattedPoll) {
-    db.addPoll(formattedPoll).then(poll => {
-      res.json(poll)
-    }).catch(error => {
-      console.log('error adding something to database', error)
-      res.send('failure :(')
-    })
-
+  if (!req.user) {
+    res.json({ error: 'polls can only be added by authenticated users' })
   } else {
-    console.log('provided poll was bad')
-    res.send('failure :(')
+    let formattedPoll = formatNewPoll(req.body.poll, req.user)
+    if (formattedPoll) {
+      db.addPoll(formattedPoll).then(poll => {
+        res.json(poll)
+      }).catch(error => {
+        console.log('error adding something to database', error)
+        res.send('failure :(')
+      })
+
+    } else {
+      console.log('provided poll was bad')
+      res.send('failure :(')
+    }
   }
+
 })
 
 app.get('/api/polls', (req, res) => {

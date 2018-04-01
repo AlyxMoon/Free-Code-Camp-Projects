@@ -9,7 +9,7 @@
           <span class="voting-open" v-else>OPEN</span>
         </span>
         <span class="poll-creator col-3" :title="poll.creator">
-          {{ poll.creator }}
+          {{ poll.creatorName }}
         </span>
         <span class="poll-name col-7">
           | {{ poll.name }}

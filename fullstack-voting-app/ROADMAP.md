@@ -4,12 +4,10 @@
 - [ ] Get required libraries
   - [x] Node / Express / Vue
   - [x] MongoDB
-  - [ ] Authentication stuff
-  - [ ] data display thingy
 - [x] Set up MongoDB
-- [ ] Set up authentication
-  - [ ] passport.js?
-  - [ ] Twitter, Google, Github, Email
+- [x] Set up authentication
+  - [x] passport.js?
+  - [x] Twitter
 - [ ] Set up frontend
   - [x] Persistent navbar
     - [x] link to create a poll
@@ -23,12 +21,19 @@
     - [x] link to each poll
     - [x] creator
     - [x] finished
-  - [ ] View: Login/Signup page
 - [x] Set up backend
 - [x] Plan out data structures
   - [x] polls
-  - [ ] users
+  - [x] users
 
+- [ ] Add authentication stuff to polls
+  - [ ] When creating poll, add in authenticated user to poll
+  - [ ] Tie voting to authenticated users
+  - [ ] Only allow creating a new option if authenticated user
+
+- [ ] Set up a user view for polls they have created
+- [ ] Allow user to delete their polls
+- [ ] Have some way of tracking votes for unauthenticated users (track IP)
 
 ### Data
 

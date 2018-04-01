@@ -10,7 +10,7 @@ options     PROVIDED
 
 */
 module.exports = {
-  formatNewPoll: (poll) => {
+  formatNewPoll: (poll, user) => {
     if (typeof poll.name !== 'string') return null
     if (typeof poll.finishedAt !== 'string') return null
     if (!Array.isArray(poll.options)) return null
@@ -19,7 +19,8 @@ module.exports = {
 
     formattedPoll.createdAt = Date.now()
     formattedPoll.finished = false
-    formattedPoll.creator = 'Testing McBob'
+    formattedPoll.creator = user.userId
+    formattedPoll.creatorName = user.name
     formattedPoll.options.forEach(option => {
       option.votes = 0
     })

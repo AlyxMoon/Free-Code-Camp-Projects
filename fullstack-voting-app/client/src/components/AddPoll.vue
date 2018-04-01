@@ -60,7 +60,11 @@ export default {
         poll: this.poll
       })
         .then(response => {
-          this.$router.push(`/poll/${response.data._id}`)
+          if (response.data.error) {
+            alert(response.data.error)
+          } else {
+            this.$router.push(`/poll/${response.data._id}`)
+          }
         })
         .catch(error => {
           alert('There was an error creating the poll.')
