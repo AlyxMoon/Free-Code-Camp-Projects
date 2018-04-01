@@ -92,7 +92,7 @@ app.get('/auth/twitter', auth.authenticate('twitter'))
 app.get('/auth/twitter/callback',
   auth.authenticate('twitter', {  successRedirect: '/',
                                     failureRedirect: '/login' }))
-app.get('/auto/logout', (req, res) => {
+app.get('/auth/logout', (req, res) => {
   req.logout()
   res.redirect('/')
 })
