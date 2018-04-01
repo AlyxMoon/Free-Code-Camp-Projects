@@ -2,7 +2,11 @@ const path = require('path')
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const passport = require('passport')
+const session = require('express-session')
+require('dotenv').config()
 
+const { auth } = require('./lib/auth')
 const {formatNewPoll} = require('./lib/poll')
 
 const db = require(path.join(__dirname, 'db'))
@@ -19,6 +23,9 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, '..', 'client', 'dist')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(session({ secret: 'moon', resave: false, saveUninitialized: false }))
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'))
@@ -73,7 +80,13 @@ app.get('/api/options/:poll_id/:option', (req, res) => {
   })
 })
 
+app.get('/auth/twitter', auth.authenticate('twitter'))
+app.get('/auth/twitter/callback',
+  auth.authenticate('twitter', {  successRedirect: '/',
+                                    failureRedirect: '/login' }))
+
 app.use((req, res) => {
+  console.log(req.user)
   res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'))
 })
 

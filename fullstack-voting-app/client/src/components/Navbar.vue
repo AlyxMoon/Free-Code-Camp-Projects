@@ -9,7 +9,7 @@
           <a class="nav-link" href="/polls">See Polls</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/login">Login/Register</a>
+          <a class="nav-link" href="/auth/twitter">Login/Register</a>
         </li>
       </ul>
     </nav>

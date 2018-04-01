@@ -97,6 +97,43 @@ module.exports = {
       client.close()
       return poll
     }).catch()
+  },
+  findUserById: (userId) => {
+    let db
+    let client
+    return MongoClient.connect(dbUrl).then(connection => {
+      client = connection
+      db = connection.db(dbName)
+      return db.collection('users')
+    }).then(collection => {
+      return collection.findOne({
+        userId: userId
+      })
+    }).then(user => {
+      client.close()
+      return user
+    })
+  },
+  findOrCreateUser: (user) => {
+    let db
+    let client
+    return MongoClient.connect(dbUrl).then(connection => {
+      client = connection
+      db = connection.db(dbName)
+      return db.collection('users')
+    }).then(collection => {
+      return collection.replaceOne({
+        userId: user.id
+      }, {
+        userId: user.id,
+        name: user.displayName
+      }, {
+        upsert: true
+      })
+    }).then(user => {
+      client.close()
+      return user.ops[0]
+    })
   }
 }
 
