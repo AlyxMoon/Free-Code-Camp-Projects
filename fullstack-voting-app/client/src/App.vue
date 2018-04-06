@@ -130,4 +130,11 @@ span[class^="voting-"] {
   }
 }
 
+i.fa-spinner {
+  color: #3FB0AC;
+  font-size: 48px;
+  text-align: center;
+  width: 100%;
+}
+
 </style>
