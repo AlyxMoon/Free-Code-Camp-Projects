@@ -132,7 +132,8 @@ app.get('/api/user', (req, res) => {
   if (req.user) {
     res.json({
       username: req.user.name,
-      userId: req.user.userId
+      userId: req.user.userId,
+      userScreenName: req.user.screen_name
     })
   } else {
     res.status(404).send('Current user is not logged in')

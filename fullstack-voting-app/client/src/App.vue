@@ -94,7 +94,7 @@ div[class^="col-"] {
   width: 50%;
 }
 .col-7 {
-  width: 58.33;
+  width: 58.33%;
 }
 .col-9 {
   width: 75%;

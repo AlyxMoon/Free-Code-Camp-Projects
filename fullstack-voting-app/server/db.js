@@ -170,7 +170,9 @@ module.exports = {
         userId: user.id
       }, {
         userId: user.id,
-        name: user.displayName
+        name: user.displayName,
+        screen_name: user.username,
+        avatar_url: user._json.profile_image_url
       }, {
         upsert: true
       })

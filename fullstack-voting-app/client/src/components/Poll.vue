@@ -1,6 +1,6 @@
 <template>
   <div id="poll" class="container">
-    <component-voting :poll="poll" :userId="userId"></component-voting>
+    <component-voting :poll="poll" :user="user"></component-voting>
     <hr />
     <component-results :poll="poll"></component-results>
   </div>
@@ -22,7 +22,7 @@ export default {
   data () {
     return {
       poll: {},
-      userId: ''
+      user: {}
     }
   },
   created: function () {
@@ -32,7 +32,7 @@ export default {
       console.log('There was an error getting the poll data', error)
     })
     axios.get('http://localhost:50031/api/user').then(response => {
-      this.userId = response.data.userId
+      this.user = response.data
     }).catch(error => {
       console.log(error)
     })

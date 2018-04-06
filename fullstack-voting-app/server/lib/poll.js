@@ -20,7 +20,8 @@ module.exports = {
     formattedPoll.createdAt = Date.now()
     formattedPoll.finished = false
     formattedPoll.creator = user.userId
-    formattedPoll.creatorName = user.name
+    formattedPoll.creatorName = user.screen_name
+    formattedPoll.creatorAvatar = `https://avatars.io/twitter/${user.screen_name}`
     formattedPoll.options.forEach(option => {
       option.votes = 0
     })

@@ -21,11 +21,11 @@
               <span class="voting-finished" v-if="poll.finished">CLOSED</span>
               <span class="voting-open" v-else>OPEN</span>
             </span>
-            <span class="poll-creator col-3" :title="poll.creator">
-              {{ poll.creatorName }}
-            </span>
             <span class="poll-name col-7">
-              | {{ poll.name }}
+              {{ poll.name }}
+            </span>
+            <span class="poll-avatar col-3">
+              <img class="avatar" :src="poll.creatorAvatar" />
             </span>
           </div>
         </a>
@@ -55,6 +55,7 @@ export default {
       if (response.data.error) {
         alert(response.data.error)
       } else {
+        console.log(JSON.stringify(response.data))
         this.loading = false
         this.polls = response.data
       }
@@ -100,6 +101,13 @@ ul {
   padding: 0;
 }
 
+.avatar {
+  width: 100%;
+  height: auto;
+}
 
+.poll-voting, .poll-name, .poll-avatar {
+  vertical-align: top;
+}
 
 </style>
