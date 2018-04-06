@@ -34,7 +34,7 @@ module.exports = {
       return doc.ops[0]
     }).catch()
   },
-  getPolls: () => {
+  getPolls: (userId) => {
     let db
     let client
     return MongoClient.connect(dbUrl).then(connection => {
@@ -42,7 +42,12 @@ module.exports = {
       db = connection.db(dbName)
       return db.collection('polls')
     }).then((collection) => {
-      return collection.find()
+      if (userId) {
+        return collection.find({ creator: userId })
+      } else {
+        return collection.find()
+      }
+
     }).then((docs) => {
       return docs.toArray()
     }).then(polls => {

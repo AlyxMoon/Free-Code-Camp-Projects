@@ -8,6 +8,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/polls">See Polls</a>
         </li>
+        <li class="nav-item" v-if="username">
+          <a class="nav-link" href="/mypolls">My Polls</a>
+        </li>
         <li class="nav-item">
           <div class="nav-dropdown" v-if="username">
             <a class="nav-link" href="#" v-on:click.prevent="toggleLogout">

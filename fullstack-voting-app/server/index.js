@@ -63,6 +63,18 @@ app.get('/api/polls', (req, res) => {
   })
 })
 
+app.get('/api/mypolls/', (req, res) => {
+  if (req.user) {
+    db.getPolls(req.user.userId).then(polls => {
+      res.json(polls)
+    }).catch(error => {
+      res.json({ error: error })
+    })
+  } else {
+    res.json({ error: 'You need to be logged in to view your polls' })
+  }
+})
+
 app.get('/api/poll/:poll_id', (req, res) => {
   db.getPoll(req.params.poll_id).then(poll => {
     res.json(poll)

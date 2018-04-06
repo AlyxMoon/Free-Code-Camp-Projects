@@ -15,6 +15,12 @@ export default new Router({
       component: PollList
     },
     {
+      path: '/mypolls',
+      name: 'MyPollList',
+      component: PollList,
+      props: { onlyUserPolls: true }
+    },
+    {
       path: '/poll/add',
       name: 'AddPoll',
       component: AddPoll

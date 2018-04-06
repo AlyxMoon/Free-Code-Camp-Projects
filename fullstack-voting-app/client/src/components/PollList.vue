@@ -24,14 +24,21 @@ import axios from 'axios'
 
 export default {
   name: 'PollList',
+  props: ['onlyUserPolls'],
   data () {
     return {
       polls: []
     }
   },
   created: function () {
-    axios.get('http://localhost:50031/api/polls').then(response => {
-      this.polls = response.data
+    let baseRoute = 'http://localhost:50031/api'
+    let apiRoute = this.onlyUserPolls ? 'myPolls' : 'polls'
+    axios.get(`${baseRoute}/${apiRoute}`).then(response => {
+      if (response.data.error) {
+        alert(response.data.error)
+      } else {
+        this.polls = response.data
+      }
     }).catch(error => {
       console.log('error getting info from polls api', error)
     })

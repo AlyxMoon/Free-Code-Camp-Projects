@@ -31,7 +31,7 @@
   - [x] Tie voting to authenticated users
   - [x] Only allow creating a new option if authenticated user
 
-- [ ] Set up a user view for polls they have created
+- [x] Set up a user view for polls they have created
 - [ ] Allow user to delete their polls
 - [x] Have some way of tracking votes for unauthenticated users (track IP)
 - [x] When logging in, redirect to current page
