@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
 const passport = require('passport')
 const session = require('express-session')
 require('dotenv').config()
@@ -23,6 +24,7 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, '..', 'client', 'dist')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cookieParser())
 app.use(session({ secret: 'moon', resave: false, saveUninitialized: false }))
 app.use(passport.initialize())
 app.use(passport.session())
@@ -95,7 +97,7 @@ app.get('/api/options/:poll_id/:option', (req, res) => {
     }).catch(error => {
       res.json({ error: error })
     })
-  }  
+  }
 })
 
 app.get('/api/user', (req, res) => {
@@ -106,10 +108,19 @@ app.get('/api/user', (req, res) => {
   }
 })
 
-app.get('/auth/twitter', auth.authenticate('twitter'))
+app.get('/auth/twitter', (req, res) => {
+    res.cookie('authRedirect', req.header('Referrer'), { expire : new Date() + 1000 })
+    auth.authenticate('twitter')(req, res)
+  })
 app.get('/auth/twitter/callback',
-  auth.authenticate('twitter', {  successRedirect: '/',
-                                    failureRedirect: '/login' }))
+  auth.authenticate('twitter'),
+  (req, res) => {
+    if (req.cookies && req.cookies.authRedirect) {
+      res.redirect(req.cookies.authRedirect)
+    } else {
+      res.redirect('/')
+    }
+  })
 app.get('/auth/logout', (req, res) => {
   req.logout()
   res.redirect('/')
