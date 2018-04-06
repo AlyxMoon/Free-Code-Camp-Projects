@@ -75,12 +75,28 @@ app.get('/api/mypolls/', (req, res) => {
   }
 })
 
+
 app.get('/api/poll/:poll_id', (req, res) => {
   db.getPoll(req.params.poll_id).then(poll => {
     res.json(poll)
   }).catch(error => {
     res.json({ error: error })
   })
+})
+
+app.get('/api/poll/:poll_id/delete', (req, res) => {
+  if (!req.user) {
+    res.status(404).send('Only a registered user can delete their own poll.')
+  } else {
+    db.deletePoll(req.params.poll_id, req.user.userId).then(() => {
+      res.json({
+        message: 'success deleting poll',
+        poll_id: req.params.poll_id
+      })
+    }).catch(error => {
+      res.json({ error: error.message })
+    })
+  }
 })
 
 app.get('/api/vote/:poll_id/:vote', (req, res) => {
@@ -114,9 +130,12 @@ app.get('/api/options/:poll_id/:option', (req, res) => {
 
 app.get('/api/user', (req, res) => {
   if (req.user) {
-    res.json({ user: req.user.name })
+    res.json({
+      username: req.user.name,
+      userId: req.user.userId
+    })
   } else {
-    res.json({ user: undefined })
+    res.status(404).send('Current user is not logged in')
   }
 })
 

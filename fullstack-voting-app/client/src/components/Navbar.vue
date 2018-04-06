@@ -50,10 +50,9 @@ export default {
   },
   created: function () {
     axios.get('http://localhost:50031/api/user').then(response => {
-      console.log(response)
-      if (response.data.user) {
-        this.username = response.data.user
-      }
+      this.username = response.data.username
+    }).catch(error => {
+      console.log(error)
     })
   }
 }

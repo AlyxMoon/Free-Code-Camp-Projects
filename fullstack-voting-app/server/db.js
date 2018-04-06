@@ -69,6 +69,29 @@ module.exports = {
       return poll
     }).catch()
   },
+  deletePoll: (poll_id, userId) => {
+    let db
+    let client
+    return MongoClient.connect(dbUrl).then(connection => {
+      client = connection
+      db = connection.db(dbName)
+      return db.collection('polls')
+    }).then((collection) => {
+      return collection.deleteOne({
+        _id: ObjectId(poll_id),
+        creator: userId
+      })
+    }).then(commandResult => {
+      if (commandResult.deletedCount === 0) {
+        return Promise.reject(Error('Poll ID and user ID did not match'))
+      }
+      client.close()
+      return commandResult
+    }).catch(error => {
+      client.close()
+      return Promise.reject(error)
+    })
+  },
   addVote: (poll_id, option, userId) => {
     let db
     let client

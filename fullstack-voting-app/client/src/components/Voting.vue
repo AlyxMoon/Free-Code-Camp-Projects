@@ -3,6 +3,12 @@
     <h1>{{ poll.name }}</h1>
     <a target="_blank" :href="`https://twitter.com/intent/tweet?text=${tweetText}`">Tweet</a>
     <h3>Creator: {{ poll.creatorName }}</h3>
+    <button
+      class="delete"
+      v-on:click="deletePoll"
+      v-if="userId === poll.creator" >
+      Delete
+    </button>
     <h4>Started On: {{ poll.createdAt }}</h4>
     <h4>
       Finishing On: {{ poll.finishedAt }}
@@ -27,7 +33,7 @@
 import axios from 'axios'
 export default {
   name: 'voting',
-  props: ['poll'],
+  props: ['poll', 'userId'],
   data () {
     return {
       currentVote: '',
@@ -65,6 +71,16 @@ export default {
           } else {
             window.location.reload()
           }
+        }).catch(error => {
+          alert(error)
+        })
+      }
+    },
+    deletePoll: function () {
+      if (confirm('Are you sure you want to delete this poll?')) {
+        axios.get(`http://localhost:50031/api/poll/${this.poll._id}/delete`).then(response => {
+          alert('Poll deleted successfully.')
+          this.$router.push(`/`)
         }).catch(error => {
           alert(error)
         })
