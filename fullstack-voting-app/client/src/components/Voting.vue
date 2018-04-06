@@ -61,14 +61,12 @@ export default {
       } else {
         axios.get(`http://localhost:50031/api/options/${this.poll._id}/${this.newOption}`).then(response => {
           if (response.data.error) {
-            console.log('error on correct return?', response.data.error)
-            alert('There was a problem registering your new option. Try again!')
+            alert(response.data.error)
           } else {
             window.location.reload()
           }
         }).catch(error => {
-          console.log(error)
-          alert('There was a problem registering your new option. Try again!')
+          alert(error)
         })
       }
     }

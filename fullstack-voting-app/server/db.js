@@ -77,7 +77,7 @@ module.exports = {
       })
     }).then(poll => {
       if (poll.userVotes[userId]) {
-        return Promise.reject(new Error('user has already voted on this poll'))
+        return Promise.reject('The user or ip address has already voted on this poll!')
       } else {
         return db.collection('polls')
       }
@@ -94,7 +94,7 @@ module.exports = {
       return poll
     }).catch()
   },
-  addOption: (poll_id, optionName) => {
+  addOption: (poll_id, optionName, userId) => {
     let db
     let client
     return MongoClient.connect(dbUrl).then(connection => {
@@ -104,7 +104,10 @@ module.exports = {
     }).then((collection) => {
       return collection.update(
         { _id: ObjectId(poll_id) },
-        { $push: { options: {  name: optionName, votes: 1 } } }
+        {
+          $push: { options: {  name: optionName, votes: 1 } },
+          $set: { [`userVotes.${userId}.vote`]: optionName }
+        }
       )
     }).then(poll => {
       client.close()

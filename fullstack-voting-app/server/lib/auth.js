@@ -15,7 +15,21 @@ module.exports = {
         done(err)
       })
     }
-  ))
+  )),
+
+  getUserIP: (req) => {
+    if (!req) return null
+    
+    let ip
+    if (req.headers['x-forwarded-for']) {
+      ip = req.headers['x-forwarded-for'].split(',').pop()
+    } else {
+      ip =  req.connection.remoteAddress ||
+            req.socket.remoteAddress ||
+            req.connection.socket.remoteAddress
+    }
+    return ip
+  }
 }
 
 passport.serializeUser((user, done) => {

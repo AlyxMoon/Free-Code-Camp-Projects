@@ -6,7 +6,7 @@ const passport = require('passport')
 const session = require('express-session')
 require('dotenv').config()
 
-const { auth } = require('./lib/auth')
+const { auth, getUserIP } = require('./lib/auth')
 const {formatNewPoll} = require('./lib/poll')
 
 const db = require(path.join(__dirname, 'db'))
@@ -28,6 +28,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.get('/', (req, res) => {
+  console.log(req.connection.remoteAddress)
   res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'))
 })
 
@@ -76,18 +77,25 @@ app.get('/api/vote/:poll_id/:vote', (req, res) => {
       res.json({ error: error })
     })
   } else {
-    res.json({ error: 'currently only authenticated users can vote. Will fix in post ;) '})
+    db.addVote(req.params.poll_id, req.params.vote, getUserIP(req)).then(() => {
+      res.json({ message: 'vote registered successfully' })
+    }).catch(error => {
+      res.json({ error: error })
+    })
   }
 
 })
 
 app.get('/api/options/:poll_id/:option', (req, res) => {
-  console.log(req.params.poll_id, req.params.option)
-  db.addOption(req.params.poll_id, req.params.option).then(() => {
-    res.json({ message: 'options added successfully' })
-  }).catch(error => {
-    res.json({ error: error })
-  })
+  if (!req.user) {
+    res.json({ error: 'Only registered users can add a new option to a poll.' })
+  } else {
+    db.addOption(req.params.poll_id, req.params.option, req.user.userId).then(() => {
+      res.json({ message: 'options added successfully' })
+    }).catch(error => {
+      res.json({ error: error })
+    })
+  }  
 })
 
 app.get('/api/user', (req, res) => {
