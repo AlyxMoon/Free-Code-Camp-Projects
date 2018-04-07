@@ -1,7 +1,6 @@
 <template>
   <div id="poll" class="container">
     <component-voting :poll="poll" :user="user"></component-voting>
-    <hr />
     <component-results :poll="poll"></component-results>
   </div>
 </template>
@@ -41,5 +40,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.container {
+  padding-top: 1px;
+}
 </style>

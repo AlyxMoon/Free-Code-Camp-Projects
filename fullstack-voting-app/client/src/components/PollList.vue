@@ -37,7 +37,7 @@
       </div>
     </transition-group>
     <i class="fa fa-spinner fa-spin" v-show="loading"></i>
-    <button v-show="!loading" class="see-more-button" v-on:click="getMorePolls">See More</button>
+    <button v-show="!loading" class="btn see-more-button" v-on:click="getMorePolls">See More</button>
   </div>
 </template>
 
@@ -124,9 +124,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$primary-color: #3FB0AC;
-$secondary-button-color: rgba(0, 0, 0, 0.8);
-$pollNameBackground: rgb(50, 50, 50);
 
 a {
   color: black;
@@ -143,64 +140,17 @@ ul {
 }
 
 .see-more-button {
-  background-color: $primary-color;
-  border: 1px solid $secondary-button-color;
-  border-radius: 3px;
-  box-shadow: 1px 1px 0 0 $secondary-button-color;
-  color: $secondary-button-color;
-  cursor: pointer;
   display: block;
   height: 30px;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 10px auto;
-  text-align: center;
-  transition-duration: 0.2s;
-  user-select: none;
   width: 100px;
-
-  &:hover {
-    background-color: $secondary-button-color;
-    border-color: $primary-color;
-    color: $primary-color;
-  }
 }
 
 .container {
-  border-radius: 8px;
-  box-shadow: 8px 8px 2px 0 #CCC;
   cursor: pointer;
   margin-bottom: 20px;
 
   &:hover {
     background-color: #D5E4DF;
-  }
-}
-
-.avatar {
-  height: auto;
-  width: 100%;
-}
-
-.poll-name {
-  background: $pollNameBackground;
-  border-radius: 5px;
-  color: white;
-  float: right;
-  margin: 1%;
-  padding: 5px 3%;
-  position: relative;
-  width: 90%;
-
-  &:before {
-    background-color: $pollNameBackground;
-    content: " ";
-    height: 10px;
-    left: -5px;
-    position: absolute;
-    top: 10px;
-    transform: rotate(45deg);
-    width: 10px;
   }
 }
 

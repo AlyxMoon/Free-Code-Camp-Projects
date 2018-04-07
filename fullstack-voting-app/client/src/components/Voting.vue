@@ -1,31 +1,38 @@
 <template>
   <div id="voting">
-    <h1>{{ poll.name }}</h1>
-    <a target="_blank" :href="`https://twitter.com/intent/tweet?text=${tweetText}`">Tweet</a>
-    <h3>Creator: {{ poll.creatorName }}</h3>
-    <button
-      class="delete"
-      v-on:click="deletePoll"
-      v-if="userId === poll.creator" >
-      Delete
-    </button>
-    <h4>Started On: {{ poll.createdAt }}</h4>
-    <h4>
-      Finishing On: {{ poll.finishedAt }}
-      <span class="voting-finished" v-if="poll.finished">CLOSED</span>
-      <span class="voting-open" v-else>OPEN</span>
-    </h4>
-    <hr />
+    <div class="row">
+      <div class="poll-avatar col-2">
+        <img class="avatar" :src="poll.creatorAvatar" />
+        <button
+          class="btn delete"
+          v-on:click="deletePoll" >
+          Delete
+        </button>
+      </div>
+      <div class="poll-info col-10">
+        <span class="poll-name">{{ poll.name }}</span>
+        <h4 class="creatorName">Creator: {{ poll.creatorName }}</h4>
+        <h4>Started On: {{ startDate }}</h4>
+        <h4>Finishing On: {{ poll.finishedAt }}</h4>
+        <span class="voting-finished" v-if="poll.finished">CLOSED</span>
+        <span class="voting-open" v-else>OPEN</span>
+      </div>
+    </div>
+
     <div v-for="(option, key) in poll.options" :key="key">
       <input type="radio" name="vote" :value="key" v-model="currentVote" />
       <label :for="key">{{ option.name }}</label>
+      <hr />
     </div>
-    <button v-on:click="vote">Vote</button>
-    <div class="input-group">
-      <button v-on:click="addOption">Add Option and Vote</button>
+    <div v-if="!user.userId">
+      <span class="new-option-label">Add Your Own Option</span>
+      <input type="radio" name="vote" :value="poll.options.length" v-model="currentVote" />
       <input type="text" v-model="newOption" />
     </div>
-
+    <button class="btn" v-on:click="vote">Vote</button>
+    <a class="btn" target="_blank" :href="`https://twitter.com/intent/tweet?text=${tweetText}`">
+      <i class="fab fa-twitter"></i>Share
+    </a>
   </div>
 </template>
 
@@ -33,7 +40,7 @@
 import axios from 'axios'
 export default {
   name: 'voting',
-  props: ['poll', 'userId'],
+  props: ['poll', 'user'],
   data () {
     return {
       currentVote: '',
@@ -41,6 +48,15 @@ export default {
     }
   },
   computed: {
+    startDate: function () {
+      let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      let date = new Date(this.poll.createdAt)
+
+      let year = date.getUTCFullYear()
+      let month = months[date.getUTCMonth()]
+      let day = date.getUTCDate().toString().padStart(2, '0')
+      return `${month} ${day}, ${year}`
+    },
     tweetText: function () {
       return `Check out my poll: ${this.poll.name} ${window.location.href}`
     }
@@ -49,6 +65,8 @@ export default {
     vote: function () {
       if (this.currentVote === '') {
         alert('No option was selected!')
+      } else if (this.currentVote === this.poll.options.length) {
+        this.addOption()
       } else {
         axios.get(`http://localhost:50031/api/vote/${this.poll._id}/${this.currentVote}`).then(response => {
           if (response.data.error) {
@@ -92,14 +110,16 @@ export default {
 
 <style scoped lang="scss">
 
+h1 {
+  text-align: left;
+}
 h4 {
   margin: 0;
 }
 
 input[type="radio"] {
   height: 18px;
-  margin-bottom: 18px;
-  vertical-align: top;
+  vertical-align: bottom;
   width: 18px;
 }
 
@@ -109,18 +129,58 @@ label {
   vertical-align: middle;
 }
 
-button {
-  background-color: #3FB0AC;
-  border: 1px solid black;
-  color: white;
-  cursor: pointer;
+.btn {
   height: 4vh;
-  margin-top: 10px;
   width: 20vh;
 
-  &:hover {
-    opacity: 0.9;
+  i {
+    padding-right: 5px;
   }
+}
+
+.btn.delete {
+  width: 100%;
+  background-color: #900;
+
+  &:hover {
+    background-color: #B20000;
+    color: white;
+    border-color: black;
+
+  }
+}
+
+.new-option-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 30px;
+}
+
+.poll-avatar {
+  vertical-align: top;
+}
+
+.poll-info {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  * {
+    padding-left: 10px;
+  }
+}
+
+.poll-name {
+  margin-left: 10px;
+}
+
+span[class^="voting-"] {
+  margin-left: 10px;
+  padding: 0 10px;
+  text-align: left;
+  width: auto;
 }
 
 </style>
