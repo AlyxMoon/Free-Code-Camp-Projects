@@ -41,8 +41,12 @@ document.head.appendChild(styleFontAwesome)
 </script>
 
 <style lang="scss">
+$primary-color: #3FB0AC;
+$secondary-color: #1C2C35;
+
 body {
-  background-color: #1C2C35;
+  background-color: $secondary-color;
+  margin: 0
 }
 
 h1 {
@@ -50,8 +54,8 @@ h1 {
 }
 
 .container {
-  background-color: #F4F7F6;
-  margin: auto;
+  background-color: #E8E9EA;
+  margin: 10px auto;
   padding: 0 1% 10px 1%;
   min-height: 100px;
   width: 100%;
@@ -62,20 +66,14 @@ h1 {
 
   .row {
     border-bottom: 1px solid black;
-    cursor: pointer;
     font-size: 0;
     padding: 5px 5px;
-
-    &:hover {
-      background: #D5E4DF;
-    }
 
     * {
       display: inline-block;
       font-size: 18px;
-      overflow: hidden;
       text-overflow: ellipsis;
-      vertical-align: bottom;
+      vertical-align: middle;
     }
   }
 }
@@ -90,6 +88,9 @@ div[class^="col-"] {
 .col-3 {
   width: 25%;
 }
+.col-4 {
+  width: 33%;
+}
 .col-6 {
   width: 50%;
 }
@@ -99,9 +100,13 @@ div[class^="col-"] {
 .col-9 {
   width: 75%;
 }
+.col-10 {
+  width: 83.33%;
+}
 
 span[class^="voting-"] {
-  color: white;
+  border-radius: 3px;
+  color: #E8E9EA;
   margin: auto;
   padding: 0 5px;
   text-align: center;
@@ -109,10 +114,10 @@ span[class^="voting-"] {
 }
 
 .voting-open {
-  background-color: #218838;
+  background-color: #090;
 }
 .voting-finished {
-  background-color: #C82333;
+  background-color: #900;
 }
 
 .icon {

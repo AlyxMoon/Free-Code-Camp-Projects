@@ -32,12 +32,16 @@
   - [x] Only allow creating a new option if authenticated user
 
 - [x] Set up a user view for polls they have created
-- [ ] Allow user to delete their polls
+- [x] Allow user to delete their polls
 - [x] Have some way of tracking votes for unauthenticated users (track IP)
 - [x] When logging in, redirect to current page
 
 - [ ] Let user see what option they've voted on in a poll
-
+- [ ] Improve look of the voting results chart
+- [ ] Show number of votes on the polls list page
+- [ ] Perhaps tidy up api routes
+- [ ] Improve look of the actual voting section
+- [ ] Move away from native alerts and use better popup boxes
 
 ### Data
 
