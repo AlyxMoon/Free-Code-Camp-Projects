@@ -56,16 +56,17 @@ app.post('/api/poll/add', (req, res) => {
 })
 
 app.get('/api/polls', (req, res) => {
-  db.getPolls().then(polls => {
+  db.getPolls(null, req.query.currentPollCount).then(polls => {
     res.json(polls)
   }).catch(error => {
+    console.log(error)
     res.json({ error: error })
   })
 })
 
 app.get('/api/mypolls/', (req, res) => {
   if (req.user) {
-    db.getPolls(req.user.userId).then(polls => {
+    db.getPolls(req.user.userId, req.query.currentPollCount).then(polls => {
       res.json(polls)
     }).catch(error => {
       res.json({ error: error })

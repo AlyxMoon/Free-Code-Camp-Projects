@@ -1,6 +1,5 @@
 <template>
   <div id="poll-list">
-    <i class="fa fa-spinner fa-spin" v-show="loading"></i>
     <transition-group
     name="polls"
     tag="div"
@@ -10,7 +9,7 @@
     v-on:leave="leave">
       <div
       class="poll-item container"
-      v-for="(poll, key) in reversePolls"
+      v-for="(poll, key) in polls"
       :key="key"
       v-bind:data-index="key">
         <a :href="'/poll/' + poll._id">
@@ -37,6 +36,8 @@
         </a>
       </div>
     </transition-group>
+    <i class="fa fa-spinner fa-spin" v-show="loading"></i>
+    <button v-show="!loading" class="see-more-button" v-on:click="getMorePolls">See More</button>
   </div>
 </template>
 
@@ -52,14 +53,8 @@ export default {
       polls: []
     }
   },
-  computed: {
-    reversePolls: function () {
-      return this.polls.slice().reverse()
-    }
-  },
-  created: function () {
+  created () {
     this.loading = true
-
     let baseRoute = 'http://localhost:50031/api'
     let apiRoute = this.onlyUserPolls ? 'myPolls' : 'polls'
     axios.get(`${baseRoute}/${apiRoute}`).then(response => {
@@ -105,12 +100,32 @@ export default {
         el.style.height = 0
         el.style.transition = 'opacity 0.5s'
       }, el.dataset.index * 60)
+    },
+    getMorePolls: function () {
+      this.loading = true
+
+      let baseRoute = 'http://localhost:50031/api'
+      let apiRoute = this.onlyUserPolls ? 'myPolls' : 'polls'
+      let option = `currentPollCount=${this.polls.length}`
+
+      axios.get(`${baseRoute}/${apiRoute}?${option}`).then(response => {
+        if (response.data.error) {
+          alert(response.data.error)
+        } else {
+          this.loading = false
+          this.polls = this.polls.concat(response.data)
+        }
+      }).catch(error => {
+        console.log('error getting info from polls api', error)
+      })
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
+$primary-color: #3FB0AC;
+$secondary-button-color: rgba(0, 0, 0, 0.8);
 $pollNameBackground: rgb(50, 50, 50);
 
 a {
@@ -125,6 +140,30 @@ h1 {
 ul {
   list-style: none;
   padding: 0;
+}
+
+.see-more-button {
+  background-color: $primary-color;
+  border: 1px solid $secondary-button-color;
+  border-radius: 3px;
+  box-shadow: 1px 1px 0 0 $secondary-button-color;
+  color: $secondary-button-color;
+  cursor: pointer;
+  display: block;
+  height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px auto;
+  text-align: center;
+  transition-duration: 0.2s;
+  user-select: none;
+  width: 100px;
+
+  &:hover {
+    background-color: $secondary-button-color;
+    border-color: $primary-color;
+    color: $primary-color;
+  }
 }
 
 .container {
