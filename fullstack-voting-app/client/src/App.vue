@@ -171,7 +171,7 @@ i.fa-spinner {
   justify-content: center;
   line-height: 16px;
   margin: 10px auto;
-  padding: 1px 6px;
+  padding: 1px 3px;
   text-align: center;
   text-decoration: none;
   transition-duration: 0.2s;

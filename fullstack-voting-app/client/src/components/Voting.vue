@@ -22,9 +22,10 @@
     <div v-for="(option, key) in poll.options" :key="key">
       <input type="radio" name="vote" :value="key" v-model="currentVote" />
       <label :for="key">{{ option.name }}</label>
+      <sup class="hasVoted" v-if="hasVotedFor(key)">Voted on this option</sup>
       <hr />
     </div>
-    <div v-if="!user.userId">
+    <div v-if="user.userId">
       <span class="new-option-label">Add Your Own Option</span>
       <input type="radio" name="vote" :value="poll.options.length" v-model="currentVote" />
       <input type="text" v-model="newOption" />
@@ -103,6 +104,14 @@ export default {
           alert(error)
         })
       }
+    },
+    hasVoted: function () {
+      if (!this.user || !this.poll) return false
+      return (this.user.userId in this.poll.userVotes)
+    },
+    hasVotedFor: function (option) {
+      if (!this.hasVoted()) return false
+      return parseInt(this.poll.userVotes[this.user.userId].vote) === option
     }
   }
 }
@@ -181,6 +190,10 @@ span[class^="voting-"] {
   padding: 0 10px;
   text-align: left;
   width: auto;
+}
+
+.hasVoted {
+  font-weight: bold;
 }
 
 </style>
