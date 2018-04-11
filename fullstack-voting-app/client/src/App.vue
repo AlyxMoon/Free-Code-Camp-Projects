@@ -191,6 +191,7 @@ i.fa-spinner {
   color: white;
   float: right;
   margin: 1%;
+  min-height: 20px;
   padding: 5px 3%;
   position: relative;
   width: 90%;
