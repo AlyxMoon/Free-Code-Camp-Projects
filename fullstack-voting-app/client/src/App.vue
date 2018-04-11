@@ -71,6 +71,7 @@ h1 {
   .row {
     border-bottom: 1px solid black;
     font-size: 0;
+    margin-bottom: 5px;
     padding: 5px 5px;
 
     * {
