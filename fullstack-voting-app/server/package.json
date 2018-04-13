@@ -4,7 +4,8 @@
   "description": "A voting app for FreeCodeCamp",
   "main": "index.js",
   "scripts": {
-    "lint": "standard"
+    "lint": "standard",
+    "start": "pm2 restart fullstack-voting-app -s"
   },
   "author": "",
   "license": "ISC",
