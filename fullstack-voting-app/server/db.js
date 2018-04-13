@@ -57,6 +57,22 @@ module.exports = {
       return polls
     }).catch()
   },
+  getAllOpenPolls: () => {
+    let db
+    let client
+    return MongoClient.connect(dbUrl).then(connection => {
+      client = connection
+      db = connection.db(dbName)
+      return db.collection('polls')
+    }).then((collection) => {
+      return collection.find({ finished: false })
+    }).then((docs) => {
+      return docs.toArray()
+    }).then(polls => {
+      client.close()
+      return polls
+    }).catch()
+  },
   getPoll: (poll_id) => {
     let db
     let client

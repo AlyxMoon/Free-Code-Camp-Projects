@@ -43,9 +43,9 @@
 - [ ] Perhaps tidy up api routes
 - [x] Improve look of the actual voting section
 - [ ] Move away from native alerts and use better popup boxes
-- [ ] Close poll when you hit the finished date
+- [x] Close poll when you hit the finished date
 - [x] Style up Add Poll page
-- [ ] Don't allow voting when  poll is closed
+- [x] Don't allow voting when poll is closed
 
 ### Data
 

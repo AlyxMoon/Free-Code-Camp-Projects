@@ -166,7 +166,7 @@ app.use((req, res) => {
 
 app.listen(port, () => {
   console.log(`FCC - Voting App started on port ${port}`)
-  db.getPolls().then(polls => {
+  db.getAllOpenPolls().then(polls => {
     scheduleAllPollCloses(polls, db.closePoll)
   }).catch(err => {
     console.log('Error when scheduling close time for existing polls', err)
