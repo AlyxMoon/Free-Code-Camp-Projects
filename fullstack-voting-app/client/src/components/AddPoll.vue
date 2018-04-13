@@ -7,7 +7,11 @@
       </div>
       <div class="input-group">
         <label for="finishedAt">Scheduled Finish</label>
-        <input type="datetime-local" name="finishedAtDateTime" v-model="finishedAtDateTime" required />
+        <input
+          type="datetime-local"
+          name="finishedAtDateTime"
+          v-model="finishedAtDateTime"
+          required />
       </div>
       <div class="input-group">
         Poll Options
@@ -52,7 +56,7 @@ export default {
         createdAt: '',
         options: [{ name: '' }, { name: '' }]
       },
-      finishedAtDateTime: '',
+      finishedAtDateTime: moment().add(1, 'day').format('YYYY-MM-DD[T]HH:mm'),
       optionsLimit: 999
     }
   },
