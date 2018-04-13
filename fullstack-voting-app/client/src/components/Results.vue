@@ -6,10 +6,10 @@
     <transition name="fade">
       <pie-chart
       class="chart"
-      v-show="showResults"
+      v-if="showResults"
       :donut="true"
       :data="chartData"
-      :library="{ animation: { animateRotate: true }}"
+      :library="{ animation: { animateRotate: true, animateScale: true }}"
        />
    </transition>
   </div>
@@ -37,7 +37,7 @@ export default {
 
 <style scoped lang="scss">
 .fade-leave-active {
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   overflow: hidden;
 }
 .fade-leave {
@@ -45,5 +45,11 @@ export default {
 }
 .fade-leave-to {
   max-height: 0;
+}
+
+.btn {
+  height: 4vh;
+  width: 20vh;
+
 }
 </style>

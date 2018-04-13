@@ -37,11 +37,11 @@
 - [x] When logging in, redirect to current page
 
 - [x] Improve look of polls list page
-- [ ] Let user see what option they've voted on in a poll
-- [ ] Improve look of the voting results chart
+- [x] Let user see what option they've voted on in a poll
+- [x] Improve look of the voting results chart
 - [x] Show number of votes on the polls list page
 - [ ] Perhaps tidy up api routes
-- [ ] Improve look of the actual voting section
+- [x] Improve look of the actual voting section
 - [ ] Move away from native alerts and use better popup boxes
 - [ ] Close poll when you hit the finished date
 
