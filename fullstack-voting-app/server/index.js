@@ -8,7 +8,7 @@ const session = require('express-session')
 require('dotenv').config()
 
 const { auth, getUserIP } = require('./lib/auth')
-const {formatNewPoll} = require('./lib/poll')
+const { formatNewPoll, schedulePollClose, scheduleAllPollCloses } = require('./lib/poll')
 
 const db = require(path.join(__dirname, 'db'))
 db.init().then(() => {
@@ -41,6 +41,7 @@ app.post('/api/poll/add', (req, res) => {
     let formattedPoll = formatNewPoll(req.body.poll, req.user)
     if (formattedPoll) {
       db.addPoll(formattedPoll).then(poll => {
+        schedulePollClose(poll, db.closePoll)
         res.json(poll)
       }).catch(error => {
         console.log('error adding something to database', error)
@@ -165,4 +166,9 @@ app.use((req, res) => {
 
 app.listen(port, () => {
   console.log(`FCC - Voting App started on port ${port}`)
+  db.getPolls().then(polls => {
+    scheduleAllPollCloses(polls, db.closePoll)
+  }).catch(err => {
+    console.log('Error when scheduling close time for existing polls', err)
+  })
 })

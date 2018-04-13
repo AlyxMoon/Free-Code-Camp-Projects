@@ -1,14 +1,6 @@
-/*
-_id         AUTO_CREATED
-name        PROVIDED
-creator     AUTO_CREATED
-createdAt   AUTO_CREATED
-finishedAt  PROVIDED
-finished    AUTO_CREATED
-options     PROVIDED
+const moment = require('moment')
+const schedule = require('node-schedule')
 
-
-*/
 module.exports = {
   formatNewPoll: (poll, user) => {
     if (typeof poll.name !== 'string' ||
@@ -28,5 +20,26 @@ module.exports = {
     formattedPoll.userVotes = {}
 
     return formattedPoll
+  },
+
+  schedulePollClose: (poll, func) => {
+    let scheduledCloseTime = moment.utc(poll.finishedAt).local().toDate()
+    schedule.scheduleJob(scheduledCloseTime, () => {
+      console.log(`Poll with _id of ${poll._id} has been closed at ${poll.finishedAt}`)
+      func(poll._id)
+    })
+    return
+  },
+
+  scheduleAllPollCloses: (polls, func) => {
+    polls.forEach(poll => {
+      let inPast = moment.utc(poll.finishedAt).local().diff(moment.utc()) <= 0
+      let scheduledCloseTime = inPast ? moment().toDate() : moment.utc(poll.finishedAt).local().toDate()
+      schedule.scheduleJob(scheduledCloseTime, () => {
+        console.log(`Poll with _id of ${poll._id} has been closed at ${poll.finishedAt}`)
+        func(poll._id)
+      })
+    })
+    return
   }
 }

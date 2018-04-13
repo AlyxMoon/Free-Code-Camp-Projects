@@ -71,6 +71,25 @@ module.exports = {
       return poll
     }).catch()
   },
+  closePoll: (poll_id) => {
+    let db
+    let client
+    return MongoClient.connect(dbUrl).then(connection => {
+      client = connection
+      db = connection.db(dbName)
+      return db.collection('polls')
+    }).then((collection) => {
+      return collection.updateOne(
+        { _id: ObjectId(poll_id) },
+        {
+          $set: { finished: true }
+        }
+      )
+    }).then(poll => {
+      client.close()
+      return poll
+    }).catch()
+  },
   deletePoll: (poll_id, userId) => {
     let db
     let client

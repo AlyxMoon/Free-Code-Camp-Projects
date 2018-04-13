@@ -45,6 +45,7 @@
 - [ ] Move away from native alerts and use better popup boxes
 - [ ] Close poll when you hit the finished date
 - [x] Style up Add Poll page
+- [ ] Don't allow voting when  poll is closed
 
 ### Data
 
