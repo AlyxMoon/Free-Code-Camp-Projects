@@ -46,9 +46,9 @@ module.exports = {
       currentPollCount = parseInt(currentPollCount)
 
       if (userId) {
-        return collection.find({ creator: userId }).limit(2).skip(currentPollCount).sort({ $natural: -1 })
+        return collection.find({ creator: userId }).limit(10).skip(currentPollCount).sort({ $natural: -1 })
       } else {
-        return collection.find().limit(2).skip(currentPollCount).sort({ $natural: -1 })
+        return collection.find().limit(10).skip(currentPollCount).sort({ $natural: -1 })
       }
     }).then((docs) => {
       return docs.toArray()
