@@ -13,7 +13,7 @@
         <span class="poll-name">{{ poll.name }}</span>
         <h4 class="creatorName">Creator: {{ poll.creatorName }}</h4>
         <h4>Started On: {{ startDate }}</h4>
-        <h4>Finishing On: {{ poll.finishedAt }}</h4>
+        <h4>Finishing On: {{ pollCloseDateTime }}</h4>
         <span class="voting-finished" v-if="poll.finished">CLOSED</span>
         <span class="voting-open" v-else>OPEN</span>
       </div>
@@ -39,6 +39,7 @@
 
 <script>
 import axios from 'axios'
+import moment from 'moment-timezone'
 export default {
   name: 'voting',
   props: ['poll', 'user'],
@@ -50,16 +51,13 @@ export default {
   },
   computed: {
     startDate: function () {
-      let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-      let date = new Date(this.poll.createdAt)
-
-      let year = date.getUTCFullYear()
-      let month = months[date.getUTCMonth()]
-      let day = date.getUTCDate().toString().padStart(2, '0')
-      return `${month} ${day}, ${year}`
+      return moment.utc(this.poll.createdAt).local().format('YYYY-MM-DD HH:mm')
     },
     tweetText: function () {
       return `Check out my poll: ${this.poll.name} ${window.location.href}`
+    },
+    pollCloseDateTime: function () {
+      return moment.utc(this.poll.finishedAt).local().format('YYYY-MM-DD HH:mm')
     }
   },
   methods: {

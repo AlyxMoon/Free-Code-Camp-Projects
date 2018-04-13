@@ -43,6 +43,7 @@
 
 <script>
 import axios from 'axios'
+import moment from 'moment'
 
 export default {
   name: 'PollList',
@@ -70,13 +71,7 @@ export default {
   },
   methods: {
     getHumanReadableDate: function (timestamp) {
-      let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-      let date = new Date(timestamp)
-
-      let year = date.getUTCFullYear()
-      let month = months[date.getUTCMonth()]
-      let day = date.getUTCDate().toString().padStart(2, '0')
-      return `${month} ${day}, ${year}`
+      return moment.utc(timestamp).local().format('YYYY-MM-DD HH:mm')
     },
     getVotesCount: function (i) {
       return this.polls[i].options.reduce((total, option) => {

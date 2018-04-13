@@ -11,13 +11,13 @@ options     PROVIDED
 */
 module.exports = {
   formatNewPoll: (poll, user) => {
-    if (typeof poll.name !== 'string') return null
-    if (typeof poll.finishedAt !== 'string') return null
-    if (!Array.isArray(poll.options)) return null
+    if (typeof poll.name !== 'string' ||
+        typeof poll.finishedAt !== 'string' ||
+        !poll.createdAt ||
+        !Array.isArray(poll.options) ) return null
 
     let formattedPoll = Object.assign({}, poll)
 
-    formattedPoll.createdAt = Date.now()
     formattedPoll.finished = false
     formattedPoll.creator = user.userId
     formattedPoll.creatorName = user.screen_name

@@ -1,13 +1,13 @@
 <template>
   <div id="add-poll">
-    <form>
+    <form @submit.prevent="addPoll">
       <div class="input-group">
         <label for="name">Poll Name</label>
         <input type="text" name="name" v-model="poll.name" required />
       </div>
       <div class="input-group">
         <label for="finishedAt">Scheduled Finish</label>
-        <input type="date" name="finishedAt" v-model="poll.finishedAt" required />
+        <input type="datetime-local" name="finishedAtDateTime" v-model="finishedAtDateTime" required />
       </div>
       <div class="input-group">
         Poll Options
@@ -33,13 +33,14 @@
         </template>
 
       </div>
-      <button v-on:click.prevent="addPoll">Add Poll</button>
+      <input type="submit" value="Add Poll" />
     </form>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import moment from 'moment-timezone'
 
 export default {
   name: 'add-poll',
@@ -48,14 +49,19 @@ export default {
       poll: {
         name: '',
         finishedAt: '',
+        createdAt: '',
         options: [{ name: '' }, { name: '' }]
-
       },
+      finishedAtDateTime: '',
       optionsLimit: 999
     }
   },
   methods: {
     addPoll () {
+      let momentDate = moment(this.finishedAtDateTime)
+      this.poll.finishedAt = momentDate.toISOString()
+      this.poll.createdAt = moment.utc()
+
       axios.post('http://localhost:50031/api/poll/add', {
         poll: this.poll
       })
