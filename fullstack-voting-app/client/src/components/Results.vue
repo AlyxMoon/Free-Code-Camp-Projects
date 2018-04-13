@@ -3,13 +3,13 @@
     <button
       class="btn"
       v-on:click="showResults = !showResults"
-      v-if="!poll.finished" >
+      v-if="!alwaysShow || !poll.finished" >
       Show Results
     </button>
     <transition name="fade">
       <pie-chart
         class="chart"
-        v-if="showResults || poll.finished"
+        v-if="showResults || (alwaysShow && poll.finished)"
         :donut="true"
         :data="chartData"
         :library="{ animation: { animateRotate: true, animateScale: true }}"
@@ -21,7 +21,7 @@
 <script>
 export default {
   name: 'results',
-  props: ['poll'],
+  props: ['poll', 'alwaysShow'],
   data () {
     return {
       showResults: false

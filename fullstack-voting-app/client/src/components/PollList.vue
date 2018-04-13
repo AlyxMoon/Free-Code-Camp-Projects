@@ -1,14 +1,20 @@
 <template>
   <div id="poll-list">
+    <div class="container subtle">
+      <input
+        type="checkbox"
+        name="onlyOpenPolls"
+        @click="togglePollsDisplay" />
+      <label for="onlyOpenPolls">Only show open polls</label>
+    </div>
     <transition-group
     name="polls"
     tag="div"
     v-bind:css="false"
     v-on:before-enter="beforeEnter"
-    v-on:enter="enter"
-    v-on:leave="leave">
+    v-on:enter="enter" >
       <div
-      class="poll-item container"
+      class="poll-item container hoverable"
       v-for="(poll, key) in polls"
       :key="key"
       v-bind:data-index="key">
@@ -34,6 +40,9 @@
             </div>
           </div>
         </a>
+        <div class="row" v-if="onlyUserPolls">
+          <component-results :poll="poll" :alwaysShow="false"></component-results>
+        </div>
       </div>
     </transition-group>
     <i class="fa fa-spinner fa-spin" v-show="loading"></i>
@@ -45,12 +54,18 @@
 import axios from 'axios'
 import moment from 'moment'
 
+import Results from './Results'
+
 export default {
   name: 'PollList',
+  components: {
+    'component-results': Results
+  },
   props: ['onlyUserPolls'],
   data () {
     return {
       loading: false,
+      onlyOpenPolls: false,
       polls: []
     }
   },
@@ -89,21 +104,14 @@ export default {
         el.style.transition = 'opacity 0.5s'
       }, el.dataset.index * 60)
     },
-    leave: function (el, done) {
-      setTimeout(() => {
-        el.style.opacity = 0
-        el.style.height = 0
-        el.style.transition = 'opacity 0.5s'
-      }, el.dataset.index * 60)
-    },
     getMorePolls: function () {
       this.loading = true
 
       let baseRoute = 'http://localhost:50031/api'
       let apiRoute = this.onlyUserPolls ? 'myPolls' : 'polls'
-      let option = `currentPollCount=${this.polls.length}`
+      let options = `currentPollCount=${this.polls.length}&onlyOpenPolls=${this.onlyOpenPolls}`
 
-      axios.get(`${baseRoute}/${apiRoute}?${option}`).then(response => {
+      axios.get(`${baseRoute}/${apiRoute}?${options}`).then(response => {
         if (response.data.error) {
           alert(response.data.error)
         } else {
@@ -113,6 +121,11 @@ export default {
       }).catch(error => {
         console.log('error getting info from polls api', error)
       })
+    },
+    togglePollsDisplay: function () {
+      this.onlyOpenPolls = !this.onlyOpenPolls
+      this.polls.splice(0, this.polls.length)
+      this.getMorePolls()
     }
   }
 }
@@ -134,19 +147,20 @@ ul {
   padding: 0;
 }
 
+input {
+  height: 20px;
+  vertical-align: middle;
+  width: 20px;
+}
+label {
+  color: #E8E9EA;
+  vertical-align: middle;
+}
+
 .see-more-button {
   display: block;
   height: 30px;
   width: 100px;
-}
-
-.container {
-  cursor: pointer;
-  margin-bottom: 20px;
-
-  &:hover {
-    background-color: #D5E4DF;
-  }
 }
 
 .vote-count {

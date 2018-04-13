@@ -59,13 +59,32 @@ h1 {
   background-color: #E8E9EA;
   border-radius: 8px;
   box-shadow: 8px 8px 2px 0 #CCC;
-  margin: 10px auto;
+  margin: 20px auto;
   min-height: 100px;
   padding: 0 1% 10px 1%;
   width: 100%;
 
   @media (min-width: 768px) {
     width: 85%;
+  }
+
+  &.subtle {
+    background: none;
+    box-shadow: none;
+    margin: 0 auto;
+    min-height: auto;
+
+    &:hover {
+      background: none;
+    }
+  }
+
+  &.hoverable {
+    cursor: pointer;
+
+    &:hover {
+      background-color: #D5E4DF;
+    }
   }
 
   .row {

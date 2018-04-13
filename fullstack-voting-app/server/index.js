@@ -57,7 +57,7 @@ app.post('/api/poll/add', (req, res) => {
 })
 
 app.get('/api/polls', (req, res) => {
-  db.getPolls(null, req.query.currentPollCount).then(polls => {
+  db.getPolls(null, req.query.currentPollCount, req.query.onlyOpenPolls).then(polls => {
     res.json(polls)
   }).catch(error => {
     console.log(error)
@@ -67,7 +67,7 @@ app.get('/api/polls', (req, res) => {
 
 app.get('/api/mypolls/', (req, res) => {
   if (req.user) {
-    db.getPolls(req.user.userId, req.query.currentPollCount).then(polls => {
+    db.getPolls(req.user.userId, req.query.currentPollCount, req.query.onlyOpenPolls).then(polls => {
       res.json(polls)
     }).catch(error => {
       res.json({ error: error })
