@@ -1,5 +1,5 @@
 <template>
-  <div id="add-poll">
+  <div class="container" id="add-poll">
     <form @submit.prevent="addPoll">
       <div class="input-group">
         <label for="name">Poll Name</label>
@@ -14,8 +14,7 @@
           required />
       </div>
       <div class="input-group">
-        Poll Options
-        <button v-on:click.prevent="addOption">Add</button>
+        <label>Poll Options</label>
         <template v-for="(option, key) in poll.options">
           <div :key="`div-${key}`" class="input-group">
             <input
@@ -33,11 +32,15 @@
               title="remove"
               class="icon icon-delete"
             ></span>
+            <hr />
           </div>
         </template>
 
       </div>
-      <input type="submit" value="Add Poll" />
+      <div class="input-group">
+        <button class="btn" @click.prevent="addOption">Add Option</button>
+        <input class="btn" type="submit" value="Create Poll" />
+      </div>
     </form>
   </div>
 </template>
@@ -65,6 +68,11 @@ export default {
       let momentDate = moment(this.finishedAtDateTime)
       this.poll.finishedAt = momentDate.toISOString()
       this.poll.createdAt = moment.utc()
+
+      if (this.poll.options.length === 0) {
+        alert('You cannot make a poll with no options!')
+        return
+      }
 
       axios.post('http://localhost:50031/api/poll/add', {
         poll: this.poll
@@ -96,12 +104,28 @@ export default {
 </script>
 
 <style scoped lang="scss">
-label, .input-group {
-  color: white;
+.container {
+  padding: 15px 10px;
 }
 
-.poll-option {
-  // display: block;
+.input-group {
+  margin-top: 5px;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input[type="text"], input[type="datetime-local"] {
+  border-radius: 5px;
+  font-size: 16px;
+  height: 25px;
+  padding: 0 5px;
+  &:focus {
+    border-radius: 5px;
+  }
 }
 
 </style>

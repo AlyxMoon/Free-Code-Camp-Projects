@@ -137,15 +137,13 @@ label {
 }
 
 .btn {
-  height: 4vh;
-  width: 20vh;
-
   i {
     padding-right: 5px;
   }
 }
 
 .btn.delete {
+  min-width: auto;
   width: 100%;
   background-color: #900;
 

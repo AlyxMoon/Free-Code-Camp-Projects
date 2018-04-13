@@ -171,13 +171,14 @@ i.fa-spinner {
   justify-content: center;
   line-height: 16px;
   margin: 10px auto;
+  min-height: 4vh;
+  min-width: 20vh;
   padding: 1px 3px;
   text-align: center;
   text-decoration: none;
   transition-duration: 0.2s;
   vertical-align: middle;
   user-select: none;
-
   &:hover {
     background-color: $secondary-button-color;
     border-color: $primary-color;
