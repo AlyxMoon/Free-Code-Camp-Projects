@@ -127,6 +127,8 @@ module.exports = {
     }).then(poll => {
       if (poll.userVotes[userId]) {
         return Promise.reject('The user or ip address has already voted on this poll!')
+      } else if (poll.finished) {
+        return Promise.reject('The poll is closed and there is no more voting.')
       } else {
         return db.collection('polls')
       }
@@ -150,6 +152,18 @@ module.exports = {
       client = connection
       db = connection.db(dbName)
       return db.collection('polls')
+    }).then(collection => {
+      return collection.findOne({
+        _id: ObjectId(poll_id)
+      })
+    }).then(poll => {
+      if (poll.userVotes[userId]) {
+        return Promise.reject('The user or ip address has already voted on this poll!')
+      } else if (poll.finished) {
+        return Promise.reject('The poll is closed and there is no more voting.')
+      } else {
+        return db.collection('polls')
+      }
     }).then((collection) => {
       return collection.update(
         { _id: ObjectId(poll_id) },

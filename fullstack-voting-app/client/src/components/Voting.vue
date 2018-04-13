@@ -20,7 +20,12 @@
     </div>
 
     <div v-for="(option, key) in poll.options" :key="key">
-      <input type="radio" name="vote" :value="key" v-model="currentVote" />
+      <input
+        type="radio"
+        name="vote"
+        :value="key"
+        v-if="!poll.finished"
+        v-model="currentVote" />
       <label :for="key">{{ option.name }}</label>
       <sup class="hasVoted" v-if="hasVotedFor(key)">Voted on this option</sup>
       <hr />
@@ -30,7 +35,7 @@
       <input type="radio" name="vote" :value="poll.options.length" v-model="currentVote" />
       <input type="text" v-model="newOption" />
     </div>
-    <button class="btn" v-on:click="vote">Vote</button>
+    <button class="btn" v-on:click="vote" v-if="!poll.finished">Vote</button>
     <a class="btn" target="_blank" :href="`https://twitter.com/intent/tweet?text=${tweetText}`">
       <i class="fab fa-twitter"></i>Share
     </a>
@@ -133,6 +138,7 @@ input[type="radio"] {
 label {
   font-size: 18px;
   line-height: 18px;
+  padding-left: 10px;
   vertical-align: middle;
 }
 

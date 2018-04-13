@@ -1,15 +1,18 @@
 <template>
   <div id="results">
-    <button class="btn" v-on:click="showResults = !showResults">
+    <button
+      class="btn"
+      v-on:click="showResults = !showResults"
+      v-if="!poll.finished" >
       Show Results
     </button>
     <transition name="fade">
       <pie-chart
-      class="chart"
-      v-if="showResults"
-      :donut="true"
-      :data="chartData"
-      :library="{ animation: { animateRotate: true, animateScale: true }}"
+        class="chart"
+        v-if="showResults || poll.finished"
+        :donut="true"
+        :data="chartData"
+        :library="{ animation: { animateRotate: true, animateScale: true }}"
        />
    </transition>
   </div>
