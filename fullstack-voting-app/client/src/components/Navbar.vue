@@ -102,7 +102,7 @@ export default {
   padding: 5px;
   position: absolute;
   right: 0;
-  text-align: right;
+  text-align: center;
   top: 30px;
 
   a {

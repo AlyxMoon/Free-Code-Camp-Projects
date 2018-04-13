@@ -95,13 +95,13 @@ export default {
     },
     beforeEnter: function (el) {
       el.style.opacity = 0
-      el.style.height = 0
+      el.style.maxHeight = 0
     },
     enter: function (el, done) {
       setTimeout(() => {
         el.style.opacity = 1
-        el.style.height = 'auto'
-        el.style.transition = 'opacity 0.5s'
+        el.style.maxHeight = '1000px'
+        el.style.transitionDuration = '0.5s'
       }, el.dataset.index * 60)
     },
     getMorePolls: function () {

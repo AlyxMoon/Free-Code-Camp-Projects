@@ -39,6 +39,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+#results {
+  width: 100%;
+}
+
 .fade-leave-active {
   transition-duration: 0.5s;
   overflow: hidden;
