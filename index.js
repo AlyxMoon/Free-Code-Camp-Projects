@@ -108,7 +108,17 @@ var projects = [
     title: 'API - Image Search Abstraction Layer',
     link: 'api-image-search',
     image: 'img/previews/api-image-search.png'
-  }
+  },
+  {
+    title: 'API - File Metadata Microservice',
+    link: 'api-file-metadata',
+    image: 'img/previews/api-file-metadata.png'
+  },
+  {
+    title: 'Fullstack Voting App',
+    link: 'http://fullstack-voting-app.allistermoon.com',
+    image: 'img/previews/fullstack-voting-app.png'
+  },
 ]
 
 $(document).ready(function() {
