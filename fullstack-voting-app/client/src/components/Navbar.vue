@@ -34,6 +34,7 @@
 
 <script>
 import axios from 'axios'
+import { apiPath } from '../consts.js'
 
 export default {
   name: 'Navbar',
@@ -49,7 +50,7 @@ export default {
     }
   },
   created: function () {
-    axios.get('http://localhost:50031/api/user').then(response => {
+    axios.get(`${apiPath}/user`).then(response => {
       this.username = response.data.username
     }).catch(error => {
       console.log(error)

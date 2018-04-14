@@ -45,6 +45,9 @@
 <script>
 import axios from 'axios'
 import moment from 'moment-timezone'
+
+import { apiPath } from '../consts.js'
+
 export default {
   name: 'voting',
   props: ['poll', 'user'],
@@ -72,7 +75,7 @@ export default {
       } else if (this.currentVote === this.poll.options.length) {
         this.addOption()
       } else {
-        axios.get(`http://localhost:50031/api/vote/${this.poll._id}/${this.currentVote}`).then(response => {
+        axios.get(`${apiPath}/vote/${this.poll._id}/${this.currentVote}`).then(response => {
           if (response.data.error) {
             alert(response.data.error)
           } else {
@@ -87,7 +90,7 @@ export default {
       if (this.newOption === '') {
         alert('You forgot to add a name to the new option!')
       } else {
-        axios.get(`http://localhost:50031/api/options/${this.poll._id}/${this.newOption}`).then(response => {
+        axios.get(`${apiPath}/options/${this.poll._id}/${this.newOption}`).then(response => {
           if (response.data.error) {
             alert(response.data.error)
           } else {
@@ -100,7 +103,7 @@ export default {
     },
     deletePoll: function () {
       if (confirm('Are you sure you want to delete this poll?')) {
-        axios.get(`http://localhost:50031/api/poll/${this.poll._id}/delete`).then(response => {
+        axios.get(`${apiPath}/poll/${this.poll._id}/delete`).then(response => {
           alert('Poll deleted successfully.')
           this.$router.push(`/`)
         }).catch(error => {

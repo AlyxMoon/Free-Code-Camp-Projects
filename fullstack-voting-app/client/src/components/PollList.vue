@@ -56,6 +56,8 @@ import moment from 'moment'
 
 import Results from './Results'
 
+import { apiPath } from '../consts.js'
+
 export default {
   name: 'PollList',
   components: {
@@ -71,9 +73,7 @@ export default {
   },
   created () {
     this.loading = true
-    let baseRoute = 'http://localhost:50031/api'
-    let apiRoute = this.onlyUserPolls ? 'myPolls' : 'polls'
-    axios.get(`${baseRoute}/${apiRoute}`).then(response => {
+    axios.get(`${apiPath}/${this.onlyUserPolls ? 'mypolls' : 'polls'}`).then(response => {
       if (response.data.error) {
         alert(response.data.error)
       } else {
@@ -107,11 +107,9 @@ export default {
     getMorePolls: function () {
       this.loading = true
 
-      let baseRoute = 'http://localhost:50031/api'
-      let apiRoute = this.onlyUserPolls ? 'myPolls' : 'polls'
+      let route = `${apiPath}/${this.onlyUserPolls ? 'mypolls' : 'polls'}`
       let options = `currentPollCount=${this.polls.length}&onlyOpenPolls=${this.onlyOpenPolls}`
-
-      axios.get(`${baseRoute}/${apiRoute}?${options}`).then(response => {
+      axios.get(`${route}?${options}`).then(response => {
         if (response.data.error) {
           alert(response.data.error)
         } else {

@@ -49,6 +49,8 @@
 import axios from 'axios'
 import moment from 'moment-timezone'
 
+import { apiPath } from '../consts.js'
+
 export default {
   name: 'add-poll',
   data () {
@@ -74,7 +76,7 @@ export default {
         return
       }
 
-      axios.post('http://localhost:50031/api/poll/add', {
+      axios.post(`${apiPath}/poll/add`, {
         poll: this.poll
       })
         .then(response => {

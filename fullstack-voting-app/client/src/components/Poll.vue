@@ -11,6 +11,8 @@ import axios from 'axios'
 import Results from './Results'
 import Voting from './Voting'
 
+import { apiPath } from '../consts.js'
+
 export default {
   name: 'Poll',
   components: {
@@ -25,12 +27,12 @@ export default {
     }
   },
   created: function () {
-    axios.get(`http://localhost:50031/api/poll/${this.poll_id}`).then(response => {
+    axios.get(`${apiPath}/poll/${this.poll_id}`).then(response => {
       this.poll = response.data
     }).catch(error => {
       console.log('There was an error getting the poll data', error)
     })
-    axios.get('http://localhost:50031/api/user').then(response => {
+    axios.get(`${apiPath}/user`).then(response => {
       this.user = response.data
     }).catch(error => {
       console.log(error)
