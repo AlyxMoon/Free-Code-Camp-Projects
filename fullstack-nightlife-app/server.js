@@ -21,7 +21,6 @@ app.prepare()
       if (err) throw err
       console.log(`> FreeCodeCamp Fullstack Nightlife App ready on port ${port}`)
     })
-
   })
   .catch(ex => {
     console.error(ex.stack)

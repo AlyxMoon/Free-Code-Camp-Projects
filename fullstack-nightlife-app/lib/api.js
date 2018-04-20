@@ -6,7 +6,7 @@ const { DEFAULT_API_QUERY_LIMIT } = require('./consts')
 const apiEndpoint = 'https://api.yelp.com/v3/businesses'
 
 router.get('/bars', (req, res) => {
-  if (!req.query  || !req.query.location) {
+  if (!req.query || !req.query.location) {
     res.json({
       error: 'To search by bars you need to input a location'
     })
