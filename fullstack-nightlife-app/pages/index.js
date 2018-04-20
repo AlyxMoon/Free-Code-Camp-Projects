@@ -1,7 +1,9 @@
 import Layout from '../components/Layout'
 
 const Home = () => (
-  <h1>This is the home page</h1>
+  <Layout>
+    <h1>This is the home page</h1>
+  </Layout>
 )
 
-export default () => (<Layout><Home /></Layout>)
+export default Home
