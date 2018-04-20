@@ -2,8 +2,17 @@ const express = require('express')
 const fetch = require('isomorphic-unfetch')
 const router = express.Router()
 
-const { DEFAULT_API_QUERY_LIMIT } = require('./consts')
+const {
+  DEFAULT_API_QUERY_LIMIT,
+  DEFAULT_API_OPTIONS
+} = require('./consts')
 const apiEndpoint = 'https://api.yelp.com/v3/businesses'
+
+router.get('/bar/:id', (req, res) => {
+  fetch(`${apiEndpoint}/${req.params.id}`, DEFAULT_API_OPTIONS)
+    .then(yelp => yelp.json())
+    .then(json => res.json(json))
+})
 
 router.get('/bars', (req, res) => {
   if (!req.query || !req.query.location) {
@@ -16,14 +25,7 @@ router.get('/bars', (req, res) => {
     parameters += `&limit=${DEFAULT_API_QUERY_LIMIT}`
     parameters += `&offset=${req.query.offset ? req.query.offset * DEFAULT_API_QUERY_LIMIT : 0}`
 
-    fetch(`${apiEndpoint}/search?${parameters}`,
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/JSON',
-          'Authorization': `Bearer ${process.env.YELP_KEY}`
-        }
-      })
+    fetch(`${apiEndpoint}/search?${parameters}`, DEFAULT_API_OPTIONS)
       .then(yelp => yelp.json())
       .then(json => res.json(json))
   }
