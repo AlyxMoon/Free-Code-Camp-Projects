@@ -21,6 +21,7 @@ router.get('/bar/:id/reviews', (req, res) => {
 })
 
 router.get('/bars', (req, res) => {
+  console.log('Hit the bars api route')
   if (!req.query || !req.query.location) {
     res.json({
       error: 'To search by bars you need to input a location'
@@ -33,7 +34,8 @@ router.get('/bars', (req, res) => {
 
     fetch(`${apiEndpoint}/search?${parameters}`, DEFAULT_API_OPTIONS)
       .then(yelp => yelp.json())
-      .then(json => res.json(json))
+      .then(json => formatYelpData(json))
+      .then(data => res.json(data))
   }
 })
 
@@ -44,3 +46,14 @@ router.get('*', (req, res) => {
 })
 
 module.exports = router
+
+const formatYelpData = data => {
+  let newData = {}
+  return new Promise((resolve, reject) => {
+    newData.bars = data.businesses
+    newData.total = data.total
+
+    console.log(newData)
+    resolve(newData)
+  })
+}
