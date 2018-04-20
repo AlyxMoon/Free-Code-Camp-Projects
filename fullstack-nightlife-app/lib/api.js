@@ -21,7 +21,6 @@ router.get('/bar/:id/reviews', (req, res) => {
 })
 
 router.get('/bars', (req, res) => {
-  console.log('Hit the bars api route')
   if (!req.query || !req.query.location) {
     res.json({
       error: 'To search by bars you need to input a location'
@@ -53,7 +52,6 @@ const formatYelpData = data => {
     newData.bars = data.businesses
     newData.total = data.total
 
-    console.log(newData)
     resolve(newData)
   })
 }

@@ -13,6 +13,14 @@ app.prepare()
 
     server.use('/api', require('./lib/api'))
 
+    server.get('/', (req, res) => {
+      const offset = req.query.offset || 0
+      const actualPage = '/'
+      const queryParams = { offset: offset }
+      console.log('In the server route', offset)
+      app.render(req, res, actualPage, queryParams)
+    })
+
     server.get('*', (req, res) => {
       return handle(req, res)
     })
