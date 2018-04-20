@@ -1,0 +1,18 @@
+{
+  "name": "fullstack-nightlife-app",
+  "version": "1.0.0",
+  "description": "A front-end wrapper for viewing bars through Yelp and saying what bars we will go to",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "isomorphic-unfetch": "^2.0.0",
+    "moment": "^2.22.1",
+    "mongodb": "^3.0.7",
+    "nextjs": "^0.0.3",
+    "passport-twitter": "^1.0.4",
+    "react": "^16.3.2",
+    "react-big-calendar": "^0.19.0",
+    "react-dom": "^16.3.2"
+  }
+}
