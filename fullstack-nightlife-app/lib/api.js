@@ -14,6 +14,12 @@ router.get('/bar/:id', (req, res) => {
     .then(json => res.json(json))
 })
 
+router.get('/bar/:id/reviews', (req, res) => {
+  fetch(`${apiEndpoint}/${req.params.id}/reviews`, DEFAULT_API_OPTIONS)
+    .then(yelp => yelp.json())
+    .then(json => res.json(json))
+})
+
 router.get('/bars', (req, res) => {
   if (!req.query || !req.query.location) {
     res.json({
