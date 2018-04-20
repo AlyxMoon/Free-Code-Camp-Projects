@@ -1,5 +1,6 @@
 const express = require('express')
 const next = require('next')
+require('dotenv').config()
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -9,6 +10,8 @@ app.prepare()
   .then(() => {
     const server = express()
     const port = 50032
+
+    server.use('/api', require('./lib/api'))
 
     server.get('*', (req, res) => {
       return handle(req, res)

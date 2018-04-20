@@ -11,6 +11,7 @@
     "start-windows": "next start -p %PORT%"
   },
   "dependencies": {
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "isomorphic-unfetch": "^2.0.0",
     "moment": "^2.22.1",
