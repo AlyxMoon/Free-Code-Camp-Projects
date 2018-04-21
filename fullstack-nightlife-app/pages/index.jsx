@@ -2,11 +2,13 @@ import PropTypes from 'prop-types'
 import fetch from 'isomorphic-unfetch'
 
 import Layout from '../components/Layout'
+import Header from '../components/Header'
 import Paginator from '../components/Paginator'
 import SearchBar from '../components/SearchBar'
 
 const Home = props => (
   <Layout>
+    <Header />
     <Paginator total={props.data.total} location={props.location} />
     <SearchBar />
     { props.data.bars.map(bar => (

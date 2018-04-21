@@ -5,6 +5,12 @@ const Layout = props => (
     <div className="content">
       {props.children}
     </div>
+    <style jsx global>{`
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    `}</style>
   </div>
 )
 Layout.propTypes = {

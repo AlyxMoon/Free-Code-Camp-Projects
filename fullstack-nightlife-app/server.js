@@ -1,6 +1,9 @@
 const express = require('express')
+const cookieParser = require('cookie-parser')
+const session = require('express-session')
+const passport = require('passport')
 const next = require('next')
-const { initDB } = require('./lib/db')
+const { initDB, findUserByID } = require('./lib/db')
 require('dotenv').config()
 
 const dev = process.env.NODE_ENV !== 'production'
@@ -12,13 +15,15 @@ app.prepare()
     const server = express()
     const port = 50032
 
-    initDB().then(() => {
-      console.log('success!')
-    }).catch(err => {
-      console.error(err)
-    })
+    server.use(cookieParser())
+    server.use(session({ secret: 'moon', resave: false, saveUninitialized: false }))
+    server.use(passport.initialize())
+    server.use(passport.session())
+
+    initDB().catch(console.error)
 
     server.use('/api', require('./lib/api'))
+    server.use('/auth', require('./lib/auth'))
 
     server.get('/', (req, res) => {
       const offset = req.query.offset || 0
@@ -26,6 +31,18 @@ app.prepare()
       const actualPage = '/'
       const queryParams = { offset, location }
       app.render(req, res, actualPage, queryParams)
+    })
+
+    server.get('/test', (req, res) => {
+      findUserByID('fjklsda')
+        .then(user => {
+          console.log(user)
+          res.json(user)
+        })
+        .catch(err => {
+          console.log(err)
+          res.json(err)
+        })
     })
 
     server.get('*', (req, res) => {

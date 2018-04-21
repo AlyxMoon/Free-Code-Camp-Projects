@@ -5,7 +5,9 @@ COLLECTION users
   - twitterName     : STRING  (twitter displayName)
   - twitterUsername : STRING  (twitter username)
   - twitterAvatar   : STRING  (twitter avatar.io url - based off twitter username)
-  - friends         : ID      (ID linking to the friends collection)
+  - friends         : OBJECT  (collection of users friends)
+    - friend_id       : STRING (twitter id of friend)
+    - accepted        : BOOL (whether the desired friend has accepted the request)
   - schedule        : OBJECT  (quick reference of bars user plans on going to)
     - "DATE": OBJECT
       - "bar_id": OBJECT
