@@ -25,12 +25,10 @@ const Home = props => (
 
 Home.getInitialProps = async ({ query }) => {
   const options = `?location=Portland,OR&offset=${query.offset}`
-  console.log(options)
 
   const res = await fetch(`http://localhost:50032/api/bars${options}`)
   const data = await res.json()
 
-  console.log(data.bars[0])
   return { data }
 }
 
