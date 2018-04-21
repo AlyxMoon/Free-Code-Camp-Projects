@@ -1,5 +1,6 @@
 const express = require('express')
 const next = require('next')
+const { initDB } = require('./lib/db')
 require('dotenv').config()
 
 const dev = process.env.NODE_ENV !== 'production'
@@ -10,6 +11,12 @@ app.prepare()
   .then(() => {
     const server = express()
     const port = 50032
+
+    initDB().then(() => {
+      console.log('success!')
+    }).catch(err => {
+      console.error(err)
+    })
 
     server.use('/api', require('./lib/api'))
 
