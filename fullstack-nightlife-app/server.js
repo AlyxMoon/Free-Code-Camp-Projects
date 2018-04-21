@@ -3,7 +3,7 @@ const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const passport = require('passport')
 const next = require('next')
-const { initDB, findUserByID } = require('./lib/db')
+const { initDB } = require('./lib/db')
 require('dotenv').config()
 
 const dev = process.env.NODE_ENV !== 'production'
@@ -29,20 +29,8 @@ app.prepare()
       const offset = req.query.offset || 0
       const location = req.query.location || ''
       const actualPage = '/'
-      const queryParams = { offset, location }
+      const queryParams = { offset, location, user: req.user }
       app.render(req, res, actualPage, queryParams)
-    })
-
-    server.get('/test', (req, res) => {
-      findUserByID('fjklsda')
-        .then(user => {
-          console.log(user)
-          res.json(user)
-        })
-        .catch(err => {
-          console.log(err)
-          res.json(err)
-        })
     })
 
     server.get('*', (req, res) => {

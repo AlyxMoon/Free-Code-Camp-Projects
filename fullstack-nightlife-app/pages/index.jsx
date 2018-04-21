@@ -8,7 +8,7 @@ import SearchBar from '../components/SearchBar'
 
 const Home = props => (
   <Layout>
-    <Header />
+    <Header username={props.user.twitterUsername || ''} />
     <Paginator total={props.data.total} location={props.location} />
     <SearchBar />
     { props.data.bars.map(bar => (
@@ -31,29 +31,36 @@ Home.getInitialProps = async ({ query }) => {
   const offset = query.offset || 0
   const location = query.location || ''
 
+  const resUser = await fetch(`http://localhost:50032/auth/user`)
+  const userData = await resUser.json()
+  console.log('client side fetch request', userData)
+
+  const user = query.user || {}
+
   if (location === '') {
     return {
       data: { bars: [], total: 0 },
-      location
+      location,
+      user
     }
   }
 
   const options = `?location=${location}&offset=${offset}`
-  console.log(options)
 
   const res = await fetch(`http://localhost:50032/api/bars${options}`)
   const data = await res.json()
 
-  console.log(data)
   return {
     data,
-    location
+    location,
+    user
   }
 }
 
 Home.propTypes = {
   data: PropTypes.object.isRequired,
-  location: PropTypes.string.isRequired
+  location: PropTypes.string.isRequired,
+  user: PropTypes.object.isRequired
 }
 
 export default Home

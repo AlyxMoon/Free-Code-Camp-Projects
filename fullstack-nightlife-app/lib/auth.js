@@ -48,4 +48,9 @@ router.get('/logout', (req, res) => {
   res.redirect('/')
 })
 
+router.get('/user', (req, res) => {
+  console.log('checking the user')
+  res.json({ user: req.user })
+})
+
 module.exports = router
