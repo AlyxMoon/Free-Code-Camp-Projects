@@ -4,7 +4,7 @@ import { DEFAULT_API_QUERY_LIMIT } from '../lib/consts'
 import Link from 'next/link'
 
 const PaginatorLink = props => (
-  <Link as="/" href={{ pathname: '/', query: { offset: props.number } }}>
+  <Link as="/" href={{ pathname: '/', query: { offset: props.number, location: props.location } }}>
     <a>
       <li>
         {props.number + 1}
@@ -22,6 +22,7 @@ const PaginatorLink = props => (
   </Link>
 )
 PaginatorLink.propTypes = {
+  location: PropTypes.string.isRequired,
   number: PropTypes.number.isRequired
 }
 
@@ -37,7 +38,7 @@ const Paginator = props => {
       <span className="pagination-label">Jump to Page:</span>
       <ul className="pagination">
         {pageNumbers.map((i) => (
-          <PaginatorLink key={`pagination-${i}`} number={i} />
+          <PaginatorLink key={`pagination-${i}`} number={i} location={props.location} />
         ))}
       </ul>
       <hr />
@@ -64,6 +65,7 @@ Paginator.defaultProps = {
 }
 
 Paginator.propTypes = {
+  location: PropTypes.string.isRequired,
   total: PropTypes.number.isRequired,
   countPerPage: PropTypes.number.isRequired
 }

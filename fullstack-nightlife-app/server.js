@@ -15,9 +15,9 @@ app.prepare()
 
     server.get('/', (req, res) => {
       const offset = req.query.offset || 0
+      const location = req.query.location || ''
       const actualPage = '/'
-      const queryParams = { offset: offset }
-      console.log('In the server route', offset)
+      const queryParams = { offset, location }
       app.render(req, res, actualPage, queryParams)
     })
 
