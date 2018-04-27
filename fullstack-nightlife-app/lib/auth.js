@@ -49,7 +49,7 @@ router.get('/logout', (req, res) => {
 })
 
 router.get('/user', (req, res) => {
-  console.log('checking the user')
+  console.log('checking the user', req.user)
   res.json({ user: req.user })
 })
 

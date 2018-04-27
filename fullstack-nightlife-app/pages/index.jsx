@@ -1,3 +1,4 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import fetch from 'isomorphic-unfetch'
 
@@ -6,54 +7,66 @@ import Header from '../components/Header'
 import Paginator from '../components/Paginator'
 import SearchBar from '../components/SearchBar'
 
-const Home = props => (
-  <Layout>
-    <Header username={props.user.twitterUsername || ''} />
-    <Paginator total={props.data.total} location={props.location} />
-    <SearchBar />
-    { props.data.bars.map(bar => (
-      <div className="bar" key={bar.id}>
-        <h1>{bar.name}</h1>
-        <img src={bar.image_url} />
-        <p><a href={bar.url}>Link to Yelp page</a></p>
-      </div>
-    ))}
-    <style jsx>{`
-      img {
-        width: 100px;
-        height: 100px;
+class Home extends React.Component {
+  static async getInitialProps ({ query }) {
+    const offset = query.offset || 0
+    const location = query.location || ''
+
+    const user = query.user || {}
+
+    if (location === '') {
+      return {
+        data: { bars: [], total: 0 },
+        location,
+        user
       }
-    `}</style>
-  </Layout>
-)
+    }
 
-Home.getInitialProps = async ({ query }) => {
-  const offset = query.offset || 0
-  const location = query.location || ''
+    const options = `?location=${location}&offset=${offset}`
 
-  const resUser = await fetch(`http://localhost:50032/auth/user`)
-  const userData = await resUser.json()
-  console.log('client side fetch request', userData)
+    const res = await fetch(`http://localhost:50032/api/bars${options}`)
+    const data = await res.json()
 
-  const user = query.user || {}
-
-  if (location === '') {
     return {
-      data: { bars: [], total: 0 },
+      data,
       location,
       user
     }
   }
 
-  const options = `?location=${location}&offset=${offset}`
+  constructor (props) {
+    super(props)
+    this.state = {
+      user: {
+        secret: props.user._id,
+        twitterID: props.user.twitterID,
+        twitterUsername: props.user.twitterUsername,
+        twitterAvatar: props.user.twitterAvatar
+      }
+    }
+  }
 
-  const res = await fetch(`http://localhost:50032/api/bars${options}`)
-  const data = await res.json()
-
-  return {
-    data,
-    location,
-    user
+  render () {
+    return (
+      <Layout>
+        <Header username={this.state.user.twitterUsername || ''} />
+        <Paginator total={this.props.data.total} location={this.props.location} />
+        <SearchBar />
+        { this.props.data.bars.map(bar => (
+          <div className="bar" key={bar.id}>
+            <h1>{bar.name}</h1>
+            <img src={bar.image_url} />
+            <p><a href={bar.url}>Link to Yelp page</a></p>
+          </div>
+        ))}
+        <style jsx>{`
+          img {
+            width: 100px;
+            height: 100px;
+          }
+        `}</style>
+      </Layout>
+    )
   }
 }
 
