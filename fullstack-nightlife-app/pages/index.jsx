@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Router from 'next/router'
 import fetch from 'isomorphic-unfetch'
 
 import Layout from '../components/Layout'
@@ -9,7 +10,7 @@ import SearchBar from '../components/SearchBar'
 
 class Home extends React.Component {
   static async getInitialProps ({ query }) {
-    const offset = query.offset || 0
+    const offset = query.offset || '0'
     const location = query.location || ''
 
     const user = query.user || {}
@@ -18,6 +19,7 @@ class Home extends React.Component {
       return {
         data: { bars: [], total: 0 },
         location,
+        offset,
         user
       }
     }
@@ -30,6 +32,7 @@ class Home extends React.Component {
     return {
       data,
       location,
+      offset,
       user
     }
   }
@@ -44,12 +47,22 @@ class Home extends React.Component {
         twitterAvatar: props.user.twitterAvatar
       }
     }
+
+    this.logout = this.logout.bind(this)
+  }
+
+  logout () {
+    Router.push('/auth/logout')
   }
 
   render () {
     return (
       <Layout>
-        <Header username={this.state.user.twitterUsername || ''} />
+        <Header
+          username={this.state.user.twitterUsername || ''}
+          avatar={this.state.user.twitterAvatar || ''}
+          logout={this.logout}
+        />
         <Paginator total={this.props.data.total} location={this.props.location} />
         <SearchBar />
         { this.props.data.bars.map(bar => (
@@ -73,6 +86,7 @@ class Home extends React.Component {
 Home.propTypes = {
   data: PropTypes.object.isRequired,
   location: PropTypes.string.isRequired,
+  offset: PropTypes.string.isRequired,
   user: PropTypes.object.isRequired
 }
 

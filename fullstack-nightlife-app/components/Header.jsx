@@ -2,15 +2,40 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 class Header extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      showMenu: false
+    }
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick () {
+    console.log('in handleClick', this.state)
+    this.setState({showMenu: !this.state.showMenu})
+  }
+
   render () {
     return (
       <div className="navbar">
         <div className="nav-item">
           { this.props.username
-            ? (<a href="#">{this.props.username}</a>)
+            ? (<a href="#" onClick={this.handleClick}>
+              {this.props.username}
+              <i className={`icon ${this.state.showMenu ? 'icon-up-arrow' : 'icon-down-arrow'}`}></i>
+              <img src={this.props.avatar} />
+            </a>
+            )
             : (<a href="/auth/twitter">Login/Register</a>)
           }
-
+          { this.state.showMenu &&
+            <div className="nav-modal">
+              <hr />
+              <a href="#" onClick={this.props.logout}>Logout</a>
+              <hr />
+            </div>
+          }
         </div>
         <style jsx>{`
           .navbar {
@@ -39,12 +64,23 @@ class Header extends React.Component {
             top: 30px;
           }
 
+          .nav-modal {
+            background-color: black;
+            border-radius: 10px;
+            line-height: normal;
+            margin-top: -10px;
+            padding: 5px;
+            position: relative;
+            text-align: center;
+          }
+
           a {
             color: white;
             font-size: 20px;
             text-align: center;
             text-decoration: none;
             transition-duration: 0.2s;
+            vertical-align: top;
           }
           a:hover {
             color: #3FB0AC;
@@ -54,6 +90,23 @@ class Header extends React.Component {
             color: black;
           }
 
+          img {
+            border-radius: 50%;
+            height: 90%;
+            margin-left: 5px;
+          }
+
+          i.icon {
+            vertical-align: text-bottom;
+          }
+
+          i.icon-down-arrow::before {
+            content: "▼";
+          }
+          i.icon-up-arrow::before {
+            content: "▲";
+          }
+
         `}</style>
       </div>
     )
@@ -61,7 +114,9 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  username: PropTypes.string
+  username: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  logout: PropTypes.func.isRequired
 }
 
 export default Header
