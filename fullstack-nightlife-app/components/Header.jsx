@@ -20,6 +20,10 @@ class Header extends React.Component {
     return (
       <div className="navbar">
         <div className="nav-item">
+          <span className="inner-text">Results powered by:</span>
+          <img src="/static/yelp.png" />
+        </div>
+        <div className="nav-item pull-right">
           { this.props.username
             ? (<a href="#" onClick={this.handleClick}>
               {this.props.username}
@@ -45,8 +49,8 @@ class Header extends React.Component {
           }
 
           .nav-item {
+            color: white;
             display: inline-block;
-            float: right;
             padding-right: 5px;
             height: 100%;
           }
@@ -55,7 +59,6 @@ class Header extends React.Component {
             background-color: white;
             border: 1px solid grey;
             border-radius: 5px;
-
             min-width: 80px;
             padding: 5px;
             position: absolute;
@@ -105,6 +108,14 @@ class Header extends React.Component {
           }
           i.icon-up-arrow::before {
             content: "▲";
+          }
+
+          .pull-right {
+            float: right;
+          }
+
+          .inner-text {
+            vertical-align: top;
           }
 
         `}</style>

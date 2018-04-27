@@ -7,6 +7,7 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Paginator from '../components/Paginator'
 import SearchBar from '../components/SearchBar'
+import BarList from '../components/BarList'
 
 class Home extends React.Component {
   static async getInitialProps ({ query }) {
@@ -65,19 +66,7 @@ class Home extends React.Component {
         />
         <Paginator total={this.props.data.total} location={this.props.location} />
         <SearchBar />
-        { this.props.data.bars.map(bar => (
-          <div className="bar" key={bar.id}>
-            <h1>{bar.name}</h1>
-            <img src={bar.image_url} />
-            <p><a href={bar.url}>Link to Yelp page</a></p>
-          </div>
-        ))}
-        <style jsx>{`
-          img {
-            width: 100px;
-            height: 100px;
-          }
-        `}</style>
+        <BarList bars={this.props.data.bars} />
       </Layout>
     )
   }
