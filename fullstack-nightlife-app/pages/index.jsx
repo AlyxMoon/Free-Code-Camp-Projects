@@ -29,6 +29,10 @@ class Home extends React.Component {
 
     const res = await fetch(`http://localhost:50032/api/bars${options}`)
     const data = await res.json()
+    data.bars.forEach(async (bar) => {
+      let schedule = await fetch(`http://localhost:50032/api/schedule/bar/${bar.id}`)
+      bar.schedule = await schedule.json()
+    })
 
     return {
       data,

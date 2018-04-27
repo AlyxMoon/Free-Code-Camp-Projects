@@ -54,7 +54,6 @@ const findOrCreateUser = (user) => {
       return new Promise((resolve, reject) => {
         resolve(state.db.collection('users'))
       }).then(collection => {
-        console.log('about to add to collection', user)
         return collection.insertOne({
           twitterID: user.id,
           twitterName: user.displayName,
@@ -69,8 +68,36 @@ const findOrCreateUser = (user) => {
     })
 }
 
+const findOrCreateBar = (id) => {
+  let col
+  return connectToDB()
+    .then(() => {
+      return state.db.collection('bars')
+    })
+    .then(collection => {
+      col = collection
+      return collection.findOne({
+        id: id
+      })
+    })
+    .then(existingBar => {
+      console.log('found a bar?', existingBar)
+      if (existingBar) return existingBar
+
+      return new Promise((resolve, reject) => {
+        resolve(col.insertOne({
+          id,
+          schedule: {}
+        }))
+      }).then(result => {
+        return result.ops[0]
+      })
+    })
+}
+
 module.exports.connectToDB = connectToDB
 module.exports.closeDB = closeDB
 module.exports.initDB = initDB
 module.exports.findUserByID = findUserByID
 module.exports.findOrCreateUser = findOrCreateUser
+module.exports.findOrCreateBar = findOrCreateBar

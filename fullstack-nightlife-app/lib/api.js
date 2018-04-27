@@ -2,6 +2,8 @@ const express = require('express')
 const fetch = require('isomorphic-unfetch')
 const router = express.Router()
 
+const { findOrCreateBar } = require('./db')
+
 const {
   DEFAULT_API_QUERY_LIMIT,
   DEFAULT_API_OPTIONS
@@ -36,6 +38,11 @@ router.get('/bars', (req, res) => {
       .then(json => formatYelpData(json))
       .then(data => res.json(data))
   }
+})
+
+router.get('/schedule/bar/:id', (req, res) => {
+  findOrCreateBar(req.params.id)
+    .then(bar => res.json(bar.schedule))
 })
 
 router.get('*', (req, res) => {
