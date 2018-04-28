@@ -152,6 +152,18 @@ const setUserGoingStatus = (dateGoing, barID, userID, goingStatus) => {
         }
       })
     })
+    .then(() => {
+      return state.db.collection('users')
+    })
+    .then(collection => {
+      return collection.updateOne({
+        twitterID: userID
+      }, {
+        $set: {
+          [`schedule.${dateGoing}.${barID}.going`]: goingStatus
+        }
+      })
+    })
     .catch(err => {
       console.log(err)
       return err

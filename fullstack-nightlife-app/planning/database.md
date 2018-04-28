@@ -11,7 +11,8 @@ COLLECTION users
   - schedule        : OBJECT  (quick reference of bars user plans on going to)
     - "DATE": OBJECT
       - "bar_id": OBJECT
-        - intoxication_level: NUMBER (planned intoxication level at the bar)
+        - going               : BOOL (whether user plans on going)
+        - intoxication_level  : NUMBER (planned intoxication level at the bar)
 
 COLLECTION bars
   - barID           : STRING  (id the of the bar)
