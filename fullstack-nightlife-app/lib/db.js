@@ -1,5 +1,6 @@
 const {
-  MongoClient
+  MongoClient,
+  ObjectId
 } = require('mongodb')
 
 const dbUrl = 'mongodb://localhost:27017'
@@ -8,6 +9,12 @@ const dbName = 'nightlifeApp'
 const state = {
   connection: null,
   db: null
+}
+
+const getNestedField = (obj, fields) => {
+  return fields.reduce((xs, x) => {
+    return (xs && xs[x]) ? xs[x] : null
+  }, obj)
 }
 
 const connectToDB = () => {
@@ -35,15 +42,22 @@ const initDB = () => {
     })
 }
 
-const findUserByID = (twitterID) => {
+const findUserByID = (twitterID, secret) => {
   return connectToDB()
     .then(() => {
       return state.db.collection('users')
     })
     .then(collection => {
-      return collection.findOne({
-        twitterID: twitterID
-      })
+      if (!secret) {
+        return collection.findOne({
+          twitterID: twitterID
+        })
+      } else {
+        return collection.findOne({
+          _id: ObjectId(secret),
+          twitterID: twitterID
+        })
+      }
     })
 }
 
@@ -81,7 +95,6 @@ const findOrCreateBar = (id) => {
       })
     })
     .then(existingBar => {
-      console.log('found a bar?', existingBar)
       if (existingBar) return existingBar
 
       return new Promise((resolve, reject) => {
@@ -95,9 +108,60 @@ const findOrCreateBar = (id) => {
     })
 }
 
+const setUserGoingStatus = (dateGoing, barID, userID, goingStatus) => {
+  let newCount
+  connectToDB()
+    .then(() => {
+      return state.db.collection('bars')
+    })
+    // First step: get bar and see if user already has a going status set
+    .then(collection => {
+      return collection.findOne({
+        id: barID
+      })
+    })
+    .then(bar => {
+      let currentGoingStatus = getNestedField(
+        bar,
+        ['schedule', dateGoing, 'users', userID, 'going']
+      )
+      let currentCount = getNestedField(
+        bar,
+        ['schedule', dateGoing, 'count']
+      ) || 0
+      newCount = currentCount
+
+      if (currentGoingStatus === true) {
+        if (!goingStatus) newCount = currentCount - 1
+      } else if (currentGoingStatus === false) {
+        if (goingStatus) newCount = currentCount + 1
+      } else {
+        goingStatus ? newCount = currentCount + 1 : newCount = currentCount - 1
+      }
+
+      return state.db.collection('bars')
+    })
+    // Second step: update bar count and user going status
+    .then(collection => {
+      return collection.updateOne({
+        id: barID
+      }, {
+        $set: {
+          [`schedule.${dateGoing}.users.${userID}.going`]: goingStatus,
+          [`schedule.${dateGoing}.count`]: newCount
+        }
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      return err
+    })
+}
+
 module.exports.connectToDB = connectToDB
 module.exports.closeDB = closeDB
 module.exports.initDB = initDB
 module.exports.findUserByID = findUserByID
 module.exports.findOrCreateUser = findOrCreateUser
 module.exports.findOrCreateBar = findOrCreateBar
+module.exports.setUserGoingStatus = setUserGoingStatus

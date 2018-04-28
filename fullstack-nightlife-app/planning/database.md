@@ -20,6 +20,7 @@ COLLECTION bars
         - count: NUMBER (convenience count of planned users going)
         - users:
           - "user_id":
+            - going               : BOOL (whether or not user plans on going)
             - intoxication_level  : NUMBER (planned intoxication level at the bar)
 
 

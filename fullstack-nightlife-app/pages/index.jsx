@@ -18,7 +18,8 @@ class Home extends React.Component {
 
     if (location === '') {
       return {
-        data: { bars: [], total: 0 },
+        bars: [],
+        total: 0,
         location,
         offset,
         user
@@ -29,13 +30,11 @@ class Home extends React.Component {
 
     const res = await fetch(`http://localhost:50032/api/bars${options}`)
     const data = await res.json()
-    data.bars.forEach(async (bar) => {
-      let schedule = await fetch(`http://localhost:50032/api/schedule/bar/${bar.id}`)
-      bar.schedule = await schedule.json()
-    })
+    console.log(data)
 
     return {
-      data,
+      bars: data.bars,
+      total: data.total,
       location,
       offset,
       user
@@ -54,10 +53,36 @@ class Home extends React.Component {
     }
 
     this.logout = this.logout.bind(this)
+    this.setStatusGoing = this.setStatusGoing.bind(this)
   }
 
   logout () {
     Router.push('/auth/logout')
+  }
+
+  async setStatusGoing (dateGoing, barId, going = true) {
+    let queryParams = `?dateGoing=${dateGoing}`
+    queryParams += `&barId=${barId}`
+    queryParams += `&going=${going}`
+    if (this.state.user.secret && this.state.user.twitterID) {
+      queryParams += `&twitterID=${this.state.user.twitterID}`
+      queryParams += `&secret=${this.state.user.secret}`
+    }
+
+    const res = await fetch(`http://localhost:50032/api/setGoing${queryParams}`)
+    const data = await res.json()
+
+    console.log('about to router push', data)
+    if (data.error) console.error(data.error)
+    else {
+      Router.push({
+        pathname: '/',
+        query: {
+          location: this.props.location,
+          offset: this.props.offset
+        }
+      }, '/')
+    }
   }
 
   render () {
@@ -68,16 +93,23 @@ class Home extends React.Component {
           avatar={this.state.user.twitterAvatar || ''}
           logout={this.logout}
         />
-        <Paginator total={this.props.data.total} location={this.props.location} />
+        <Paginator
+          total={this.props.total}
+          location={this.props.location} />
         <SearchBar />
-        <BarList bars={this.props.data.bars} />
+        { this.props.bars.length > 0 &&
+          <BarList
+            bars={this.props.bars}
+            setStatusGoing={this.setStatusGoing} />
+        }
       </Layout>
     )
   }
 }
 
 Home.propTypes = {
-  data: PropTypes.object.isRequired,
+  bars: PropTypes.array.isRequired,
+  total: PropTypes.number.isRequired,
   location: PropTypes.string.isRequired,
   offset: PropTypes.string.isRequired,
   user: PropTypes.object.isRequired

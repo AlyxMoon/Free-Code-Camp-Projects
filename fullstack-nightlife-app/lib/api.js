@@ -2,13 +2,30 @@ const express = require('express')
 const fetch = require('isomorphic-unfetch')
 const router = express.Router()
 
-const { findOrCreateBar } = require('./db')
+const {
+  findOrCreateBar,
+  findUserByID,
+  setUserGoingStatus
+} = require('./db')
 
 const {
   DEFAULT_API_QUERY_LIMIT,
   DEFAULT_API_OPTIONS
 } = require('./consts')
 const apiEndpoint = 'https://api.yelp.com/v3/businesses'
+
+function isValidUser (twitterID, secret) {
+  return new Promise((resolve, reject) => {
+    if (!twitterID || !secret) reject(new Error('no user credentials provided'))
+
+    findUserByID(twitterID, secret)
+      .then(user => {
+        if (!user) reject(new Error('not a valid logged in user'))
+        resolve(user)
+      })
+      .catch(reject)
+  })
+}
 
 router.get('/bar/:id', (req, res) => {
   fetch(`${apiEndpoint}/${req.params.id}`, DEFAULT_API_OPTIONS)
@@ -45,6 +62,23 @@ router.get('/schedule/bar/:id', (req, res) => {
     .then(bar => res.json(bar.schedule))
 })
 
+router.get('/setGoing', (req, res) => {
+  isValidUser(req.query.twitterID, req.query.secret)
+    .then(user => {
+      return setUserGoingStatus(
+        req.query.dateGoing,
+        req.query.barId,
+        user.twitterID,
+        req.query.going === 'true')
+    })
+    .then(() => {
+      res.json({ message: 'success setting going status' })
+    })
+    .catch(error => {
+      res.json({ error: error.message })
+    })
+})
+
 router.get('*', (req, res) => {
   res.json({
     error: 'The provided api route was not recognized.'
@@ -59,6 +93,11 @@ const formatYelpData = data => {
     newData.bars = data.businesses
     newData.total = data.total
 
-    resolve(newData)
+    Promise.all(newData.bars.map(bar => {
+      return findOrCreateBar(bar.id)
+        .then(barInfo => { bar.schedule = barInfo.schedule })
+    })).then(() => {
+      resolve(newData)
+    })
   })
 }
