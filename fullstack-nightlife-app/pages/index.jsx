@@ -72,7 +72,6 @@ class Home extends React.Component {
     const res = await fetch(`http://localhost:50032/api/setGoing${queryParams}`)
     const data = await res.json()
 
-    console.log('about to router push', data)
     if (data.error) console.error(data.error)
     else {
       Router.push({

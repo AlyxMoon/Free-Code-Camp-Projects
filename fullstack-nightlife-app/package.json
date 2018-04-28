@@ -13,6 +13,7 @@
     "start-windows": "next start -p %PORT%"
   },
   "dependencies": {
+    "@zeit/next-css": "^0.1.5",
     "cookie-parser": "^1.4.3",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",

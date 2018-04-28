@@ -1,5 +1,11 @@
 import { Component } from 'react'
+import Calendar from 'react-big-calendar'
 import PropTypes from 'prop-types'
+import moment from 'moment'
+
+import styleCalendar from 'react-big-calendar/lib/css/react-big-calendar.css'
+
+Calendar.setLocalizer(Calendar.momentLocalizer(moment))
 
 class BarListItem extends Component {
   constructor (props) {
@@ -19,6 +25,10 @@ class BarListItem extends Component {
 
   handleGoing () {
     if (this.state.dateGoing === '') return
+    if (moment().startOf('day').diff(moment(this.state.dateGoing).startOf('day')) > 0) {
+      alert('You cannot go in the past! Live in the present my friend :)')
+      return
+    }
     this.props.setStatusGoing(this.state.dateGoing, this.props.bar.id)
   }
 
@@ -31,11 +41,39 @@ class BarListItem extends Component {
     }, 0)
   }
 
+  getTodayCountofAttendees (schedule = {}) {
+    let today = new Date()
+    let todayString = today.getFullYear() + '-'
+    todayString += ('0' + (today.getMonth() + 1)).slice(-2) + '-'
+    todayString += ('0' + (today.getDate())).slice(-2)
+
+    if (schedule[todayString]) {
+      return schedule[todayString].count
+    }
+    return 0
+  }
+
+  getEventsFromSchedule (schedule = {}) {
+    let keys = Object.keys(schedule)
+
+    return keys.map(key => {
+      return {
+        start: moment(key),
+        end: moment(key),
+        title: `Going: ${schedule[key].count}`
+      }
+    })
+  }
+
   render () {
     return (
       <div className="bar" key={this.props.bar.id}>
         <h1>{this.props.bar.name}</h1>
+        <div className="calendar-wrapper">
+          <Calendar events={this.getEventsFromSchedule(this.props.bar.schedule)} onView='month' views={['month']} />
+        </div>
         <p>Total Number Visited: {this.getTotalCountOfAttendees(this.props.bar.schedule)}</p>
+        <p>People Going Today: {this.getTodayCountofAttendees(this.props.bar.schedule)}</p>
         <img src={this.props.bar.image_url} />
         <input
           type="date"
@@ -53,6 +91,10 @@ class BarListItem extends Component {
             height: 100px;
             width: 100px;
           }
+          .calendar-wrapper {
+            height: 400px;
+          }
+          ${styleCalendar}
         `}</style>
       </div>
     )
