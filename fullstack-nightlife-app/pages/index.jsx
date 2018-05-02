@@ -30,7 +30,6 @@ class Home extends React.Component {
 
     const res = await fetch(`http://localhost:50032/api/bars${options}`)
     const data = await res.json()
-    console.log(data)
 
     return {
       bars: data.bars,

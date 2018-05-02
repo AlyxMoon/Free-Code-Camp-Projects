@@ -5,6 +5,8 @@ import moment from 'moment'
 
 import styleCalendar from 'react-big-calendar/lib/css/react-big-calendar.css'
 
+const { isPast } = require('../lib/time')
+
 Calendar.setLocalizer(Calendar.momentLocalizer(moment))
 
 class BarListItem extends Component {
@@ -25,7 +27,8 @@ class BarListItem extends Component {
 
   handleGoing () {
     if (this.state.dateGoing === '') return
-    if (moment().startOf('day').diff(moment(this.state.dateGoing).startOf('day')) > 0) {
+
+    if (isPast(moment(this.state.dateGoing).valueOf())) {
       alert('You cannot go in the past! Live in the present my friend :)')
       return
     }
