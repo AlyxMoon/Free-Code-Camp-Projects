@@ -60,6 +60,7 @@ class Home extends React.Component {
   }
 
   async setStatusGoing (dateGoing, barId, going = true) {
+    console.log('setStatusGoing:', going)
     let queryParams = `?dateGoing=${dateGoing}`
     queryParams += `&barId=${barId}`
     queryParams += `&going=${going}`

@@ -12,8 +12,8 @@ const state = {
 }
 
 const getNestedField = (obj, fields) => {
-  return fields.reduce((xs, x) => {
-    return (xs && xs[x]) ? xs[x] : null
+  return fields.reduce((nestedObject, key) => {
+    return (nestedObject && (key in nestedObject)) ? nestedObject[key] : null
   }, obj)
 }
 
@@ -130,13 +130,12 @@ const setUserGoingStatus = (dateGoing, barID, userID, goingStatus) => {
         ['schedule', dateGoing, 'count']
       ) || 0
       newCount = currentCount
-
       if (currentGoingStatus === true) {
         if (!goingStatus) newCount = currentCount - 1
       } else if (currentGoingStatus === false) {
         if (goingStatus) newCount = currentCount + 1
       } else {
-        goingStatus ? newCount = currentCount + 1 : newCount = currentCount - 1
+        goingStatus ? newCount = currentCount + 1 : newCount = currentCount
       }
 
       return state.db.collection('bars')

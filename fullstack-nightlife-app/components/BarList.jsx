@@ -9,30 +9,66 @@ const { isPast } = require('../lib/time')
 
 Calendar.setLocalizer(Calendar.momentLocalizer(moment))
 
+class ConfirmBarAttendanceModal extends Component {
+  render () {
+    return (
+      <div className="modal">
+        <div className="modal-window">
+          <div>
+            <button onClick={() => { this.props.confirm(true) }}>Yes, I&apos;m Going</button>
+            <button onClick={() => { this.props.confirm(false) }}>No, I&apos;m not Going</button>
+          </div>
+        </div>
+        <style jsx>{`
+          .modal {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: auto;
+            height: auto
+            margin: auto;
+            background: rgba(0,0,0,0.5);
+            z-index: 10;
+          }
+        `}</style>
+      </div>
+    )
+  }
+}
+
+ConfirmBarAttendanceModal.propTypes = {
+  confirm: PropTypes.func.isRequired
+}
+
 class BarListItem extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      dateGoing: ''
+      dateGoing: '',
+      showModal: false
     }
 
     this.handleGoing = this.handleGoing.bind(this)
     this.handleChangeGoing = this.handleChangeGoing.bind(this)
+    this.handleSelectDate = this.handleSelectDate.bind(this)
   }
 
   handleChangeGoing (event) {
     this.setState({ dateGoing: event.target.value })
   }
 
-  handleGoing () {
+  handleGoing (going) {
+    this.setState({ showModal: false })
     if (this.state.dateGoing === '') return
 
     if (isPast(moment(this.state.dateGoing).valueOf())) {
       alert('You cannot go in the past! Live in the present my friend :)')
       return
     }
-    this.props.setStatusGoing(this.state.dateGoing, this.props.bar.id)
+    this.props.setStatusGoing(this.state.dateGoing, this.props.bar.id, going)
   }
 
   getTotalCountOfAttendees (schedule = {}) {
@@ -68,12 +104,27 @@ class BarListItem extends Component {
     })
   }
 
+  handleSelectDate (slotInfo) {
+    if (slotInfo.action === 'select') return
+    this.setState({
+      showModal: true,
+      dateGoing: moment(slotInfo.start).format('YYYY-MM-DD')
+    })
+  }
+
   render () {
     return (
       <div className="bar" key={this.props.bar.id}>
         <h1>{this.props.bar.name}</h1>
         <div className="calendar-wrapper">
-          <Calendar events={this.getEventsFromSchedule(this.props.bar.schedule)} onView='month' views={['month']} />
+          <Calendar
+            events={this.getEventsFromSchedule(this.props.bar.schedule)}
+            defaultDate={new Date()}
+            onView='month'
+            views={['month']}
+            selectable={'ignoreEvents'}
+            onSelectSlot={this.handleSelectDate}
+          />
         </div>
         <p>Total Number Visited: {this.getTotalCountOfAttendees(this.props.bar.schedule)}</p>
         <p>People Going Today: {this.getTodayCountofAttendees(this.props.bar.schedule)}</p>
@@ -88,6 +139,7 @@ class BarListItem extends Component {
           onClick={this.handleGoing} />
         <p><a href={this.props.bar.url}>Link to Yelp page</a></p>
 
+        { this.state.showModal && <ConfirmBarAttendanceModal confirm={this.handleGoing} /> }
         <style jsx>{`
           img {
             display: block;
