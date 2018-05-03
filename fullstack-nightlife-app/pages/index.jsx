@@ -11,7 +11,7 @@ import BarList from '../components/BarList'
 
 class Home extends React.Component {
   static async getInitialProps ({ query }) {
-    const offset = query.offset || '0'
+    const offset = parseInt(query.offset) || 0
     const location = query.location || ''
 
     const user = query.user || {}
@@ -92,9 +92,13 @@ class Home extends React.Component {
           avatar={this.state.user.twitterAvatar || ''}
           logout={this.logout}
         />
-        <Paginator
-          total={this.props.total}
-          location={this.props.location} />
+        { this.props.bars.length > 0 &&
+          <Paginator
+            total={this.props.total}
+            location={this.props.location}
+            currentPage={this.props.offset + 1}
+          />
+        }
         <SearchBar />
         { this.props.bars.length > 0 &&
           <BarList
@@ -110,7 +114,7 @@ Home.propTypes = {
   bars: PropTypes.array.isRequired,
   total: PropTypes.number.isRequired,
   location: PropTypes.string.isRequired,
-  offset: PropTypes.string.isRequired,
+  offset: PropTypes.number.isRequired,
   user: PropTypes.object.isRequired
 }
 

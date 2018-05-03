@@ -17,6 +17,10 @@ const Layout = props => (
           margin: 0;
           padding: 0;
         }
+
+        .page {
+          padding: 0 5px;
+        }
       `}</style>
     </div>
   </AlertProvider>

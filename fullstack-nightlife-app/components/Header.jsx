@@ -46,6 +46,8 @@ class Header extends React.Component {
             background-color: black;
             height: 50px;
             line-height: 50px;
+            margin: 0 -5px;
+            padding: 0 5px;
           }
 
           .nav-item {
