@@ -1,17 +1,25 @@
 import PropTypes from 'prop-types'
+import { Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
+
+const options = {
+  timeout: 10000
+}
 
 const Layout = props => (
-  <div className="page">
-    <div className="content">
-      {props.children}
+  <AlertProvider template={AlertTemplate} {...options}>
+    <div className="page">
+      <div className="content">
+        {props.children}
+      </div>
+      <style jsx global>{`
+        body {
+          margin: 0;
+          padding: 0;
+        }
+      `}</style>
     </div>
-    <style jsx global>{`
-      body {
-        margin: 0;
-        padding: 0;
-      }
-    `}</style>
-  </div>
+  </AlertProvider>
 )
 Layout.propTypes = {
   children: PropTypes.any.isRequired
