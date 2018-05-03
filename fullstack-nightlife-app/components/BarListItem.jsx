@@ -53,12 +53,7 @@ class BarListItem extends Component {
     }
 
     this.handleGoing = this.handleGoing.bind(this)
-    this.handleChangeGoing = this.handleChangeGoing.bind(this)
     this.handleSelectDate = this.handleSelectDate.bind(this)
-  }
-
-  handleChangeGoing (event) {
-    this.setState({ dateGoing: event.target.value })
   }
 
   handleGoing (going) {
@@ -130,14 +125,6 @@ class BarListItem extends Component {
         <p>Total Number Visited: {this.getTotalCountOfAttendees(this.props.bar.schedule)}</p>
         <p>People Going Today: {this.getTodayCountofAttendees(this.props.bar.schedule)}</p>
         <img src={this.props.bar.image_url} />
-        <input
-          type="date"
-          value={this.state.dateGoing}
-          onChange={this.handleChangeGoing} />
-        <input
-          type="button"
-          value="Going"
-          onClick={this.handleGoing} />
         <p><a href={this.props.bar.url}>Link to Yelp page</a></p>
 
         { this.state.showModal && <ConfirmBarAttendanceModal confirm={this.handleGoing} /> }
