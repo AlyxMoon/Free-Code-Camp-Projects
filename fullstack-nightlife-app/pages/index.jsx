@@ -4,63 +4,15 @@ import Router from 'next/router'
 import fetch from 'isomorphic-unfetch'
 
 import Layout from '../components/Layout'
-import Header from '../components/Header'
 import Paginator from '../components/Paginator'
 import SearchBar from '../components/SearchBar'
 import BarList from '../components/BarList'
 
 class Home extends React.Component {
-  static async getInitialProps ({ query, pathname, asPath, req }) {
-    const offset = parseInt(query.offset) || 0
-    const location = query.location || ''
-
-    const user = query.user || {}
-
-    if (location === '') {
-      return {
-        bars: [],
-        total: 0,
-        location,
-        offset,
-        user
-      }
-    }
-
-    const options = `?location=${location}&offset=${offset}`
-
-    const res = await fetch(`http://localhost:50032/api/bars${options}`)
-    const data = await res.json()
-
-    if (!req) {
-      document.cookie = `authRedirect=${pathname}${options}; expires:${new Date() + 1000}`
-    }
-
-    return {
-      bars: data.bars,
-      total: data.total,
-      location,
-      offset,
-      user
-    }
-  }
-
   constructor (props) {
     super(props)
-    this.state = {
-      user: {
-        secret: props.user._id,
-        twitterID: props.user.twitterID,
-        twitterUsername: props.user.twitterUsername,
-        twitterAvatar: props.user.twitterAvatar
-      }
-    }
 
-    this.logout = this.logout.bind(this)
     this.setStatusGoing = this.setStatusGoing.bind(this)
-  }
-
-  logout () {
-    Router.push('/auth/logout')
   }
 
   async setStatusGoing (dateGoing, barId, going = true) {
@@ -68,9 +20,9 @@ class Home extends React.Component {
     let queryParams = `?dateGoing=${dateGoing}`
     queryParams += `&barId=${barId}`
     queryParams += `&going=${going}`
-    if (this.state.user.secret && this.state.user.twitterID) {
-      queryParams += `&twitterID=${this.state.user.twitterID}`
-      queryParams += `&secret=${this.state.user.secret}`
+    if (this.props.user.secret && this.props.user.twitterID) {
+      queryParams += `&twitterID=${this.props.user.twitterID}`
+      queryParams += `&secret=${this.props.user.secret}`
     }
 
     const res = await fetch(`http://localhost:50032/api/setGoing${queryParams}`)
@@ -90,12 +42,7 @@ class Home extends React.Component {
 
   render () {
     return (
-      <Layout>
-        <Header
-          username={this.state.user.twitterUsername || ''}
-          avatar={this.state.user.twitterAvatar || ''}
-          logout={this.logout}
-        />
+      <div>
         { this.props.bars.length > 0 &&
           <Paginator
             total={this.props.total}
@@ -109,7 +56,7 @@ class Home extends React.Component {
             bars={this.props.bars}
             setStatusGoing={this.setStatusGoing} />
         }
-      </Layout>
+      </div>
     )
   }
 }
@@ -122,4 +69,4 @@ Home.propTypes = {
   user: PropTypes.object.isRequired
 }
 
-export default Home
+export default Layout(Home)

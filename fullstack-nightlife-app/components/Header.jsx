@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Router from 'next/router'
+
 class Header extends React.Component {
   constructor (props) {
     super(props)
@@ -13,6 +15,10 @@ class Header extends React.Component {
 
   handleClick () {
     this.setState({showMenu: !this.state.showMenu})
+  }
+
+  logout () {
+    Router.push('/auth/logout')
   }
 
   render () {
@@ -35,7 +41,7 @@ class Header extends React.Component {
           { this.state.showMenu &&
             <div className="nav-modal">
               <hr />
-              <a href="#" onClick={this.props.logout}>Logout</a>
+              <a href="#" onClick={this.logout}>Logout</a>
               <hr />
             </div>
           }
@@ -127,8 +133,7 @@ class Header extends React.Component {
 
 Header.propTypes = {
   username: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  logout: PropTypes.func.isRequired
+  avatar: PropTypes.string.isRequired
 }
 
 export default Header
