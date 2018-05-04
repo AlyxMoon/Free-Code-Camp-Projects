@@ -1,5 +1,6 @@
 const express = require('express')
 const fetch = require('isomorphic-unfetch')
+const throat = require('throat')(2)
 const router = express.Router()
 
 const {
@@ -28,9 +29,12 @@ function isValidUser (twitterID, secret) {
 }
 
 router.get('/bar/:id', (req, res) => {
-  fetch(`${apiEndpoint}/${req.params.id}`, DEFAULT_API_OPTIONS)
-    .then(yelp => yelp.json())
-    .then(json => res.json(json))
+  console.log(`API - Attempting to get info on bar ${req.params.id}`)
+  throat(() => {
+    return fetch(`${apiEndpoint}/${req.params.id}`, DEFAULT_API_OPTIONS)
+      .then(yelp => yelp.json())
+      .then(json => res.json(json))
+  })
 })
 
 router.get('/bar/:id/reviews', (req, res) => {

@@ -33,6 +33,12 @@ app.prepare()
       app.render(req, res, actualPage, queryParams)
     })
 
+    server.get('/user', (req, res) => {
+      const actualPage = '/user'
+      const queryParams = { user: req.user }
+      app.render(req, res, actualPage, queryParams)
+    })
+
     server.get('*', (req, res) => {
       return handle(req, res)
     })

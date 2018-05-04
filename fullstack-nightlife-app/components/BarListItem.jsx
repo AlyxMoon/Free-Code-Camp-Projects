@@ -4,8 +4,6 @@ import Calendar from 'react-big-calendar'
 import { withAlert } from 'react-alert'
 import moment from 'moment'
 
-import styleCalendar from 'react-big-calendar/lib/css/react-big-calendar.css'
-
 const { isPast } = require('../lib/time')
 
 Calendar.setLocalizer(Calendar.momentLocalizer(moment))
@@ -134,10 +132,6 @@ class BarListItem extends Component {
             height: 100px;
             width: 100px;
           }
-          .calendar-wrapper {
-            height: 400px;
-          }
-          ${styleCalendar}
         `}</style>
       </div>
     )
