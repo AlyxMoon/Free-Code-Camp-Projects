@@ -12,7 +12,6 @@ class Header extends React.Component {
   }
 
   handleClick () {
-    console.log('in handleClick', this.state)
     this.setState({showMenu: !this.state.showMenu})
   }
 

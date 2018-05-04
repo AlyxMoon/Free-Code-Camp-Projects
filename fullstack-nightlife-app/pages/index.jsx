@@ -10,7 +10,7 @@ import SearchBar from '../components/SearchBar'
 import BarList from '../components/BarList'
 
 class Home extends React.Component {
-  static async getInitialProps ({ query }) {
+  static async getInitialProps ({ query, pathname, asPath, req }) {
     const offset = parseInt(query.offset) || 0
     const location = query.location || ''
 
@@ -30,6 +30,10 @@ class Home extends React.Component {
 
     const res = await fetch(`http://localhost:50032/api/bars${options}`)
     const data = await res.json()
+
+    if (!req) {
+      document.cookie = `authRedirect=${pathname}${options}; expires:${new Date() + 1000}`
+    }
 
     return {
       bars: data.bars,

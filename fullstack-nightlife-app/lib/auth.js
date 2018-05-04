@@ -26,9 +26,6 @@ passport.deserializeUser((id, done) => {
 })
 
 router.get('/twitter', (req, res) => {
-  if (req.header('Referrer')) {
-    res.cookie('authRedirect', req.header('Referrer'), { expire: new Date() + 1000 })
-  }
   auth.authenticate('twitter')(req, res)
 })
 

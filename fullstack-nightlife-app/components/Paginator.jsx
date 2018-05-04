@@ -32,7 +32,7 @@ const PaginatorLink = props => (
 PaginatorLink.propTypes = {
   location: PropTypes.string.isRequired,
   number: PropTypes.number.isRequired,
-  active: PropTypes.bool.isRequired,
+  active: PropTypes.bool,
   text: PropTypes.string
 }
 
