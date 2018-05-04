@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 import Calendar from 'react-big-calendar'
-import { withAlert } from 'react-alert'
 import moment from 'moment'
 
 const { isPast } = require('../lib/time')
@@ -54,14 +53,14 @@ class BarListItem extends Component {
     this.handleSelectDate = this.handleSelectDate.bind(this)
   }
 
+  componentWillMount () {
+    const alertify = require('alertifyjs')
+    this.setState({ alertify })
+  }
+
   handleGoing (going) {
     this.setState({ showModal: false })
     if (this.state.dateGoing === '') return
-
-    if (isPast(moment(this.state.dateGoing).valueOf())) {
-      this.props.alert.error('You cannot go in the past! Live in the present my friend :)')
-      return
-    }
     this.props.setStatusGoing(this.state.dateGoing, this.props.bar.id, going)
   }
 
@@ -100,10 +99,31 @@ class BarListItem extends Component {
 
   handleSelectDate (slotInfo) {
     if (slotInfo.action === 'select') return
+    if (isPast(moment(slotInfo.start).valueOf())) {
+      this.state.alertify.error('Cannot go to an event in the past')
+      return
+    }
+
     this.setState({
-      showModal: true,
       dateGoing: moment(slotInfo.start).format('YYYY-MM-DD')
     })
+
+    this.state.alertify.dialog('confirm').set({
+      title: 'Do you want to go?',
+      message: `Do you want to go to ${this.props.bar.name} on ${this.state.dateGoing}`,
+      transition: 'zoom',
+      movable: false,
+      labels: {
+        ok: 'Yes',
+        cancel: 'No'
+      },
+      onok: () => {
+        this.handleGoing(true)
+      },
+      oncancel: () => {
+        this.handleGoing(false)
+      }
+    }).show()
   }
 
   render () {
@@ -140,8 +160,7 @@ class BarListItem extends Component {
 
 BarListItem.propTypes = {
   bar: PropTypes.object.isRequired,
-  setStatusGoing: PropTypes.func.isRequired,
-  alert: PropTypes.object
+  setStatusGoing: PropTypes.func.isRequired
 }
 
-export default withAlert(BarListItem)
+export default BarListItem

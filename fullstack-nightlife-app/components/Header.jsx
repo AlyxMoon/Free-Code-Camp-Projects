@@ -34,6 +34,7 @@ class Header extends React.Component {
           }
           { this.state.showMenu &&
             <div className="nav-modal">
+              <hr />
               <a href="/user">Profile</a>
               <hr />
               <a href="/auth/logout">Logout</a>

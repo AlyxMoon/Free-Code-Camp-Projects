@@ -1,16 +1,12 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Provider as AlertProvider } from 'react-alert'
-import AlertTemplate from 'react-alert-template-basic'
 import fetch from 'isomorphic-unfetch'
 
 import styleCalendar from 'react-big-calendar/lib/css/react-big-calendar.css'
+import styleAlertify from 'alertifyjs/build/css/alertify.min.css'
+import styleAlertifyDefault from 'alertifyjs/build/css/themes/default.min.css'
 
 import Header from '../components/Header'
-
-const options = {
-  timeout: 10000
-}
 
 const withLayout = ComposedComponent => {
   class Layout extends Component {
@@ -95,33 +91,39 @@ const withLayout = ComposedComponent => {
     render () {
       let { user, ...leftoverProps } = this.props
       return (
-        <AlertProvider template={AlertTemplate} {...options}>
-          <div className="page">
-            <Header
-              username={this.state.user.twitterUsername || ''}
-              avatar={this.state.user.twitterAvatar || ''}
-            />
-            <div className="content">
-              <ComposedComponent user={this.state.user} {...leftoverProps} />
-            </div>
-            <style jsx global>{`
-              body {
-                margin: 0;
-                padding: 0;
-              }
-
-              .page {
-                padding: 0 5px;
-              }
-
-              .calendar-wrapper {
-                height: 400px;
-              }
-
-              ${styleCalendar}
-            `}</style>
+        <div className="page">
+          <Header
+            username={this.state.user.twitterUsername || ''}
+            avatar={this.state.user.twitterAvatar || ''}
+          />
+          <div className="content">
+            <ComposedComponent user={this.state.user} {...leftoverProps} />
           </div>
-        </AlertProvider>
+          <style jsx global>{`
+            body {
+              margin: 0;
+              padding: 0;
+            }
+
+            .page {
+              padding: 0 5px;
+            }
+
+            .calendar-wrapper {
+              height: 400px;
+            }
+
+            button {
+              cursor: pointer;
+            }
+
+            ${styleCalendar}
+
+            ${styleAlertify}
+
+            ${styleAlertifyDefault}
+          `}</style>
+        </div>
       )
     }
   }

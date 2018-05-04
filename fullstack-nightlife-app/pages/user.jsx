@@ -18,8 +18,8 @@ class User extends Component {
       bars.forEach(bar => {
         if (schedule[date][bar].going) {
           events.push({
-            start: moment(date),
-            end: moment(date),
+            start: moment(date).toDate(),
+            end: moment(date).toDate(),
             title: schedule[date][bar].name
           })
         }
@@ -43,8 +43,9 @@ class User extends Component {
               <Calendar
                 events={this.getEventsFromSchedule(this.props.user.schedule)}
                 defaultDate={new Date()}
-                onView='month'
+                defaultView='month'
                 views={['month']}
+                popup
               />
             </div>
           </div>
