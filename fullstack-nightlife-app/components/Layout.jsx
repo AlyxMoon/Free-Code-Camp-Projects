@@ -15,7 +15,6 @@ const options = {
 const withLayout = ComposedComponent => {
   class Layout extends Component {
     static async getInitialProps ({ query, pathname, req, res }) {
-      console.log('hitting getInitialProps', query)
       if (pathname === '/user') {
         let user = {}
         if (req) {
@@ -27,7 +26,6 @@ const withLayout = ComposedComponent => {
         }
 
         if (user.schedule) {
-          console.log('trying to update user schedule')
           let dates = Object.keys(user.schedule)
           for (let date of dates) {
             let bars = Object.keys(user.schedule[date])
@@ -66,6 +64,8 @@ const withLayout = ComposedComponent => {
 
       if (!req) {
         document.cookie = `authRedirect=${pathname}${options}; expires:${new Date() + 1000}`
+      } else {
+        res.cookie('authRedirect', `${pathname}${options}`, { expire: (new Date() + 1000) })
       }
 
       return {
@@ -79,8 +79,6 @@ const withLayout = ComposedComponent => {
 
     constructor (props) {
       super(props)
-
-      console.log('hit the constructor', this.state, props)
 
       this.state = {
         user: {
@@ -102,7 +100,6 @@ const withLayout = ComposedComponent => {
             <Header
               username={this.state.user.twitterUsername || ''}
               avatar={this.state.user.twitterAvatar || ''}
-              user={this.state.user}
             />
             <div className="content">
               <ComposedComponent user={this.state.user} {...leftoverProps} />
