@@ -2,51 +2,18 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 import Calendar from 'react-big-calendar'
 import moment from 'moment'
+import IntoxicationLevel from './IntoxicationLevel'
 
 const { isPast } = require('../lib/time')
 
 Calendar.setLocalizer(Calendar.momentLocalizer(moment))
-
-class ConfirmBarAttendanceModal extends Component {
-  render () {
-    return (
-      <div className="modal">
-        <div className="modal-window">
-          <div>
-            <button onClick={() => { this.props.confirm(true) }}>Yes, I&apos;m Going</button>
-            <button onClick={() => { this.props.confirm(false) }}>No, I&apos;m not Going</button>
-          </div>
-        </div>
-        <style jsx>{`
-          .modal {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: auto;
-            height: auto
-            margin: auto;
-            background: rgba(0,0,0,0.5);
-            z-index: 10;
-          }
-        `}</style>
-      </div>
-    )
-  }
-}
-
-ConfirmBarAttendanceModal.propTypes = {
-  confirm: PropTypes.func.isRequired
-}
 
 class BarListItem extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      dateGoing: '',
-      showModal: false
+      dateGoing: ''
     }
 
     this.handleGoing = this.handleGoing.bind(this)
@@ -59,7 +26,6 @@ class BarListItem extends Component {
   }
 
   handleGoing (going) {
-    this.setState({ showModal: false })
     if (this.state.dateGoing === '') return
     this.props.setStatusGoing(this.state.dateGoing, this.props.bar.id, going)
   }
@@ -142,10 +108,13 @@ class BarListItem extends Component {
         </div>
         <p>Total Number Visited: {this.getTotalCountOfAttendees(this.props.bar.schedule)}</p>
         <p>People Going Today: {this.getTodayCountofAttendees(this.props.bar.schedule)}</p>
+        <p>
+          Average Drunk Level:
+          <IntoxicationLevel level={3} />
+        </p>
         <img src={this.props.bar.image_url} />
         <p><a href={this.props.bar.url}>Link to Yelp page</a></p>
 
-        { this.state.showModal && <ConfirmBarAttendanceModal confirm={this.handleGoing} /> }
         <style jsx>{`
           img {
             display: block;

@@ -123,6 +123,18 @@ const withLayout = ComposedComponent => {
               }
             }
 
+            .intox-level {
+              background-color: #DDD;
+              border-radius: 5px;
+              color: white;
+              margin: 0 2px;
+              padding: 4px;
+            }
+
+            .intox-level.fill {
+              color: red;
+            }
+
             ${styleCalendar}
 
             ${styleAlertify}
