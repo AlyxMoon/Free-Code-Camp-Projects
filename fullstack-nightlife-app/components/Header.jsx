@@ -19,13 +19,14 @@ class Header extends React.Component {
     return (
       <div className="navbar">
         <div className="nav-item">
-          <span className="inner-text">Results powered by:</span>
-          <img src="/static/yelp.png" />
+          <a href="/">
+            FCC Nightlife
+          </a>
         </div>
         <div className="nav-item pull-right">
           { this.props.username
             ? (<a href="#" onClick={this.handleClick}>
-              {this.props.username}
+              <span className="hide-xs">{this.props.username}</span>
               <i className={`icon ${this.state.showMenu ? 'icon-up-arrow' : 'icon-down-arrow'}`}></i>
               <img src={this.props.avatar} />
             </a>
@@ -78,11 +79,13 @@ class Header extends React.Component {
             padding: 5px;
             position: relative;
             text-align: center;
+            z-index: 5;
           }
 
           a {
             color: white;
             font-size: 20px;
+            line-height: 50px;
             text-align: center;
             text-decoration: none;
             transition-duration: 0.2s;
@@ -90,6 +93,10 @@ class Header extends React.Component {
           }
           a:hover {
             color: #3FB0AC;
+          }
+
+          a span {
+            vertical-align: top;
           }
 
           .nav-dropdown.menu a {
@@ -115,6 +122,7 @@ class Header extends React.Component {
 
           .pull-right {
             float: right;
+            text-align: right;
           }
 
           .inner-text {

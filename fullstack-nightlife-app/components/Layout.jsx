@@ -117,6 +117,12 @@ const withLayout = ComposedComponent => {
               cursor: pointer;
             }
 
+            @media (max-width: 768px) {
+              .hide-xs {
+                display: none;
+              }
+            }
+
             ${styleCalendar}
 
             ${styleAlertify}
