@@ -15,10 +15,11 @@ class Home extends React.Component {
     this.setStatusGoing = this.setStatusGoing.bind(this)
   }
 
-  async setStatusGoing (dateGoing, barId, going = true) {
+  async setStatusGoing (dateGoing, barId, going = true, intoxLevel = 0) {
     let queryParams = `?dateGoing=${dateGoing}`
     queryParams += `&barId=${barId}`
     queryParams += `&going=${going}`
+    queryParams += `&intoxLevel=${intoxLevel}`
     if (this.props.user.secret && this.props.user.twitterID) {
       queryParams += `&twitterID=${this.props.user.twitterID}`
       queryParams += `&secret=${this.props.user.secret}`

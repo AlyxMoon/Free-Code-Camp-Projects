@@ -12,22 +12,25 @@ class BarListItem extends Component {
   constructor (props) {
     super(props)
 
-    this.state = {
-      dateGoing: ''
-    }
-
-    this.handleGoing = this.handleGoing.bind(this)
     this.handleSelectDate = this.handleSelectDate.bind(this)
   }
 
-  componentWillMount () {
-    const alertify = require('alertifyjs')
-    this.setState({ alertify })
+  componentDidMount () {
+    this.setState({ alertify: require('alertifyjs') })
   }
 
-  handleGoing (going) {
-    if (this.state.dateGoing === '') return
-    this.props.setStatusGoing(this.state.dateGoing, this.props.bar.id, going)
+  getAverageIntoxLevel (schedule = {}) {
+    let keys = Object.keys(schedule)
+
+    if (keys.length === 0) return 0
+    return Math.floor(keys.reduce((sum, day) => {
+      let users = Object.keys(schedule[day].users)
+
+      if (users.length === 0) return sum + 0
+      return sum + users.reduce((sum2, user) => {
+        return sum2 + schedule[day].users[user].intoxLevel
+      }, 0)
+    }, 0) / keys.length)
   }
 
   getTotalCountOfAttendees (schedule = {}) {
@@ -55,10 +58,12 @@ class BarListItem extends Component {
     let keys = Object.keys(schedule)
 
     return keys.map(key => {
-      return {
-        start: moment(key),
-        end: moment(key),
-        title: `Going: ${schedule[key].count}`
+      if (schedule[key].count > 0) {
+        return {
+          start: moment(key),
+          end: moment(key),
+          title: `Going: ${schedule[key].count}`
+        }
       }
     })
   }
@@ -70,26 +75,9 @@ class BarListItem extends Component {
       return
     }
 
-    this.setState({
-      dateGoing: moment(slotInfo.start).format('YYYY-MM-DD')
-    })
-
-    this.state.alertify.dialog('confirm').set({
-      title: 'Do you want to go?',
-      message: `Do you want to go to ${this.props.bar.name} on ${this.state.dateGoing}`,
-      transition: 'zoom',
-      movable: false,
-      labels: {
-        ok: 'Yes',
-        cancel: 'No'
-      },
-      onok: () => {
-        this.handleGoing(true)
-      },
-      oncancel: () => {
-        this.handleGoing(false)
-      }
-    }).show()
+    this.props.onCalendarClick((
+      <p>Do you want to go to <b>{this.props.bar.name}</b> on <b>{this.state.dateGoing}</b>?</p>
+    ), moment(slotInfo.start).format('YYYY-MM-DD'), this.props.bar.id)
   }
 
   render () {
@@ -109,8 +97,8 @@ class BarListItem extends Component {
         <p>Total Number Visited: {this.getTotalCountOfAttendees(this.props.bar.schedule)}</p>
         <p>People Going Today: {this.getTodayCountofAttendees(this.props.bar.schedule)}</p>
         <p>
-          Average Drunk Level:
-          <IntoxicationLevel level={3} />
+          Average Intoxication Level:
+          <IntoxicationLevel level={this.getAverageIntoxLevel(this.props.bar.schedule)} />
         </p>
         <img src={this.props.bar.image_url} />
         <p><a href={this.props.bar.url}>Link to Yelp page</a></p>
@@ -129,7 +117,7 @@ class BarListItem extends Component {
 
 BarListItem.propTypes = {
   bar: PropTypes.object.isRequired,
-  setStatusGoing: PropTypes.func.isRequired
+  onCalendarClick: PropTypes.func.isRequired
 }
 
 export default BarListItem

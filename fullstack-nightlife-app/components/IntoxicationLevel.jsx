@@ -8,8 +8,13 @@ const IntoxicationLevel = props => {
   let icons = []
   for (let i = 1; i <= 5; i++) {
     let fill = level >= i ? 'fill' : ''
+    let selectable = props.selectable ? 'selectable' : ''
     icons.push((
-      <i className={'fas fa-beer intox-level ' + fill} />
+      <i
+        key={`intox-level-${i}`}
+        className={`fas fa-beer intox-level ${fill} ${selectable}`}
+        onClick={() => { props.onClickIcon(i) }}
+      />
     ))
   }
 
@@ -21,11 +26,15 @@ const IntoxicationLevel = props => {
 }
 
 IntoxicationLevel.defaultProps = {
-  level: 0
+  level: 0,
+  selectable: false,
+  onClickIcon: () => {}
 }
 
 IntoxicationLevel.propTypes = {
-  level: PropTypes.number
+  level: PropTypes.number,
+  selectable: PropTypes.bool,
+  onClickIcon: PropTypes.func
 }
 
 export default IntoxicationLevel

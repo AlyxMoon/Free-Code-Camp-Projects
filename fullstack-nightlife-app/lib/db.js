@@ -108,7 +108,7 @@ const findOrCreateBar = (id) => {
     })
 }
 
-const setUserGoingStatus = (dateGoing, barID, userID, goingStatus) => {
+const setUserGoingStatus = (dateGoing, barID, userID, goingStatus, intoxLevel) => {
   let newCount
   connectToDB()
     .then(() => {
@@ -147,6 +147,7 @@ const setUserGoingStatus = (dateGoing, barID, userID, goingStatus) => {
       }, {
         $set: {
           [`schedule.${dateGoing}.users.${userID}.going`]: goingStatus,
+          [`schedule.${dateGoing}.users.${userID}.intoxLevel`]: intoxLevel,
           [`schedule.${dateGoing}.count`]: newCount
         }
       })
@@ -159,7 +160,8 @@ const setUserGoingStatus = (dateGoing, barID, userID, goingStatus) => {
         twitterID: userID
       }, {
         $set: {
-          [`schedule.${dateGoing}.${barID}.going`]: goingStatus
+          [`schedule.${dateGoing}.${barID}.going`]: goingStatus,
+          [`schedule.${dateGoing}.${barID}.intoxLevel`]: intoxLevel
         }
       })
     })

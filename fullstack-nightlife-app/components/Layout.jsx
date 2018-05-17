@@ -135,6 +135,10 @@ const withLayout = ComposedComponent => {
               color: red;
             }
 
+            .intox-level.selectable {
+              cursor: pointer;
+            }
+
             ${styleCalendar}
 
             ${styleAlertify}

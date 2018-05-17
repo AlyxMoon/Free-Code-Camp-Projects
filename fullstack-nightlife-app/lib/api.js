@@ -73,7 +73,8 @@ router.get('/setGoing', (req, res) => {
         req.query.dateGoing,
         req.query.barId,
         user.twitterID,
-        req.query.going === 'true')
+        req.query.going === 'true',
+        parseInt(req.query.intoxLevel))
     })
     .then(() => {
       res.json({ message: 'success setting going status' })
