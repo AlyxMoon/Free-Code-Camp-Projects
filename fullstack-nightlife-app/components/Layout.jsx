@@ -154,6 +154,37 @@ const withLayout = ComposedComponent => {
               cursor: pointer;
             }
 
+            .btn {
+              border-radius: 5px;
+              border-style: solid;
+              font-size: 18px;
+              line-height: 18px;
+              margin: 5px;
+              padding: 5px 15px;
+            }
+
+            .btn.btn-default {
+              background-color: #6C757D;
+              border-color: #6C757D;
+              color: #EEE
+            }
+
+            .btn.btn-default:hover {
+              background-color: #525D67;
+              border-color: #525D67;
+            }
+
+            .btn.btn-primary {
+              background-color: #3174AD;
+              border-color: #3174AD;
+              color: #EEE;
+            }
+
+            .btn.btn-primary:hover {
+              background-color: #1160A2;
+              border-color: #1160A2;
+            }
+
             ${styleCalendar}
 
             ${styleAlertify}

@@ -46,10 +46,10 @@ class BarList extends Component {
   render () {
     let buttons = []
     buttons.push((
-      <button key='modal-button-1' onClick={() => { this.going(true) }}>Yes</button>
+      <button key='modal-button-1' className="btn btn-primary" onClick={() => { this.going(true) }}>Yes</button>
     ))
     buttons.push((
-      <button key='modal-button-2' onClick={() => { this.going(false) }}>No</button>
+      <button key='modal-button-2' className="btn btn-default" onClick={() => { this.going(false) }}>No</button>
     ))
 
     return (

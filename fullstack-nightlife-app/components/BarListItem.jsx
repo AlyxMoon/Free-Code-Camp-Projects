@@ -74,10 +74,11 @@ class BarListItem extends Component {
       this.state.alertify.error('Cannot go to an event in the past')
       return
     }
+    let date = moment(slotInfo.start).format('YYYY-MM-DD')
 
     this.props.onCalendarClick((
-      <p>Do you want to go to <b>{this.props.bar.name}</b> on <b>{this.state.dateGoing}</b>?</p>
-    ), moment(slotInfo.start).format('YYYY-MM-DD'), this.props.bar.id)
+      <p>Do you want to go to <b>{this.props.bar.name}</b> on <b>{date}</b>?</p>
+    ), date, this.props.bar.id)
   }
 
   render () {
