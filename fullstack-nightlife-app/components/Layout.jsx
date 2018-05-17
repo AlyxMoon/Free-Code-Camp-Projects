@@ -22,13 +22,28 @@ const withLayout = ComposedComponent => {
         }
 
         if (user.schedule) {
+          let setBars = new Set()
+
           let dates = Object.keys(user.schedule)
           for (let date of dates) {
             let bars = Object.keys(user.schedule[date])
+
             for (let bar of bars) {
-              let barInfo = await fetch(`http://localhost:50032/api/bar/${bar}`)
-              let parsedBarInfo = await barInfo.json()
-              user.schedule[date][bar].name = parsedBarInfo.name
+              setBars.add(bar)
+            }
+          }
+
+          console.log(setBars)
+          let parsedBarInfo = {}
+          for (let bar of setBars) {
+            let barInfo = await fetch(`http://localhost:50032/api/bar/${bar}`)
+            parsedBarInfo[bar] = await barInfo.json()
+          }
+
+          for (let date of dates) {
+            let bars = Object.keys(user.schedule[date])
+            for (let bar of bars) {
+              user.schedule[date][bar].name = parsedBarInfo[bar].name
             }
           }
         }

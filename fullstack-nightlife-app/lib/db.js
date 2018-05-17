@@ -37,8 +37,11 @@ const initDB = () => {
     .then(() => {
       return Promise.all([
         state.db.createCollection('users'),
-        state.db.createCollection('bars')
-      ])
+        state.db.createCollection('bars'),
+        state.db.createCollection('bars_temp')
+      ]).then(collections => {
+        collections[2].createIndex({ createdAt: 1 }, { expireAfterSeconds: 86400 })
+      })
     })
 }
 
@@ -78,6 +81,27 @@ const findOrCreateUser = (user) => {
         })
       }).then(result => {
         return result.ops[0]
+      })
+    })
+}
+
+const findTempBarbyID = (id) => {
+  return connectToDB()
+    .then(() => state.db.collection('bars_temp'))
+    .then(collection => {
+      return collection.findOne({
+        id: id
+      })
+    })
+}
+
+const addTempBar = (bar) => {
+  return connectToDB()
+    .then(() => state.db.collection('bars_temp'))
+    .then(collection => {
+      return collection.insertOne({
+        createdAt: new Date(),
+        ...bar
       })
     })
 }
@@ -176,5 +200,7 @@ module.exports.closeDB = closeDB
 module.exports.initDB = initDB
 module.exports.findUserByID = findUserByID
 module.exports.findOrCreateUser = findOrCreateUser
+module.exports.addTempBar = addTempBar
+module.exports.findTempBarbyID = findTempBarbyID
 module.exports.findOrCreateBar = findOrCreateBar
 module.exports.setUserGoingStatus = setUserGoingStatus
