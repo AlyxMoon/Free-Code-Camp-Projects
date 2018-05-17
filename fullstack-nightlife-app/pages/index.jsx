@@ -50,10 +50,6 @@ class Home extends React.Component {
             currentPage={this.props.offset + 1}
           />
         }
-        <div className="yelp-wrapper">
-          <span>Results powered by:</span>
-          <a href="https://www.yelp.com"><img src="/static/yelp.png" /></a>
-        </div>
         <SearchBar />
         { this.props.bars.length > 0 &&
           <BarList
@@ -61,23 +57,6 @@ class Home extends React.Component {
             setStatusGoing={this.setStatusGoing} />
         }
         <style jsx>{`
-          .yelp-wrapper {
-            background-color: #DDD;
-            border-radius: 10%;
-            display: flex;
-            justify-content: center;
-            height: 50px;
-            line-height: 50px;
-            margin: 5px auto;
-            min-width: 200px;
-            max-width: 300px;
-            padding: 5px;
-          }
-
-          .yelp-wrapper img {
-            background-color: #D32323;
-            height: 100%;
-          }
         `}</style>
       </div>
     )

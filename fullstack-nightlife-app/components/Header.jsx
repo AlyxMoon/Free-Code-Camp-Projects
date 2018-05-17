@@ -17,39 +17,76 @@ class Header extends React.Component {
 
   render () {
     return (
-      <div className="navbar">
-        <div className="nav-item">
-          <a href="/">
-            FCC Nightlife
-          </a>
-        </div>
-        <div className="nav-item pull-right">
-          { this.props.username
-            ? (<a href="#" onClick={this.handleClick}>
-              <span className="hide-xs">{this.props.username}</span>
-              <i className={`icon ${this.state.showMenu ? 'icon-up-arrow' : 'icon-down-arrow'}`}></i>
-              <img src={this.props.avatar} />
+      <div className="navbar-wrapper">
+        <div className="navbar">
+          <div className="nav-item">
+            <a href="/">
+              FCC Nightlife
             </a>
-            )
-            : (<a href="/auth/twitter">Login/Register</a>)
-          }
-          { this.state.showMenu &&
-            <div className="nav-modal">
-              <hr />
-              <a href="/user">Profile</a>
-              <hr />
-              <a href="/auth/logout">Logout</a>
-              <hr />
-            </div>
-          }
+          </div>
+          <div className="nav-item pull-right">
+            { this.props.username
+              ? (<a href="#" onClick={this.handleClick}>
+                <span className="hide-xs">{this.props.username}</span>
+                <i className={`icon ${this.state.showMenu ? 'icon-up-arrow' : 'icon-down-arrow'}`}></i>
+                <img src={this.props.avatar} />
+              </a>
+              )
+              : (<a href="/auth/twitter">Login/Register</a>)
+            }
+            { this.state.showMenu &&
+              <div className="nav-modal">
+                <hr />
+                <a href="/user">Profile</a>
+                <hr />
+                <a href="/auth/logout">Logout</a>
+                <hr />
+              </div>
+            }
+          </div>
+        </div>
+        <div className="navbar-padding"></div>
+        <div className="attribution">
+          <span>Results powered by:</span>
+          <a href="https://www.yelp.com"><img src="/static/yelp.png" /></a>
         </div>
         <style jsx>{`
           .navbar {
             background-color: black;
             height: 50px;
             line-height: 50px;
-            margin: 0 -5px;
+            margin: 0;
             padding: 0 5px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+          }
+
+          .navbar-padding {
+            height: 50px;
+          }
+
+          .attribution {
+            background-color: black;
+            color: white;
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            margin-left: -5px;
+            margin-bottom: 10px;
+            padding: 5px;
+          }
+
+          .attribution span {
+            vertical-align: top;
+          }
+
+          .attribution img {
+            background-color: #D32323;
+            height: 50px;
+            width: 80px;
           }
 
           .nav-item {
@@ -103,7 +140,7 @@ class Header extends React.Component {
             color: black;
           }
 
-          img {
+          .navbar img {
             border-radius: 50%;
             height: 90%;
             margin-left: 5px;
