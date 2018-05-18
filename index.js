@@ -119,6 +119,11 @@ var projects = [
     link: 'http://fullstack-voting-app.allistermoon.com',
     image: 'img/previews/fullstack-voting-app.png'
   },
+  {
+    title: 'Fullstack Nightlife App',
+    link: 'http://fullstack-nightlife-app.allister.moon',
+    image: 'img/previews/fullstack-nightlife-app.png'
+  }
 ]
 
 $(document).ready(function() {
