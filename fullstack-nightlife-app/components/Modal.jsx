@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 class Modal extends Component {
   render () {
     return (
-      <div className="modal-page-wrapper">
-        <div className="modal">
+      <div onClick={this.props.closeModal} className="modal-page-wrapper">
+        <div onClick={e => { e.stopPropagation() } } className="modal">
           <div className="modal-title">
             <div className="modal-title-text">{this.props.title}</div>
             <i onClick={this.props.closeModal} className="close fas fa-times"></i>
@@ -42,6 +42,9 @@ class Modal extends Component {
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 10;
+
+            animation-name: inTop;
+            animation-duration: 0.5s;
           }
 
           .modal-title {
@@ -76,6 +79,15 @@ class Modal extends Component {
             float: right;
             line-height: 24px;
             padding-right: 10px;
+          }
+
+          @keyframes inTop {
+            0% {
+              transform: translate(-50%, -200%);
+            }
+            100% {
+              transform: translate(-50%, -50%);
+            }
           }
         `}</style>
       </div>

@@ -25,7 +25,7 @@ class BarList extends Component {
   }
 
   closeModal () {
-    this.setState({ showModal: false })
+    this.setState({ showModal: false, plannedIntoxicationLevel: 0 })
   }
 
   setPlannedIntoxicationLevel (level) {

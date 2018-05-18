@@ -12,7 +12,12 @@ const PaginatorLink = props => (
         { props.text ? props.text : props.number + 1 }
       </li>
       <style jsx>{`
+        a {
+          color: black;
+          text-decoration: none;
+        }
         li {
+          background-color: white;
           border: 1px solid #DDD;
           border-radius: 4px;
           display: inline-block;
@@ -22,6 +27,7 @@ const PaginatorLink = props => (
           height: 20px;
           width: 25px;
           text-align: center;
+          user-select: none;
         }
 
         .active {
@@ -95,6 +101,7 @@ class Paginator extends Component {
 
     return (
       <div className="paginator">
+        <hr />
         <ul className="pagination-item">
           <PaginatorLink
             number={0}
@@ -138,6 +145,10 @@ class Paginator extends Component {
         </p>
         <hr />
         <style jsx>{`
+          .paginator {
+            color: #EEE;
+          }
+
           .pagination-item {
             display: flex;
             justify-content: center;

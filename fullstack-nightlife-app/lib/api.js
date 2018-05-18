@@ -33,8 +33,13 @@ function isValidUser (twitterID, secret) {
 router.get('/bar/:id', (req, res) => {
   return findTempBarbyID(req.params.id)
     .then(bar => {
-      if (bar) res.json(bar)
-      else {
+      if (bar) {
+        return findOrCreateBar(bar.id)
+          .then(localBarInfo => {
+            bar.schedule = localBarInfo.schedule
+            res.json(bar)
+          })
+      } else {
         throat(() => {
           return fetch(`${apiEndpoint}/${req.params.id}`, DEFAULT_API_OPTIONS)
             .then(yelp => yelp.json())

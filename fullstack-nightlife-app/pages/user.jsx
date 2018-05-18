@@ -5,6 +5,7 @@ import moment from 'moment'
 import Calendar from 'react-big-calendar'
 
 import Layout from '../components/Layout'
+import BarList from '../components/BarList'
 
 Calendar.setLocalizer(Calendar.momentLocalizer(moment))
 
@@ -31,14 +32,13 @@ class User extends Component {
 
   render () {
     return (
-      <div>
-        { this.props.user.twitterUsername
-          ? <span>Hello {this.props.user.twitterUsername}!</span>
-          : <span>You need to be logged in to view anything on this page</span>
+      <div className="page-user">
+        { !this.props.user.twitterUsername &&
+          <span>You need to be logged in to view anything on this page</span>
         }
         { this.props.user.schedule &&
           <div>
-            <h2>Schedule of Bars</h2>
+            <h2 className="page-text">Your Schedule</h2>
             <div className="calendar-wrapper">
               <Calendar
                 events={this.getEventsFromSchedule(this.props.user.schedule)}
@@ -50,13 +50,31 @@ class User extends Component {
             </div>
           </div>
         }
+        <hr />
+        <h2 className="page-text">Your Visited Bars</h2>
+        { this.props.bars.length > 0 &&
+          <BarList
+            bars={this.props.bars}
+            setStatusGoing={this.props.setStatusGoing} />
+        }
+        <style jsx>{`
+          .page-text {
+            color: #DDD;
+          }
+
+          .calendar-wrapper {
+            color: black;
+          }
+        `}</style>
       </div>
     )
   }
 }
 
 User.propTypes = {
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+  bars: PropTypes.array.isRequired,
+  setStatusGoing: PropTypes.func.isRequired
 }
 
 export default Layout(User)

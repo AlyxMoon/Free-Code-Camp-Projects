@@ -74,7 +74,7 @@ class Header extends React.Component {
             display: inline-block;
             height: 50px;
             line-height: 50px;
-            margin-left: -5px;
+            margin-left: -10px;
             margin-bottom: 10px;
             padding: 5px;
           }

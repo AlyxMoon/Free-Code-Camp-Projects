@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
+import Router from 'next/router'
 import fetch from 'isomorphic-unfetch'
 
 import styleCalendar from 'react-big-calendar/lib/css/react-big-calendar.css'
@@ -21,6 +22,7 @@ const withLayout = ComposedComponent => {
           if (query.user) user = query.user
         }
 
+        let userBars = []
         if (user.schedule) {
           let setBars = new Set()
 
@@ -33,7 +35,6 @@ const withLayout = ComposedComponent => {
             }
           }
 
-          console.log(setBars)
           let parsedBarInfo = {}
           for (let bar of setBars) {
             let barInfo = await fetch(`http://localhost:50032/api/bar/${bar}`)
@@ -46,10 +47,16 @@ const withLayout = ComposedComponent => {
               user.schedule[date][bar].name = parsedBarInfo[bar].name
             }
           }
+
+          let barKeys = Object.keys(parsedBarInfo)
+          for (let barKey of barKeys) {
+            userBars.push(parsedBarInfo[barKey])
+          }
         }
 
         return {
-          user
+          user,
+          bars: userBars
         }
       }
 
@@ -88,6 +95,31 @@ const withLayout = ComposedComponent => {
       }
     }
 
+    async setStatusGoing (dateGoing, barId, going = true, intoxLevel = 0) {
+      let queryParams = `?dateGoing=${dateGoing}`
+      queryParams += `&barId=${barId}`
+      queryParams += `&going=${going}`
+      queryParams += `&intoxLevel=${intoxLevel}`
+      if (this.state.user.secret && this.state.user.twitterID) {
+        queryParams += `&twitterID=${this.state.user.twitterID}`
+        queryParams += `&secret=${this.state.user.secret}`
+      }
+
+      const res = await fetch(`http://localhost:50032/api/setGoing${queryParams}`)
+      const data = await res.json()
+
+      if (data.error) console.error(data.error)
+      else {
+        Router.push({
+          pathname: '/',
+          query: {
+            location: this.props.location,
+            offset: this.props.offset
+          }
+        }, '/')
+      }
+    }
+
     constructor (props) {
       super(props)
 
@@ -101,6 +133,8 @@ const withLayout = ComposedComponent => {
           schedule: props.user.schedule
         }
       }
+
+      this.setStatusGoing = this.setStatusGoing.bind(this)
     }
 
     render () {
@@ -112,20 +146,17 @@ const withLayout = ComposedComponent => {
             avatar={this.state.user.twitterAvatar || ''}
           />
           <div className="content">
-            <ComposedComponent user={this.state.user} {...leftoverProps} />
+            <ComposedComponent user={this.state.user} setStatusGoing={this.setStatusGoing} {...leftoverProps} />
           </div>
           <style jsx global>{`
             body {
+              background-color: #1C2C35;
               margin: 0;
               padding: 0;
             }
 
             .page {
-              padding: 0 5px;
-            }
-
-            .calendar-wrapper {
-              height: 400px;
+              padding: 0 10px;
             }
 
             button {
@@ -135,6 +166,10 @@ const withLayout = ComposedComponent => {
             @media (max-width: 768px) {
               .hide-xs {
                 display: none;
+              }
+
+              .page {
+                padding: 0;
               }
             }
 
@@ -156,11 +191,13 @@ const withLayout = ComposedComponent => {
 
             .btn {
               border-radius: 5px;
+              border-width: 1px;
               border-style: solid;
               font-size: 18px;
               line-height: 18px;
               margin: 5px;
               padding: 5px 15px;
+              transition-duration: 0.2s;
             }
 
             .btn.btn-default {
@@ -183,6 +220,24 @@ const withLayout = ComposedComponent => {
             .btn.btn-primary:hover {
               background-color: #1160A2;
               border-color: #1160A2;
+            }
+
+            .category-list-item {
+              font-weight: normal;
+            }
+
+            .category-list-item:first-child::before {
+              content: '• '
+            }
+
+            .category-list-item:not(:first-child)::before {
+              content: ', ';
+            }
+
+            .calendar-wrapper {
+              background-color: white;
+              height: 500px;
+              padding-top: 5px;
             }
 
             ${styleCalendar}

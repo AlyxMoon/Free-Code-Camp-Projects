@@ -2,7 +2,9 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 import Calendar from 'react-big-calendar'
 import moment from 'moment'
+
 import IntoxicationLevel from './IntoxicationLevel'
+import Rating from './Rating'
 
 const { isPast } = require('../lib/time')
 
@@ -12,11 +14,26 @@ class BarListItem extends Component {
   constructor (props) {
     super(props)
 
+    this.state = {
+      showCollapsable: false,
+      stylingShowCollapsable: false
+    }
+
+    this.toggleCollapsable = this.toggleCollapsable.bind(this)
     this.handleSelectDate = this.handleSelectDate.bind(this)
   }
 
   componentDidMount () {
     this.setState({ alertify: require('alertifyjs') })
+  }
+
+  toggleCollapsable () {
+    this.setState({ stylingShowCollapsable: !this.state.stylingShowCollapsable })
+    let timeout = 0
+    if (this.state.showCollapsable) timeout = 500
+    window.setTimeout(() => {
+      this.setState({ showCollapsable: !this.state.showCollapsable })
+    }, timeout)
   }
 
   getAverageIntoxLevel (schedule = {}) {
@@ -84,32 +101,114 @@ class BarListItem extends Component {
   render () {
     return (
       <div className="bar" key={this.props.bar.id}>
-        <h1>{this.props.bar.name}</h1>
-        <div className="calendar-wrapper">
-          <Calendar
-            events={this.getEventsFromSchedule(this.props.bar.schedule)}
-            defaultDate={new Date()}
-            onView='month'
-            views={['month']}
-            selectable={'ignoreEvents'}
-            onSelectSlot={this.handleSelectDate}
-          />
+        <div className="bar-info">
+          <img className="bar-image" src={this.props.bar.image_url} />
+          <div className="bar-info-meta">
+            <a href={this.props.bar.url}><h2>{this.props.bar.name}</h2></a>
+            <div>
+              Rating:
+              <span className="sm-push-down">
+                <Rating rating={this.props.bar.rating} />
+                Reviews - {this.props.bar.review_count}
+              </span>
+            </div>
+            <div>
+              Price: {this.props.bar.price} {this.props.bar.categories.map(category => (
+                <span className="category-list-item" key={category.alias}>
+                  {category.title}
+                </span>
+              ))}
+            </div>
+            <div>
+              Average Intoxication Level:
+              <span className="sm-push-down">
+                <IntoxicationLevel level={this.getAverageIntoxLevel(this.props.bar.schedule)} />
+              </span>
+            </div>
+
+            <div>Total Visits: {this.getTotalCountOfAttendees(this.props.bar.schedule)}</div>
+            <div>People Going Today: {this.getTodayCountofAttendees(this.props.bar.schedule)}</div>
+          </div>
         </div>
-        <p>Total Number Visited: {this.getTotalCountOfAttendees(this.props.bar.schedule)}</p>
-        <p>People Going Today: {this.getTodayCountofAttendees(this.props.bar.schedule)}</p>
-        <p>
-          Average Intoxication Level:
-          <IntoxicationLevel level={this.getAverageIntoxLevel(this.props.bar.schedule)} />
-        </p>
-        <img src={this.props.bar.image_url} />
-        <p><a href={this.props.bar.url}>Link to Yelp page</a></p>
+
+        <div className={`collapsable-wrapper ${this.state.stylingShowCollapsable ? 'show' : ''}`}>
+          <div onClick={this.toggleCollapsable} className="collapsable-title">
+            {this.state.showCollapsable ? 'Hide Schedule' : 'Show Schedule'}
+          </div>
+          { this.state.showCollapsable && (
+            <div className="calendar-wrapper">
+              <Calendar
+                events={this.getEventsFromSchedule(this.props.bar.schedule)}
+                defaultDate={new Date()}
+                onView='month'
+                views={['month']}
+                selectable={'ignoreEvents'}
+                onSelectSlot={this.handleSelectDate}
+              />
+            </div>
+          )}
+          <span>To say you are going to visit the bar, open the calendar and click on the day you would like to go.</span>
+        </div>
 
         <style jsx>{`
-          img {
-            display: block;
-            height: 100px;
-            width: 100px;
+          .bar {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 5px;
           }
+
+          .bar-info {
+            display: flex;
+          }
+
+          .bar-info-meta {
+            margin-left: 5px;
+          }
+
+          .bar-info-meta h2 {
+            margin: 3px;
+          }
+          .bar-info-meta div {
+            font-weight: bold;
+            margin: 3px;
+          }
+
+          .bar-image {
+            border-radius: 5px;
+            height: 150px;
+            width: 150px;
+          }
+
+          .collapsable-wrapper {
+            border: 2px solid rgba(0,0,0,0.5);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            margin: 10px 0;
+            max-height: 65px;
+            overflow-y: hidden;
+            padding: 5px;
+            transition: max-height 0.5s;
+            user-select: none;
+          }
+          .collapsable-wrapper.show {
+            max-height: 700px;
+            transition: max-height 1s;
+          }
+
+          .collapsable-title {
+            border-bottom: 1px solid rgba(0,0,0,0.4);
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 5px;
+          }
+
+          @media (max-width: 520px) {
+            display: block;
+            margin-bottom: 5px;
+          }
+
         `}</style>
       </div>
     )
