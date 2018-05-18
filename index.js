@@ -121,7 +121,7 @@ var projects = [
   },
   {
     title: 'Fullstack Nightlife App',
-    link: 'http://fullstack-nightlife-app.allister.moon',
+    link: 'http://fullstack-nightlife-app.allistermoon.com',
     image: 'img/previews/fullstack-nightlife-app.png'
   }
 ]
