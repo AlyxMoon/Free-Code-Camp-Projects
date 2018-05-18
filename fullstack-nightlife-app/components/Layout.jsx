@@ -9,6 +9,8 @@ import styleAlertifyDefault from 'alertifyjs/build/css/themes/default.min.css'
 
 import Header from '../components/Header'
 
+import { apiURL } from '../lib/consts.js'
+
 const withLayout = ComposedComponent => {
   class Layout extends Component {
     static async getInitialProps ({ query, pathname, req, res }) {
@@ -37,7 +39,7 @@ const withLayout = ComposedComponent => {
 
           let parsedBarInfo = {}
           for (let bar of setBars) {
-            let barInfo = await fetch(`http://localhost:50032/api/bar/${bar}`)
+            let barInfo = await fetch(`${apiURL}/bar/${bar}`)
             parsedBarInfo[bar] = await barInfo.json()
           }
 
@@ -77,7 +79,7 @@ const withLayout = ComposedComponent => {
 
       const options = `?location=${location}&offset=${offset}`
 
-      const resBars = await fetch(`http://localhost:50032/api/bars${options}`)
+      const resBars = await fetch(`${apiURL}/bars${options}`)
       const data = await resBars.json()
 
       if (!req) {
@@ -105,7 +107,7 @@ const withLayout = ComposedComponent => {
         queryParams += `&secret=${this.state.user.secret}`
       }
 
-      const res = await fetch(`http://localhost:50032/api/setGoing${queryParams}`)
+      const res = await fetch(`${apiURL}/setGoing${queryParams}`)
       const data = await res.json()
 
       if (data.error) console.error(data.error)
