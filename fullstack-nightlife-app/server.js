@@ -1,6 +1,7 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
+const cors = require('cors')
 const passport = require('passport')
 const next = require('next')
 const { initDB } = require('./lib/db')
@@ -15,6 +16,7 @@ app.prepare()
     const server = express()
     const port = 50032
 
+    server.use(cors())
     server.use(cookieParser())
     server.use(session({ secret: 'moon', resave: false, saveUninitialized: false }))
     server.use(passport.initialize())
